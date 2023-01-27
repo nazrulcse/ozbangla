@@ -1,0 +1,43 @@
+@import "../../../app.component.scss";
+.mobile-nav {
+  display: none;
+}
+@media (max-width: 992px) {
+  .mobile-nav {
+    display: block;
+  }
+  .desktop-nav {
+    display: none;
+    position: fixed;
+  }
+}
+
+.nav-custom-hover-effect {
+  position: relative;
+  .custom-dropdown-lists {
+    position: absolute;
+    width: 250px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    background-color: $white;
+    border: .1px solid $lightgray;
+  }
+  &:hover {
+    .custom-dropdown-lists {
+      display: block;
+      opacity: 1;
+      visibility: visible;
+      transition: .3s;
+      li {
+        list-style: none;
+        padding: 10px;
+        border-bottom: .1px solid $lightgray;
+        a {
+          text-decoration: none;
+          color: $black;
+        }
+      }
+    }
+  }
+}
