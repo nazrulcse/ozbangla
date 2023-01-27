@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light desktop-nav">
+<nav class="navbar navbar-expand-lg navbar-light desktop-nav">
   <div class="container-fluid">
-    <div class="navbar-brand" href="#">Navbar</div>
+    <div class="navbar-brand"><a href="#" class="logo">AZET ACADEMY</a></div>
     <button
       class="navbar-toggler"
       type="button"
@@ -14,65 +14,88 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">HOME</a>
+        <li class="nav-item nav-item-padding">
+          <a class="nav-link navigation-links" aria-current="page" href="#">HOME</a>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            COURSES
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+        <li
+          class="nav-item nav-item-padding nav-custom-hover-effect margin-right-1"
+        >
+          <a class="nav-link navigation-links" href="#"> COURSE <i class="arrow down"></i></a>
+          <div class="custom-dropdown-lists">
+            <li><a href="#">Sponsorship Program</a></li>
+            <li><a href="#">Basic Programming</a></li>
+            <li><a href="#">Collaborative Course</a></li>
+          </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">WORKSHOP</a>
+        <li class="nav-item nav-item-padding">
+          <a class="nav-link navigation-links" href="#">WORKSHOP</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">BLOG</a>
+        <li class="nav-item nav-item-padding">
+          <a class="nav-link navigation-links" href="#">BLOG</a>
         </li>
-        <li class="nav-item nav-custom-hover-effect">
-          <a class="nav-link" href="#">SEIP COURSE</a>
-          <ul class="custom-dropdown-lists">
+        <li
+          class="nav-item nav-item-padding nav-custom-hover-effect margin-right-1"
+        >
+          <a class="nav-link navigation-links" href="#"
+            >SEIP COURSE <i class="arrow down"></i
+          ></a>
+          <div class="custom-dropdown-lists">
             <li><a href="#">Sub Menu 1</a></li>
             <li><a href="#">Sub Menu 2</a></li>
             <li><a href="#">Sub Menu 3</a></li>
-          </ul>
+          </div>
+        </li>
+        <li class="nav-item nav-item-padding">
+          <a class="nav-link navigation-links" href="#">TSL HACKATHON</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="d-flex align-items-center">
+        <button class="navbar-icons">
+          <img
+            src="../../../../assets/images/bell.png"
+            class="img-fluid"
+            alt="notification-bell"
+          />
+        </button>
+        <button class="navbar-icons">
+          <img
+            src="../../../../assets/images/chat.png"
+            class="img-fluid"
+            alt="chat"
+          />
+        </button>
+        <button class="navbar-icons">
+          <img
+            src="../../../../assets/images/settings.png"
+            alt="settings"
+            class="img-fluid"
+          />
+        </button>
+        <button class="profile-icons">
+          <img
+            src="../../../../assets/images/man.png"
+            alt="profile avater"
+            class="img-fluid"
+          />
+        </button>
+      </div>
     </div>
   </div>
 </nav>
 
 <nav class="mobile-nav">
-  <button
-    class="btn"
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="navbar-brand"><a href="#" class="logo">AZET ACADEMY</a></div>
+    <button
+    class="humberger-btn"
     type="button"
     data-bs-toggle="offcanvas"
     data-bs-target="#offcanvasScrolling"
     aria-controls="offcanvasScrolling"
   >
-    Enable body scrolling
+    <img src="../../../../assets/images/hamburger.png" alt="" class="img-fluid">
   </button>
+  </div>
   <div
     class="offcanvas offcanvas-start"
     data-bs-scroll="true"

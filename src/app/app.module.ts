@@ -8,6 +8,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
+import { UserInfoContainerComponent } from './components/dashboard/user-info-container/user-info-container.component';
+
 
 @NgModule({
   declarations: [
@@ -15,14 +19,21 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    DashboardComponent
+    DashboardComponent,
+    SidebarComponent,
+    UserInfoContainerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+
+  }
+ }

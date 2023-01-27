@@ -1,0 +1,35 @@
+@import '../../../app.component.scss';
+.sidebar {
+  height: 80%;
+  width: 250px;
+  position: fixed;
+  overflow: hidden;
+  top: 10;
+  left: 0;
+  background-color: white;
+}
+.sidebar-single-option {
+  padding: 10px 30px;
+  transition:  .1s;
+  a {
+    color: $gray;
+    text-decoration: none;
+    cursor: pointer;
+    padding-left: 10px;
+    transition: .3s;
+    &:hover {
+      padding-left: 15px;
+    }
+  }
+  &:hover {
+   background-color: $rgbgray;
+  }
+}
+.sidebar-img {
+  width: 20px;
+}
+@media (max-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+}

@@ -1,17 +1,38 @@
 @import "../../../app.component.scss";
+.desktop-nav {
+  box-shadow: 0 0 8px $lightgray;
+}
 .mobile-nav {
   display: none;
+  padding: 20px;
 }
+
 @media (max-width: 992px) {
   .mobile-nav {
     display: block;
+    box-shadow: 0 0 8px $lightgray;
   }
   .desktop-nav {
     display: none;
     position: fixed;
   }
+  .humberger-btn {
+    width: 40px;
+    border: 0;
+    background-color: transparent;
+  }
 }
 
+.logo {
+  text-decoration: none;
+  color: $black;
+}
+.nav-item-padding {
+  padding: 0 5px;
+}
+.navigation-links {
+  font-size: 15px;
+}
 .nav-custom-hover-effect {
   position: relative;
   .custom-dropdown-lists {
@@ -21,23 +42,71 @@
     visibility: hidden;
     opacity: 0;
     background-color: $white;
-    border: .1px solid $lightgray;
+    border: 0.1px solid $lightgray;
   }
   &:hover {
     .custom-dropdown-lists {
       display: block;
       opacity: 1;
       visibility: visible;
-      transition: .3s;
+      transition: 0.3s;
       li {
         list-style: none;
-        padding: 10px;
-        border-bottom: .1px solid $lightgray;
+        padding: 12px 20px;
+        border-bottom: 0.1px solid $lightgray;
+        transition: all 0.2s ease 0s;
+        &:last-child {
+          border-bottom: 0;
+        }
         a {
           text-decoration: none;
           color: $black;
+          transition: all 0.3s ease 0s;
+          &:hover {
+            padding-left: 5px;
+          }
         }
       }
     }
   }
+}
+
+.arrow {
+  border: solid gray;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px 3px;
+  position: absolute;
+  bottom: 18px;
+  right: -3px;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.margin-right-1 {
+  margin-right: 16px;
+  // 1rem = 16px
+}
+.profile-btn {
+  border: 0;
+  .profile-img {
+    width: 40px;
+    cursor: pointer;
+    background-color: transparent;
+    margin: 0 20px;
+  }
+}
+.icons-common {
+  border: 0;
+  margin: 0 16px;
+  background-color: transparent;
+}
+.navbar-icons {
+  width: 20px;
+  @extend .icons-common;
+}
+.profile-icons {
+  width: 40px;
+  @extend .icons-common;
 }

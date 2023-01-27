@@ -1,0 +1,25 @@
+@import '../../app.component.scss';
+
+.main {
+  margin-left: 250px;
+  text-align: justify;
+  padding: 20px;
+  p {
+    text-align: justify;
+  }
+}
+
+.dashboard-title {
+  background-color: $rgbgray;
+  padding: 12px;
+  border-radius: 5px;
+  .username {
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 992px) {
+  .main {
+    margin-left: 0;
+  }
+}

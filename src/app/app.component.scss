@@ -2,3 +2,32 @@ $white: white;
 $black: black;
 $lightgray: lightgray;
 $gray: gray;
+$skyblue: #5A98FB;
+$rgbgray: rgb(235, 235, 235);
+
+a {
+  text-decoration: none;
+  color: gray;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.d-flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.d-flex-center {
+  display: flex;
+  justify-content: space-center;
+  align-items: center;
+}
+.d-flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
