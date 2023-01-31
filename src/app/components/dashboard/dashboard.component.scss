@@ -7,16 +7,27 @@
   p {
     text-align: justify;
   }
-}
+  .dashboard-title {
+    background-color: $rgb-gray;
+    padding: 12px;
+    border-radius: 5px;
+    .username {
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+  }
 
-.dashboard-title {
-  background-color: $rgbgray;
-  padding: 12px;
-  border-radius: 5px;
-  .username {
-    font-weight: 600;
+  .courses-container {
+    padding: 12px;
+    .side-padding-none {
+      padding-left: 0px;
+    }
+  }
+  .upcoming-activity-events {
+    padding-right: 0;
   }
 }
+
 
 @media (max-width: 992px) {
   .main {

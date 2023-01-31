@@ -11,6 +11,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
 import { UserInfoContainerComponent } from './components/dashboard/user-info-container/user-info-container.component';
+import { AllCoursesComponent } from './components/dashboard/all-courses/all-courses.component';
+import { RecentCourseComponent } from './components/dashboard/recent-course/recent-course.component';
+import { LoginComponent } from './components/login/login.component';
+import { UpcomingActivitiesComponent } from './components/dashboard/upcoming-activities/upcoming-activities.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AvailableFilesComponent } from './components/dashboard/available-files/available-files.component';
 
 
 @NgModule({
@@ -21,13 +29,21 @@ import { UserInfoContainerComponent } from './components/dashboard/user-info-con
     HomeComponent,
     DashboardComponent,
     SidebarComponent,
-    UserInfoContainerComponent
+    UserInfoContainerComponent,
+    AllCoursesComponent,
+    RecentCourseComponent,
+    LoginComponent,
+    UpcomingActivitiesComponent,
+    AvailableFilesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FontAwesomeModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

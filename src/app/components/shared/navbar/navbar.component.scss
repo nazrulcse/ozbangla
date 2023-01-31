@@ -1,6 +1,7 @@
 @import "../../../app.component.scss";
 .desktop-nav {
-  box-shadow: 0 0 8px $lightgray;
+  box-shadow: 0 0 5px $light-gray;
+  background-color: $white;
 }
 .mobile-nav {
   display: none;
@@ -10,7 +11,24 @@
 @media (max-width: 992px) {
   .mobile-nav {
     display: block;
-    box-shadow: 0 0 8px $lightgray;
+    box-shadow: 0 0 5px $light-gray;
+    .nav-item-d-block {
+      list-style: none;
+      display: block;
+      padding: 12px 0;
+      border-bottom: 0.1px solid #595959;
+      transition: 0.3s;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      a {
+        color: $white;
+        text-transform: uppercase;
+      }
+    }
+    .profile-icons {
+      width: 30px!important;
+    }
   }
   .desktop-nav {
     display: none;
@@ -32,6 +50,8 @@
 }
 .navigation-links {
   font-size: 15px;
+  color: $black !important;
+  text-transform: uppercase;
 }
 .nav-custom-hover-effect {
   position: relative;
@@ -42,7 +62,7 @@
     visibility: hidden;
     opacity: 0;
     background-color: $white;
-    border: 0.1px solid $lightgray;
+    border: 0.1px solid $light-gray;
   }
   &:hover {
     .custom-dropdown-lists {
@@ -53,7 +73,7 @@
       li {
         list-style: none;
         padding: 12px 20px;
-        border-bottom: 0.1px solid $lightgray;
+        border-bottom: 0.1px solid $light-gray;
         transition: all 0.2s ease 0s;
         &:last-child {
           border-bottom: 0;
@@ -72,7 +92,7 @@
 }
 
 .arrow {
-  border: solid gray;
+  border: solid $black;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px 3px;

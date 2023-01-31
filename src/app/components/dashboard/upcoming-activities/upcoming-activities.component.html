@@ -1,0 +1,47 @@
+<div class="upcoming-activity p-3 d-flex flex-wrap justify-content-between">
+  <div class="control-mat-width mx-1">
+    <mat-form-field appearance="fill" [style.width.px]="130">
+      <mat-label><fa-icon [icon]="faClock" class="icon"></fa-icon></mat-label>
+      <mat-select>
+        <mat-option *ngFor="let due of dueDate" [value]="due.value">
+          {{ due.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="mx-1">
+    <mat-form-field appearance="fill" [style.width.px]="130">
+      <mat-label
+        ><fa-icon [icon]="faArrowDown" class="icon"></fa-icon
+      ></mat-label>
+      <mat-select>
+        <mat-option
+          *ngFor="let sort of sortByDate"
+          [value]="sort.value"
+          class="select-option"
+        >
+          {{ sort.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="mx-1">
+    <ng-container *ngFor="let course of allCourses">
+      <p class="course-title mt-4">{{ course.title }}</p>
+      <div class="text-center">
+        <img
+          src="../../../../assets/images/activities.svg"
+          alt="activities"
+          class="img-fluid activity-img"
+        />
+        <p class="no-activity">No upcoming activities due</p>
+      </div>
+    </ng-container>
+
+    <div class="text-center my-3">
+      <button class="button more-courses-btn">More Courses</button>
+    </div>
+  </div>
+</div>

@@ -1,12 +1,12 @@
 @import '../../../app.component.scss';
 .sidebar {
-  height: 80%;
+  height: 100%;
   width: 250px;
   position: fixed;
   overflow: hidden;
-  top: 10;
   left: 0;
   background-color: white;
+  box-shadow: 0 0 5px 0 $light-gray;
 }
 .sidebar-single-option {
   padding: 10px 30px;
@@ -22,7 +22,7 @@
     }
   }
   &:hover {
-   background-color: $rgbgray;
+   background-color: $rgb-gray;
   }
 }
 .sidebar-img {

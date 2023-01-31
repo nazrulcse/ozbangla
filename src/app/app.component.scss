@@ -1,9 +1,12 @@
 $white: white;
 $black: black;
-$lightgray: lightgray;
 $gray: gray;
-$skyblue: #5A98FB;
-$rgbgray: rgb(235, 235, 235);
+$light-gray: lightgray;
+$rgb-gray: rgb(235, 235, 235);
+$custom-purple: #782CEE;
+$custom-red: #FF1053;
+$custom-green: #00A78E;
+$custom-yellow: rgb(241, 197, 40);
 
 a {
   text-decoration: none;
@@ -12,6 +15,32 @@ a {
 
 p {
   margin-bottom: 0;
+}
+
+.button-container {
+  .button:not(:first-child) {
+    margin-left: 20px;
+  }
+}
+.button {
+  padding: 8px 20px;
+  border-radius: 3px;
+  background: transparent;
+}
+@mixin button-bg($color) {
+  border: 1px solid $color;
+  color: $color;
+  transition: .3s;
+  &:hover {
+    background-color: $color;
+    color: $white;
+  }
+}
+.bg-green {
+  @include button-bg($custom-green)
+}
+.bg-red {
+  @include button-bg($custom-red)
 }
 
 .d-flex-between {
@@ -30,4 +59,11 @@ p {
   align-items: center;
 }
 
-
+@media (max-width: 524px) {
+  .button-container {
+    .button:not(:first-child) {
+      margin-left: 0px;
+      margin-top: 10px;
+    }
+  }
+}

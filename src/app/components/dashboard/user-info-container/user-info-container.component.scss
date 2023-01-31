@@ -1,17 +1,16 @@
 @import '../../../app.component.scss';
 .single-item {
-  box-shadow: 0 0 8px $lightgray;
+  box-shadow: 0 0 5px $light-gray;
   padding: 20px;
   border-radius: 5px;
   .small {
     font-size: 13px;
   }
-  .bold {
-    font-weight: 700;
+  .semi-bold {
+    font-weight: 600;
     color: $black;
   }
-  .img-container {
-    background-color: #2441E7;
+  .icon-container {
     padding: 20px 25px;
     border-radius: 5px;
 
@@ -19,6 +18,21 @@
       font-size: 40px;
       color: $white;
     }
+  }
+  @mixin dashboard-bg($bg-color) {
+    background-color: $bg-color;
+  }
+  .purple {
+    @include dashboard-bg($custom-purple);
+  }
+  .red {
+    @include dashboard-bg($custom-red);
+  }
+  .green {
+    @include dashboard-bg($custom-green);
+  }
+  .yellow {
+    @include dashboard-bg($custom-yellow)
   }
 }
 

@@ -1,0 +1,26 @@
+@import '../../../app.component.scss';
+.upcoming-activity {
+  box-shadow: 0 0 5px $light-gray;
+  .course-title {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .activity-img {
+    width: 70px;
+    margin: 15px 0;
+  }
+  .no-activity {
+    font-size: 15px;
+    color: $gray;
+  }
+  .more-courses-btn {
+    color: $black;
+    border: 1px solid $gray;
+    transition: .3s;
+    &:hover {
+      background-color: rgb(191, 190, 190);
+      color: $black;
+      border: 1px solid transparent;
+    }
+  }
+}

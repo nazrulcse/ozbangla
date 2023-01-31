@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light desktop-nav">
+<nav class="navbar navbar-expand-lg navbar-light desktop-nav sticky-top">
   <div class="container-fluid">
     <div class="navbar-brand"><a href="#" class="logo">AZET ACADEMY</a></div>
     <button
@@ -15,12 +15,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item nav-item-padding">
-          <a class="nav-link navigation-links" aria-current="page" href="#">HOME</a>
+          <a class="nav-link navigation-links" aria-current="page" href="#"
+            >HOME</a
+          >
         </li>
         <li
           class="nav-item nav-item-padding nav-custom-hover-effect margin-right-1"
         >
-          <a class="nav-link navigation-links" href="#"> COURSE <i class="arrow down"></i></a>
+          <a class="nav-link navigation-links" href="#">
+            COURSE <i class="arrow down"></i
+          ></a>
           <div class="custom-dropdown-lists">
             <li><a href="#">Sponsorship Program</a></li>
             <li><a href="#">Basic Programming</a></li>
@@ -87,36 +91,88 @@
   <div class="d-flex justify-content-between align-items-center">
     <div class="navbar-brand"><a href="#" class="logo">AZET ACADEMY</a></div>
     <button
-    class="humberger-btn"
-    type="button"
-    data-bs-toggle="offcanvas"
-    data-bs-target="#offcanvasScrolling"
-    aria-controls="offcanvasScrolling"
-  >
-    <img src="../../../../assets/images/hamburger.png" alt="" class="img-fluid">
-  </button>
+      class="humberger-btn"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasScrolling"
+      aria-controls="offcanvasScrolling"
+    >
+      <img
+        src="../../../../assets/images/hamburger.png"
+        alt=""
+        class="img-fluid"
+      />
+    </button>
   </div>
   <div
-    class="offcanvas offcanvas-start"
-    data-bs-scroll="true"
+    class="offcanvas offcanvas-start bg-dark text-light"
+    data-bs-scroll="false"
     data-bs-backdrop="false"
     tabindex="-1"
     id="offcanvasScrolling"
     aria-labelledby="offcanvasScrollingLabel"
   >
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasScrollingLabel">
-        Colored with scrolling
-      </h5>
+      <div class="offcanvas-title" id="offcanvasScrollingLabel">
+        <div class="logo text-light">AZET ACADEMY</div>
+      </div>
       <button
         type="button"
-        class="btn-close text-reset"
+        class="btn-close text-reset bg-light"
         data-bs-dismiss="offcanvas"
         aria-label="Close"
       ></button>
     </div>
     <div class="offcanvas-body">
-      <p>Try scrolling the rest of the page to see this option in action.</p>
+      <div>
+        <li class="nav-item nav-item-d-block">
+          <a routerLink="login" class="nav-link" data-bs-dismiss="offcanvas"
+            >HOME</a
+          >
+        </li>
+        <li class="nav-item nav-item-d-block">
+          <a routerLink="login" class="nav-link" data-bs-dismiss="offcanvas"
+            >COURSE</a
+          >
+        </li>
+        <li class="nav-item nav-item-d-block">
+          <a routerLink="login" class="nav-link" data-bs-dismiss="offcanvas"
+            >WORKSHOP</a
+          >
+        </li>
+        <li class="nav-item nav-item-d-block">
+          <a routerLink="login" class="nav-link" data-bs-dismiss="offcanvas"
+            >BLOG</a
+          >
+        </li>
+        <li class="nav-item nav-item-d-block">
+          <a routerLink="login" class="nav-link" data-bs-dismiss="offcanvas"
+            >SEIP COURSE</a
+          >
+        </li>
+        <li class="nav-item nav-item-d-block">
+          <a routerLink="login" class="nav-link" data-bs-dismiss="offcanvas"
+            >TSL HACKATHON</a
+          >
+        </li>
+        <li class="nav-item nav-item-d-block">
+          <a
+            routerLink="login"
+            class="nav-link d-flex justify-content-between align-items-center"
+          >
+            <div>
+              <span>Arifur Rahman</span>
+            </div>
+            <div class="profile-btn profile-icons">
+              <img
+                src="../../../../assets/images/man.png"
+                alt="profile avater"
+                class="img-fluid"
+              />
+            </div>
+          </a>
+        </li>
+      </div>
     </div>
   </div>
 </nav>
