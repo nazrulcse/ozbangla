@@ -8,8 +8,22 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {}
-  openDropDown: boolean = false;
+  openProfleDropDown: boolean = false;
+  settingDropDown: boolean = false;
+  showNotification: boolean = false;
   profileDropDownToggle() {
-    this.openDropDown = !this.openDropDown;
+    this.openProfleDropDown = !this.openProfleDropDown;
+    this.settingDropDown = false;
+    this.showNotification = false;
+  }
+  settingsDropDownToggle() {
+    this.settingDropDown = !this.settingDropDown;
+    this.openProfleDropDown = false;
+    this.showNotification = false;
+  }
+  showNotifications() {
+    this.showNotification = !this.showNotification;
+    this.settingDropDown = false;
+    this.openProfleDropDown = false;
   }
 }

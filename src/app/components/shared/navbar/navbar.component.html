@@ -28,7 +28,9 @@
           <div class="custom-dropdown-lists">
             <li><a href="#">Sponsorship Program</a></li>
             <li><a href="#">Basic Programming</a></li>
+            <li><a href="#">Offline Course</a></li>
             <li><a href="#">Collaborative Course</a></li>
+            <li><a href="#">A Level & O Level</a></li>
           </div>
         </li>
         <li class="nav-item nav-item-padding">
@@ -44,9 +46,11 @@
             >SEIP COURSE <i class="arrow down"></i
           ></a>
           <div class="custom-dropdown-lists">
-            <li><a href="#">Sub Menu 1</a></li>
-            <li><a href="#">Sub Menu 2</a></li>
-            <li><a href="#">Sub Menu 3</a></li>
+            <li><a href="#">Sponsorship Program</a></li>
+            <li><a href="#">Basic Programming</a></li>
+            <li><a href="#">Offline Course</a></li>
+            <li><a href="#">Collaborative Course</a></li>
+            <li><a href="#">A Level & O Level</a></li>
           </div>
         </li>
         <li class="nav-item nav-item-padding">
@@ -54,12 +58,15 @@
         </li>
       </ul>
       <div class="d-flex align-items-center">
-        <button class="navbar-icons">
+        <button class="navbar-icons" (click)="showNotifications()">
           <img
             src="../../../../assets/images/bell.png"
             class="img-fluid"
             alt="notification-bell"
           />
+          <div [ngClass]="showNotification ? 'open-dropdown && notification-dropdown-align' : 'close-dropdown' ">
+           <app-notification></app-notification>
+          </div>
         </button>
         <button class="navbar-icons">
           <img
@@ -68,12 +75,20 @@
             alt="chat"
           />
         </button>
-        <button class="navbar-icons">
+        <button class="navbar-icons" (click)="settingsDropDownToggle()">
           <img
             src="../../../../assets/images/settings.png"
             alt="settings"
             class="img-fluid"
           />
+          <div [ngClass]="settingDropDown ? 'open-dropdown && nav-setting-drop-right' : 'close-dropdown' ">
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Site Home</a></li>
+            <li><a href="">Calender</a></li>
+            <li><a href="">Private Files</a></li>
+            <li><a href="">ERP-B1</a></li>
+            <li><a href="">AHOWSP-B1</a></li>
+          </div>
         </button>
         <button class="profile-icons" (click)="profileDropDownToggle()">
           <img
@@ -81,7 +96,7 @@
             alt="profile avater"
             class="img-fluid"
           />
-          <div [ngClass]="openDropDown ? 'open-dropdown' : 'close-dropdown' ">
+          <div [ngClass]="openProfleDropDown ? 'open-dropdown && nav-profile-drop-right' : 'close-dropdown' ">
             <li><a href="">Dashboard</a></li>
             <li><a href="">Profile</a></li>
             <li><a href="">Grades</a></li>
@@ -169,7 +184,7 @@
             class="nav-link d-flex justify-content-between align-items-center"
           >
             <div>
-              <span>Arifur Rahman</span>
+              <span>Md. Iqbal Ahmed</span>
             </div>
             <div class="profile-btn profile-icons">
               <img

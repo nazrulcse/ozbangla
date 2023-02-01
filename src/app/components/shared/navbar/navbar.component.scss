@@ -70,7 +70,7 @@
   position: relative;
   .custom-dropdown-lists {
     position: absolute;
-    width: 250px;
+    width: 275px;
     border-radius: 5px;
     visibility: hidden;
     opacity: 0;
@@ -151,12 +151,11 @@
 .open-dropdown {
   position: absolute;
   top: 68px;
-  right: 20px;
   box-shadow: 0 0 8px $light-gray;
   display: block;
   transition: all 0.2s ease 0;
   background-color: $white;
-  width: 250px;
+  width: 300px;
   border-radius: 5px;
   text-align: left;
   li {
@@ -177,6 +176,17 @@
     right: 20px;
   }
 }
+
+.nav-profile-drop-right {
+  right: 20px;
+}
+.nav-setting-drop-right {
+  right: 82px;
+}
+.notification-dropdown-align {
+  right: 187px;
+}
+
 .close-dropdown {
   display: none;
 }

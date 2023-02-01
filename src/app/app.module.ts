@@ -24,6 +24,7 @@ import { BadgesComponent } from './components/dashboard/badges/badges.component'
 import { EventsComponent } from './components/dashboard/events/events.component';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NotificationComponent } from './components/dashboard/notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     OnlineUsersComponent,
     BadgesComponent,
     EventsComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
