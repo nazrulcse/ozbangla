@@ -75,12 +75,20 @@
             class="img-fluid"
           />
         </button>
-        <button class="profile-icons">
+        <button class="profile-icons" (click)="profileDropDownToggle()">
           <img
             src="../../../../assets/images/man.png"
             alt="profile avater"
             class="img-fluid"
           />
+          <div [ngClass]="openDropDown ? 'open-dropdown' : 'close-dropdown' ">
+            <li><a href="">Dashboard</a></li>
+            <li><a href="">Profile</a></li>
+            <li><a href="">Grades</a></li>
+            <li><a href="">Messages</a></li>
+            <li><a href="">Preferances</a></li>
+            <li><a href="">Logout</a></li>
+          </div>
         </button>
       </div>
     </div>

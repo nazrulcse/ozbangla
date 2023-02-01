@@ -15,6 +15,9 @@
       font-weight: 600;
       margin-bottom: 0;
     }
+    .dashboard-text {
+      color: $black;
+    }
   }
 
   .courses-container {
@@ -22,6 +25,16 @@
     .side-padding-none {
       padding-left: 0px;
     }
+
+    .reset-btn,
+    .stop-customize-btn {
+      width: 100%;
+      margin: 10px 0;
+    }
+    .reset-btn-container {
+      margin-right: 10px;
+    }
+
   }
   .upcoming-activity-events {
     padding-right: 0;

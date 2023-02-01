@@ -2,15 +2,19 @@
   <app-sidebar></app-sidebar>
   <div class="main py-2">
     <div class="d-flex-between flex-wrap dashboard-title my-3">
-      <h5 class="username">Mohammad Arifur Rahman</h5>
-      <a href="#">Dashboard</a>
+      <h5 class="username">Md. Iqbal Ahmed</h5>
+      <a href="#" class="dashboard-text">Dashboard</a>
     </div>
     <app-user-info-container></app-user-info-container>
     <div class="row courses-container">
       <div class="col-md-8 side-padding-none">
-        <div class="button-container">
-          <button class="button bg-green">Reset page to default</button>
-          <button class="button bg-red">Stop customizing this page</button>
+        <div class="button-container d-flex flex-wrap">
+          <div class="flex-fill reset-btn-container">
+            <button class="button bg-green reset-btn">Reset page to default</button>
+          </div>
+          <div class="flex-fill">
+            <button class="button bg-red stop-customize-btn">Stop customizing page</button>
+          </div>
         </div>
         <div>
           <app-all-courses></app-all-courses>
