@@ -1,8 +1,9 @@
 @import "../../../app.component.scss";
-.available-file-container {
+.badges-container {
   box-shadow: 0 0 5px $light-gray;
   border-radius: 5px;
-  .no-file {
+  .badges {
+    color: $gray;
     font-size: 15px;
   }
 }

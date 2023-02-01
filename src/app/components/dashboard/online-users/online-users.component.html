@@ -1,0 +1,11 @@
+<div class="online-users-container px-3 py-4">
+  <p class="online-users-no">6 Online Users </p>
+  <ng-container *ngFor="let user of onlineUsers">
+    <li class="user-list">
+      <a routerLink="/">
+        <img [src]="user.img" alt="img" />
+        <span class="username">{{ user.name }}</span>
+      </a>
+    </li>
+  </ng-container>
+</div>

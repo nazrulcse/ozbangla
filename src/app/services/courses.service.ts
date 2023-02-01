@@ -8,14 +8,14 @@ export class CoursesService {
   getAllCourse() {
     return [
       {
-        img: '../../assets/images/python.png',
+        img: '../../assets/images/python.jpg',
         category: 'Learning Python',
         title: 'Python Programming For Beginner to Advance - B2',
         status: 'published',
-        completeRatio: '85%',
+        completeRatio: '75%',
       },
       {
-        img: '../../assets/images/ruby.webp',
+        img: '../../assets/images/ruby.jpg',
         category: 'Learning Ruby',
         title: 'Ruby On Rails in Web Development and Server Side Application - B4',
         status: 'pending',
@@ -30,14 +30,14 @@ export class CoursesService {
         category: 'Learning JavaScript',
         title: 'JavaScript For Beginners',
         status: 'published',
-        completeRatio: '85%'
+        completeRatio: '50%'
       },
       {
-        img: '../../assets/images/ruby.webp',
-        category: 'Learning Ruby',
-        title: 'Ruby On Rails in Web Development and Server Side Application - B4',
+        img: '../../assets/images/node.jpg',
+        category: 'Learning Node.Js',
+        title: 'Node.Js. The JavaScript runtime',
         status: 'pending',
-        completeRatio: '85%',
+        completeRatio: '55%',
       },
     ]
   }

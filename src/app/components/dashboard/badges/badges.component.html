@@ -1,0 +1,10 @@
+<div class="badges-container px-3 py-4 my-4">
+  <ng-container *ngIf="!badges">
+    <p class="badges">You have no badges to display</p>
+  </ng-container>
+  <ng-container *ngIf="badges">
+    <p class="badges">
+      loading badges...
+    </p>
+  </ng-container>
+</div>

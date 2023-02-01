@@ -63,6 +63,7 @@
     opacity: 0;
     background-color: $white;
     border: 0.1px solid $light-gray;
+    box-shadow: 0 0 15px $light-gray;
   }
   &:hover {
     .custom-dropdown-lists {
@@ -86,6 +87,17 @@
             padding-left: 5px;
           }
         }
+      }
+      &:before {
+        background-color: #fff;
+        position: absolute;
+        content: "";
+        height: 17px;
+        width: 17px;
+        top: -5px;
+        left: 30px;
+        transform: rotate(45deg);
+
       }
     }
   }

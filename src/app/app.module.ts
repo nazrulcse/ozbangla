@@ -19,7 +19,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AvailableFilesComponent } from './components/dashboard/available-files/available-files.component';
-
+import { OnlineUsersComponent } from './components/dashboard/online-users/online-users.component';
+import { BadgesComponent } from './components/dashboard/badges/badges.component';
+import { EventsComponent } from './components/dashboard/events/events.component';
+import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -35,6 +39,9 @@ import { AvailableFilesComponent } from './components/dashboard/available-files/
     LoginComponent,
     UpcomingActivitiesComponent,
     AvailableFilesComponent,
+    OnlineUsersComponent,
+    BadgesComponent,
+    EventsComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,9 +50,10 @@ import { AvailableFilesComponent } from './components/dashboard/available-files/
     FontAwesomeModule,
     MatFormFieldModule,
     MatSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

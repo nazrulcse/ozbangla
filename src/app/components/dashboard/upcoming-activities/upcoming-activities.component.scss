@@ -1,6 +1,7 @@
 @import '../../../app.component.scss';
 .upcoming-activity {
   box-shadow: 0 0 5px $light-gray;
+  border-radius: 5px;
   .course-title {
     font-size: 15px;
     font-weight: 500;
@@ -18,7 +19,7 @@
     border: 1px solid $gray;
     transition: .3s;
     &:hover {
-      background-color: rgb(191, 190, 190);
+      background-color: rgb(230, 226, 226);
       color: $black;
       border: 1px solid transparent;
     }

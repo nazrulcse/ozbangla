@@ -2,7 +2,7 @@
 
 .courses-container {
   .course-card {
-    border-radius: 3px;
+    border-radius: 5px;
     box-shadow: 0 0 5px $light-gray;
     .course-lists-header {
       border-bottom: 0.1px solid #eeeded;
@@ -13,14 +13,16 @@
     .course-lists-body {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       border-bottom: 0.1px solid #eeeded;
       &:last-child {
         border-bottom: 0;
       }
       .image-container {
         position: relative;
+        flex: 1;
         .course-img {
-          width: 250px;
+          min-width: 200px;
           min-height: 150px;
           border-radius: 5px;
           display: block;
@@ -34,7 +36,7 @@
           border-radius: 5px;
           background-color: rgba(0, 0, 0, 0.5);
           overflow: hidden;
-          width: 100%;
+          min-width: 200px;
           height: 100%;
           transform: scale(0);
           transition: 0.3s all ease;
@@ -63,7 +65,8 @@
         }
       }
       .course-content {
-        margin: 10px;
+        flex: 1;
+        margin: 10px 15px;
         .category {
           color: $gray;
           text-transform: capitalize;
@@ -78,7 +81,7 @@
           color: $white;
           font-size: 13px;
           padding: 2px 5px;
-          border-radius: 2px;
+          border-radius: 3px;
           text-transform: capitalize;
         }
         .status-success {

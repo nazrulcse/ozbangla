@@ -34,3 +34,12 @@
     margin-left: 0;
   }
 }
+
+@media (max-width: 767px) {
+  .side-padding-none {
+    padding-right: 0px;
+  }
+  .upcoming-activity-events {
+    padding-left: 0;
+  }
+}

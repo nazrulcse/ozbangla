@@ -1,0 +1,8 @@
+@import '../../../app.component.scss';
+.date-picker-container, .event-list {
+  box-shadow: 0 0 5px $light-gray;
+  border-radius: 5px;
+}
+.event-list {
+  font-size: 15px;
+}
