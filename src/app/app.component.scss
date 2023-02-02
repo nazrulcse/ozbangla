@@ -3,7 +3,7 @@ $black: black;
 $gray: gray;
 $light-gray: lightgray;
 $rgb-gray: rgb(235, 235, 235);
-$custom-purple: #782CEE;
+$custom-blue: #2441E7;
 $custom-red: #FF1053;
 $custom-green: #00A78E;
 $custom-yellow: rgb(241, 197, 40);
@@ -57,6 +57,15 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.input {
+  border-radius: 4px;
+  font-size: 14px;
+  &:focus {
+    box-shadow: none;
+    border: 1px solid $light-gray;
+  }
 }
 
 @media (max-width: 524px) {

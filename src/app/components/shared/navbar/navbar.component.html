@@ -64,24 +64,41 @@
             class="img-fluid"
             alt="notification-bell"
           />
-          <div [ngClass]="showNotification ? 'open-dropdown && notification-dropdown-align' : 'close-dropdown' ">
-           <app-notification></app-notification>
+          <div
+            [ngClass]="
+              showNotification
+                ? 'open-dropdown && notification-dropdown-align'
+                : 'close-dropdown'
+            "
+          >
+            <app-notification></app-notification>
           </div>
         </button>
-        <button class="navbar-icons">
+        <button class="navbar-icons" (click)="showAllMessages()">
           <img
             src="../../../../assets/images/chat.png"
             class="img-fluid"
             alt="chat"
           />
         </button>
+
+        <div [ngClass]="showMessages ? 'open-chat' : 'close-chat'">
+          <app-chat (closeChat)="chatClose($event)"></app-chat>
+        </div>
+
         <button class="navbar-icons" (click)="settingsDropDownToggle()">
           <img
             src="../../../../assets/images/settings.png"
             alt="settings"
             class="img-fluid"
           />
-          <div [ngClass]="settingDropDown ? 'open-dropdown && nav-setting-drop-right' : 'close-dropdown' ">
+          <div
+            [ngClass]="
+              settingDropDown
+                ? 'open-dropdown && nav-setting-drop-right'
+                : 'close-dropdown'
+            "
+          >
             <li><a href="">Dashboard</a></li>
             <li><a href="">Site Home</a></li>
             <li><a href="">Calender</a></li>
@@ -96,7 +113,13 @@
             alt="profile avater"
             class="img-fluid"
           />
-          <div [ngClass]="openProfleDropDown ? 'open-dropdown && nav-profile-drop-right' : 'close-dropdown' ">
+          <div
+            [ngClass]="
+              openProfleDropDown
+                ? 'open-dropdown && nav-profile-drop-right'
+                : 'close-dropdown'
+            "
+          >
             <li><a href="">Dashboard</a></li>
             <li><a href="">Profile</a></li>
             <li><a href="">Grades</a></li>

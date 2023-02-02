@@ -22,8 +22,8 @@
   @mixin dashboard-bg($bg-color) {
     background-color: $bg-color;
   }
-  .purple {
-    @include dashboard-bg($custom-purple);
+  .blue {
+    @include dashboard-bg($custom-blue);
   }
   .red {
     @include dashboard-bg($custom-red);
