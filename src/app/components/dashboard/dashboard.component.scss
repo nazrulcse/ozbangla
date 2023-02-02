@@ -8,8 +8,7 @@
     text-align: justify;
   }
   .dashboard-title {
-    background-color: $rgb-gray;
-    padding: 12px;
+    box-shadow: 0 0 8px $light-gray;
     border-radius: 5px;
     .username {
       font-weight: 600;

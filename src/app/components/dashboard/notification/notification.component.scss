@@ -1,6 +1,27 @@
 @import "../../../app.component.scss";
-.no-notifications {
-  font-size: 15px;
-  color: $gray;
-  text-align: center;
+.notification-container {
+  height: 450px;
+  overflow: scroll;
+  .notification-header {
+    border-bottom: .1px solid $light-gray;
+    padding: 10px 0;
+  }
+  .no-notifications {
+    font-size: 15px;
+    color: $gray;
+    text-align: center;
+  }
+  .notification {
+    border-bottom: 1px solid $light-gray;
+    padding: 10px 0;
+    .title {
+      font-size: 15px;
+      text-align: justify;
+    }
+    &:last-child {
+        border-bottom: 0;
+    }
+  }
 }
+
+

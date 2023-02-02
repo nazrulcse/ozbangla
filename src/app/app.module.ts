@@ -25,6 +25,7 @@ import { EventsComponent } from './components/dashboard/events/events.component'
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NotificationComponent } from './components/dashboard/notification/notification.component';
+import { ChatComponent } from './components/dashboard/chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { NotificationComponent } from './components/dashboard/notification/notif
     BadgesComponent,
     EventsComponent,
     NotificationComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

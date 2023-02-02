@@ -1,5 +1,13 @@
 <div class="notification-container p-4">
-  <h6>Notifications</h6>
-  <hr />
-  <p class="no-notifications">You have no notifications</p>
+  <h6 class="notification-header">Notifications</h6>
+  <ng-container *ngIf="notifications.length === 0">
+    <p class="no-notifications">You have no notifications</p>
+  </ng-container>
+  <ng-container *ngIf="notifications">
+    <ng-container *ngFor="let notification of notifications">
+      <div class="notification">
+        <a class="title">{{ notification.title }}</a>
+      </div>
+    </ng-container>
+  </ng-container>
 </div>
