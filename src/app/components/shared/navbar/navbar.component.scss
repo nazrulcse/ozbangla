@@ -27,7 +27,7 @@
       }
     }
     .profile-icons {
-      width: 30px !important;
+      width: 30px;
     }
   }
   .desktop-nav {
@@ -35,7 +35,7 @@
     position: fixed;
   }
   .humberger-btn {
-    width: 40px;
+    width: 30px;
     border: 0;
     background-color: transparent;
   }
@@ -178,14 +178,18 @@
 }
 
 .close-chat {
-  display: none;
+  position: absolute;
+  width: 0;
+  top: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 .open-chat {
   position: fixed;
   background-color: $white;
   width: 420px;
   height: 100vh;
-  // overflow: auto;
+  transition: .3s;
   box-shadow: 0 0 8px $light-gray;
   z-index: 10;
   visibility: visible;
