@@ -1,5 +1,4 @@
 @import '../../../app.component.scss';
-
 .chat-btn {
   background-color: $custom-blue;
   color: $white;
@@ -12,5 +11,26 @@
 }
 .search-btn {
   border-radius: 4px;
+  padding: .65rem .5rem;
 }
 
+.icon {
+  width: 20px;
+}
+
+.accordion-container {
+  height: 59vh;
+  overflow: auto;
+}
+
+.see-all-btn {
+  .bg-red {
+    background-color: $custom-red;
+    color: $white;
+    &:hover {
+      background-color: transparent;
+      border: 1px solid $custom-red;
+      color: $custom-red;
+    }
+  }
+}

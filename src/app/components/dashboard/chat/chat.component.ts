@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { faWindowClose, faCog, faTimes, faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-chat',

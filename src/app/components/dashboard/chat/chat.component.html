@@ -10,7 +10,7 @@
         <button class="chat-btn">
           <fa-icon [icon]="faUser"></fa-icon> Contacts
         </button>
-        <button class="chat-btn mar-left" (click)="closeChatCanvas()">
+        <button class="chat-btn mar-left">
           <fa-icon [icon]="faCog"></fa-icon>
         </button>
       </div>
@@ -25,9 +25,36 @@
           aria-describedby="basic-addon1"
         />
         <button class="input-group-text search-btn" id="basic-addon1">
-          <fa-icon [icon]="faSearch" class="search-icon"></fa-icon>
+          <!-- <fa-icon [icon]="faSearch" class="search-icon"></fa-icon> -->
+          <img
+            src="../../../../assets/images/search-icon.png"
+            alt="search-icon"
+            class="img-fluid icon"
+          />
         </button>
       </div>
+    </div>
+
+    <div class="accordion-container">
+      <ngb-accordion #acc="ngbAccordion" class="accordion-container">
+        <ngb-panel id="toggle-1" title="Started" class="accordion-panel">
+          <ng-template ngbPanelContent> lorem400 </ng-template>
+        </ngb-panel>
+        <ngb-panel id="toggle-2" title="Private" class="accordion-panel">
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit,
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="toggle-3" title="Group" class="accordion-panel">
+          <ng-template ngbPanelContent>
+            Anim pariatur cliche reprehenderit
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+
+    <div class="see-all-btn my-2">
+      <button class="button form-control bg-red">See All</button>
     </div>
   </div>
 </div>
