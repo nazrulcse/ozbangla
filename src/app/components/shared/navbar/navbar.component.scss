@@ -6,6 +6,9 @@
 .mobile-nav {
   display: none;
   padding: 20px;
+  .humberger-btn {
+    width: 30px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -52,6 +55,7 @@
   font-size: 15px;
   color: $black !important;
   text-transform: uppercase;
+  position: relative;
 }
 .dropdown-indicator {
   background-color: #fff;
@@ -116,7 +120,7 @@
   padding: 3px 3px;
   position: absolute;
   bottom: 18px;
-  right: -3px;
+  right: -5px;
 }
 .down {
   transform: rotate(45deg);

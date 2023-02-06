@@ -1,0 +1,122 @@
+<div class="my-3 p-4">
+  <div class="container">
+    <div class="row d-flex-center">
+      <div class="col-md-6 form-container">
+        <h5 class="text-center mb-3">Create New Account</h5>
+        <div class="d-flex-center">
+          <form action="post" (ngSubmit)="registration()" class="form">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text input-label-img">
+                  <img
+                    src="../../../assets/images/user.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </span>
+              </div>
+              <input
+                type="text"
+                name="username"
+                [(ngModel)]="loginFormData.username"
+                class="form-control input"
+                placeholder="Username"
+                aria-label="username"
+                aria-describedby="username"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text input-label-img">
+                  <img
+                    src="../../../assets/images/mail.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </span>
+              </div>
+              <input
+                type="email"
+                name="email"
+                [(ngModel)]="loginFormData.email"
+                class="form-control input"
+                placeholder="Email"
+                aria-label="email"
+                aria-describedby="email"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text input-label-img">
+                  <img
+                    src="../../../assets//images/lock.png"
+                    alt="lock"
+                    class="img-fluid"
+                  />
+                </span>
+              </div>
+              <input
+                type="password"
+                name="password"
+                [(ngModel)]="loginFormData.password"
+                class="form-control input"
+                placeholder="Password"
+                aria-label="password"
+                aria-describedby="password"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text input-label-img">
+                  <img
+                    src="../../../assets/images/telephone.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </span>
+              </div>
+              <input
+                type="tel"
+                name="mobile"
+                [(ngModel)]="loginFormData.mobile"
+                class="form-control input"
+                placeholder="Mobile Number"
+                aria-label="mobile"
+                aria-describedby="mobile"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text input-label-img">
+                  <img
+                    src="../../../assets/images/location.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </span>
+              </div>
+              <input
+                type="text"
+                name="city"
+                [(ngModel)]="loginFormData.city"
+                class="form-control input"
+                placeholder="City"
+                aria-label="city"
+                aria-describedby="city"
+              />
+            </div>
+
+            <input type="submit" value="Sign Up" class="input form-control" />
+            <p class="py-3 sign-up-link">
+              Have Account? <a routerLink="/login">Sign In</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+@import "../../app.component.scss";
+
+.form-container {
+  box-shadow: 0 0 8px $light-gray;
+  padding: 64px 30px;
+  border-radius: 4px;
+}
+.form {
+  width: 80%;
+  .input-label-img {
+    border-radius: 4px 0 0 4px;
+    background-color: transparent;
+    width: 45px;
+    height: 40px;
+    text-align: center;
+  }
+  input[type="submit"] {
+    background-color: $custom-cyan;
+    color: $white;
+  }
+  .check-input {
+    border-radius: 2px;
+  }
+  .remember-user-forget-paddword {
+    font-size: 15px;
+    .remember-username {
+      color: $gray;
+    }
+    .forget-password {
+      color: $custom-cyan;
+      text-decoration: underline;
+    }
+  }
+  .sign-up-link {
+    color: $gray;
+    font-size: 15px;
+    text-align: center;
+    a{
+      color: $custom-cyan;
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .form {
+    width: 100%;
+  }
+}

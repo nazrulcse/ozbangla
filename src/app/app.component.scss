@@ -3,10 +3,10 @@ $black: black;
 $gray: gray;
 $light-gray: lightgray;
 $rgb-gray: rgb(235, 235, 235);
-$custom-blue: #2441E7;
-$custom-red: #FF1053;
+$custom-cyan: #219ac0;
+$custom-pink: #ed4f84;
 $custom-green: #00A78E;
-$custom-yellow: rgb(241, 197, 40);
+$custom-blue: #3449d8;
 
 a {
   text-decoration: none;
@@ -40,7 +40,7 @@ p {
   @include button-bg($custom-green)
 }
 .bg-red {
-  @include button-bg($custom-red)
+  @include button-bg($custom-pink)
 }
 
 .d-flex-between {
@@ -50,7 +50,7 @@ p {
 }
 .d-flex-center {
   display: flex;
-  justify-content: space-center;
+  justify-content: center;
   align-items: center;
 }
 .d-flex-around {

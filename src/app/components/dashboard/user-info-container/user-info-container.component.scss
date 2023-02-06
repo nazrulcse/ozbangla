@@ -1,4 +1,4 @@
-@import '../../../app.component.scss';
+@import "../../../app.component.scss";
 .single-item {
   box-shadow: 0 0 5px $light-gray;
   padding: 20px;
@@ -19,20 +19,19 @@
       color: $white;
     }
   }
-  @mixin dashboard-bg($bg-color) {
-    background-color: $bg-color;
+  @mixin dashboard-bg($first-gradient, $second-gradient) {
+    background: linear-gradient(45deg, $first-gradient, $second-gradient);
   }
-  .blue {
-    @include dashboard-bg($custom-blue);
+  .cyan {
+    @include dashboard-bg(#38b8e0, #219ac0);
   }
-  .red {
-    @include dashboard-bg($custom-red);
+  .pink {
+    @include dashboard-bg(#ed4f84, #cb0c4d);
   }
   .green {
-    @include dashboard-bg($custom-green);
+    @include dashboard-bg(#17c3a9, #00A78E);
   }
-  .yellow {
-    @include dashboard-bg($custom-yellow)
+  .blue {
+    @include dashboard-bg(#6e79c3, #3449d8);
   }
 }
-

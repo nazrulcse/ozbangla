@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
@@ -26,6 +27,7 @@ import { MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NotificationComponent } from './components/dashboard/notification/notification.component';
 import { ChatComponent } from './components/dashboard/chat/chat.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { ChatComponent } from './components/dashboard/chat/chat.component';
     EventsComponent,
     NotificationComponent,
     ChatComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { ChatComponent } from './components/dashboard/chat/chat.component';
     MatSelectModule,
     BrowserAnimationsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    FormsModule
   ],
   bootstrap: [AppComponent]
 })

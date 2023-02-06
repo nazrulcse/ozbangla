@@ -1,1 +1,83 @@
-<p>login works!</p>
+<div class="login-container my-3 p-4">
+  <div class="container">
+    <div class="row d-flex-center">
+      <div class="col-md-6 form-container">
+        <h5 class="text-center mb-3">Login To Your Account</h5>
+        <div class="d-flex-center">
+          <form action="post" (ngSubmit)="login()" class="form">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text input-label-img">
+                  <img
+                    src="../../../assets/images/mail.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </span>
+              </div>
+              <input
+                type="email"
+                name="email"
+                [(ngModel)]="loginFormData.email"
+                class="form-control input"
+                placeholder="Email"
+                aria-label="email"
+                aria-describedby="email"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text input-label-img">
+                  <img
+                    src="../../../assets//images/lock.png"
+                    alt="lock"
+                    class="img-fluid"
+                  />
+                </span>
+              </div>
+              <input
+                type="password"
+                name="password"
+                [(ngModel)]="loginFormData.password"
+                class="form-control input"
+                placeholder="Password"
+                aria-label="password"
+                aria-describedby="password"
+              />
+            </div>
+
+            <div
+              class="form-check mb-3 d-flex-between flex-wrap remember-user-forget-paddword"
+            >
+              <div>
+                <input
+                  mdbCheckbox
+                  class="form-check-input check-input"
+                  type="checkbox"
+                  [(ngModel)]="loginFormData.rememberUsername"
+                  name="rememberUser"
+                  id="flexCheckDefault"
+                />
+                <label
+                  class="form-check-label remember-username"
+                  for="flexCheckDefault"
+                >
+                  Remember Username
+                </label>
+              </div>
+
+              <div>
+                <a routerLink="" class="forget-password">Forgot Password?</a>
+              </div>
+            </div>
+
+            <input type="submit" value="Login" class="input form-control" />
+            <p class="py-3 sign-up-link">No Account?  <a routerLink="/registration">Sign Up</a> </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
