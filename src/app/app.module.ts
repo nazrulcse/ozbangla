@@ -29,6 +29,7 @@ import { NotificationComponent } from './components/dashboard/notification/notif
 import { ChatComponent } from './components/dashboard/chat/chat.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { CourseDetailsComponent } from './components/dashboard/course-details/course-details.component';
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { CourseDetailsComponent } from './components/dashboard/course-details/co
     ChatComponent,
     RegistrationComponent,
     CourseDetailsComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

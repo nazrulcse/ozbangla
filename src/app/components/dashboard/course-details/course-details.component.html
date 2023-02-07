@@ -1,7 +1,8 @@
-<p>course-details works!</p>
-<h2>{{ courseId }}</h2>
-<ng-container *ngIf="isCourse">
-  <p>{{ course.title }}</p>
-  <p>{{ course.category }}</p>
-  <p>{{ course.status }}</p>
-</ng-container>
+<div class="p-4">
+  <h2>{{ courseId }}</h2>
+  <ng-container *ngIf="isCourse">
+    <p>{{ course.title }}</p>
+    <p>{{ course.category }}</p>
+    <p>{{ course.status }}</p>
+  </ng-container>
+</div>

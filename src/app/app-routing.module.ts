@@ -1,3 +1,4 @@
+import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { CourseDetailsComponent } from './components/dashboard/course-details/course-details.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
@@ -16,16 +17,20 @@ const routes: Routes = [
   },
   {
     path: 'registration',
-    component: RegistrationComponent
+    component: RegistrationComponent,
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
   },
   {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
     path: 'dashboard/course_details/:id',
-    component: CourseDetailsComponent
-  }
+    component: CourseDetailsComponent,
+  },
 ];
 
 @NgModule({

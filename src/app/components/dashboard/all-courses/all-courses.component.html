@@ -6,10 +6,7 @@
     </div>
 
     <ng-container *ngFor="let course of allCourses">
-      <a
-        routerLink="course_details/{{ course.id }}"
-        class="course-lists-body p-4"
-      >
+      <a routerLink="course_details/{{ course.id }}" class="course-lists-body p-4" >
         <div class="image-container">
           <img
             [src]="course.img"
@@ -42,9 +39,7 @@
               aria-valuemax="100"
             ></div>
           </div>
-          <span class="complete-ratio"
-            >{{ course.completeRatio }} complete</span
-          >
+          <span class="complete-ratio">{{ course.completeRatio }} complete</span>
         </div>
       </a>
     </ng-container>
