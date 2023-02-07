@@ -28,6 +28,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { NotificationComponent } from './components/dashboard/notification/notification.component';
 import { ChatComponent } from './components/dashboard/chat/chat.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { CourseDetailsComponent } from './components/dashboard/course-details/course-details.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { RegistrationComponent } from './components/registration/registration.co
     NotificationComponent,
     ChatComponent,
     RegistrationComponent,
+    CourseDetailsComponent,
   ],
   imports: [
     BrowserModule,

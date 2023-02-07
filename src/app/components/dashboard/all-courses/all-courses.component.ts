@@ -10,7 +10,6 @@ export class AllCoursesComponent implements OnInit {
   constructor(private courseService: CoursesService) { }
 
   public allCourses: any = [];
-
   ngOnInit(): void {
     this.allCourses = this.courseService.getAllCourse();
   }

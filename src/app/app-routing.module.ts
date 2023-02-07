@@ -1,3 +1,4 @@
+import { CourseDetailsComponent } from './components/dashboard/course-details/course-details.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
@@ -21,6 +22,10 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
   },
+  {
+    path: 'dashboard/course_details/:id',
+    component: CourseDetailsComponent
+  }
 ];
 
 @NgModule({

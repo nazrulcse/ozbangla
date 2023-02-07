@@ -5,41 +5,48 @@
       <h6>Courses</h6>
     </div>
 
-    <a href="#" class="course-lists-body p-4" *ngFor="let course of allCourses">
-      <div class="image-container">
-        <img
-          [src]="course.img"
-          alt="javascript_course"
-          class="img-fluid course-img"
-        />
-        <div class="overlay-content">
-          <div class="inner-text">
-            <button class="overlay-button">View</button>
+    <ng-container *ngFor="let course of allCourses">
+      <a
+        routerLink="course_details/{{ course.id }}"
+        class="course-lists-body p-4"
+      >
+        <div class="image-container">
+          <img
+            [src]="course.img"
+            alt="javascript_course"
+            class="img-fluid course-img"
+          />
+          <div class="overlay-content">
+            <div class="inner-text">
+              <button class="overlay-button">View</button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="course-content">
-        <h6 class="category">{{ course.category }}</h6>
-        <h5 class="title">{{ course.title }}</h5>
-        <ng-container *ngIf="course.status === 'pending'">
-          <span class="status status-danger">{{ course.status }}</span>
-        </ng-container>
-        <ng-container *ngIf="course.status === 'published'">
-          <span class="status status-success">{{ course.status }}</span>
-        </ng-container>
-        <span class="status">{{ course.status }}</span>
-        <div class="progress mt-3" style="height: 5px">
-          <div
-            class="progress-bar progress-color"
-            role="progressbar"
-            [ngStyle]="{ width: course.completeRatio }"
-            aria-valuenow="72"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          ></div>
+        <div class="course-content">
+          <h6 class="category">{{ course.category }}</h6>
+          <h5 class="title">{{ course.title }}</h5>
+          <ng-container *ngIf="course.status === 'pending'">
+            <span class="status status-danger">{{ course.status }}</span>
+          </ng-container>
+          <ng-container *ngIf="course.status === 'published'">
+            <span class="status status-success">{{ course.status }}</span>
+          </ng-container>
+          <span class="status">{{ course.status }}</span>
+          <div class="progress mt-3" style="height: 5px">
+            <div
+              class="progress-bar progress-color"
+              role="progressbar"
+              [ngStyle]="{ width: course.completeRatio }"
+              aria-valuenow="72"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+          <span class="complete-ratio"
+            >{{ course.completeRatio }} complete</span
+          >
         </div>
-        <span class="complete-ratio">{{ course.completeRatio }} complete</span>
-      </div>
-    </a>
+      </a>
+    </ng-container>
   </div>
 </div>
