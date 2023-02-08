@@ -1,0 +1,66 @@
+<div class="user-details-container">
+  <div class="accordion-container" (click)="toggileUserDetails()">
+    <h6 class="accordion-title">
+      User details
+      <i class="arrow" [ngClass]="openUserDetails ? 'up' : 'down'"></i>
+    </h6>
+  </div>
+  <div *ngIf="openUserDetails" class="edit">
+      <div class="radio-btn circle-orange">
+
+      </div>
+      <h6 class="title">
+        <a href="">
+          Edit Profile
+        </a>
+      </h6>
+  </div>
+
+  <div class="accordion-container" (click)="togglePrivacyPolicy()">
+    <h6 class="accordion-title">
+      Privacy and policies
+      <i class="arrow" [ngClass]="openPrivacyPolicty ? 'up' : 'down'"></i>
+    </h6>
+  </div>
+  <div *ngIf="openPrivacyPolicty">Privacy Policy</div>
+
+  <div class="accordion-container" (click)="toggleCourseDetails()">
+    <h6 class="accordion-title">
+      Course details
+      <i class="arrow" [ngClass]="openCourseDetails ? 'up' : 'down'"></i>
+    </h6>
+  </div>
+  <div *ngIf="openCourseDetails">Edit Profile</div>
+
+  <div class="accordion-container" (click)="toggleMiscellaneous()">
+    <h6 class="accordion-title">
+      Miscellaneous
+      <i class="arrow" [ngClass]="openmiscellaneous ? 'up' : 'down'"></i>
+    </h6>
+  </div>
+  <div *ngIf="openmiscellaneous">Edit Profile</div>
+
+  <div class="accordion-container" (click)="toggleReport()">
+    <h6 class="accordion-title">
+      Reports
+      <i class="arrow" [ngClass]="openReport ? 'up' : 'down'"></i>
+    </h6>
+  </div>
+  <div *ngIf="openReport">Edit Profile</div>
+
+  <div class="accordion-container" (click)="toggleLoginActivity()">
+    <h6 class="accordion-title">
+      Login activity
+      <i class="arrow" [ngClass]="openLoginActivity ? 'up' : 'down'"></i>
+    </h6>
+  </div>
+  <div *ngIf="openLoginActivity">Login activity</div>
+
+  <div class="accordion-container" (click)="toggleMobileApp()">
+    <h6 class="accordion-title">
+      Mobile app
+      <i class="arrow" [ngClass]="openMobileApp ? 'up' : 'down'"></i>
+    </h6>
+  </div>
+  <div *ngIf="openMobileApp">Mobile app</div>
+</div>

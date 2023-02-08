@@ -7,7 +7,7 @@ $custom-cyan: #219ac0;
 $custom-pink: #ed4f84;
 $custom-green: #00A78E;
 $custom-blue: #3449d8;
-
+$accordion-bg: #EDEFF7;
 a {
   text-decoration: none;
   color: gray;
@@ -37,10 +37,13 @@ p {
   }
 }
 .bg-green {
-  @include button-bg($custom-green)
+  @include button-bg($custom-green);
 }
 .bg-red {
-  @include button-bg($custom-pink)
+  @include button-bg($custom-pink);
+}
+.bg-blue {
+  @include button-bg($custom-blue);
 }
 
 .d-flex-between {

@@ -1,0 +1,72 @@
+@import "../../../../app.component.scss";
+@import "../profile.component.scss";
+
+.user-details-container {
+  margin: 3rem 0;
+}
+.accordion-container {
+  background-color: $accordion-bg;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin: 20px 0;
+  cursor: pointer;
+  .accordion-title {
+    position: relative;
+  }
+}
+
+.arrow {
+  position: absolute;
+  border: solid $black;
+  border-width: 0 1px 1px 0;
+  padding: 3px;
+  right: 0;
+  top: 7px;
+  transition: 0.3s;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.up {
+  transform: rotate(-136deg);
+}
+
+@mixin circle-bg($bg-color) {
+  background-color: $bg-color;
+}
+
+.circle-orange {
+  @include circle-bg(#c75533);
+}
+
+.edit {
+  .title {
+    margin: 0 4rem;
+    a {
+      color: $black;
+      font-weight: 300;
+    }
+  }
+  position: relative;
+  .radio-btn {
+    border-radius: 50%;
+    height: 10px;
+    left: 5px;
+    position: absolute;
+    top: 7px;
+    width: 10px;
+    &::before {
+      background-color: #fff;
+      border: 2px solid #c75533;
+      border-radius: 50%;
+      content: "";
+      height: 18px;
+      left: -4px;
+      position: absolute;
+      top: -4px;
+      width: 18px;
+      z-index: -1;
+    }
+  }
+}

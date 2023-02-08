@@ -30,6 +30,7 @@ import { ChatComponent } from './components/dashboard/chat/chat.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { CourseDetailsComponent } from './components/dashboard/course-details/course-details.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
+import { UserDetailsComponent } from './components/dashboard/profile/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ProfileComponent } from './components/dashboard/profile/profile.compone
     RegistrationComponent,
     CourseDetailsComponent,
     ProfileComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
