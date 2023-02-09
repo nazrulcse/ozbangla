@@ -1,0 +1,46 @@
+@import "../../../app.component.scss";
+.footer-container,
+.social-media-container {
+  background-color: #151515;
+  color: $accordion-bg;
+}
+.footer-title {
+  margin: 20px 0;
+}
+.popular-course {
+  a {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 3px;
+  }
+}
+.footer-content {
+  font-size: 15px;
+  color: $gray;
+}
+
+.social-media-container
+{
+  border-top: .1px solid rgb(68, 68, 68);
+  .footer-links {
+    a {
+      color: $gray;
+      padding: 8px;
+      font-size: 14px;
+      border-right: .1px solid rgb(68, 68, 68);
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        border-right: 0;
+      }
+    }
+  }
+  .footer-social-img {
+    width: 20px;
+    margin: 0 10px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

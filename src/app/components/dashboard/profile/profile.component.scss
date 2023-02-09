@@ -36,9 +36,25 @@
       }
     }
   }
+  .information-container,
+  .recent-activity {
+    border: .1px solid $rgb-gray;
+    padding: 25px;
+    border-radius: 4px;
+    .title {
+      font-size: 20px;
+    }
+    .label {
+      color: $gray;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .info {
+      font-size: 16px;
+      word-wrap: break-word;
+    }
+  }
 }
-
-
 
 @media (max-width: 992px) {
   .reset-customize-btns {

@@ -28,18 +28,48 @@
     </div>
     <div class="reset-customize-btns">
       <button class="button bg-blue">Reset page to default</button>
-      <button class="button bg-red">
-        Stop customizing page
-      </button>
+      <button class="button bg-red">Stop customizing page</button>
     </div>
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-lg-9 col-md-7 col-sm-12 col-xsm-12">
         <app-user-details></app-user-details>
+        <app-last-access-course></app-last-access-course>
       </div>
-      <div class="col-md-3">
-
+      <div class="col-lg-3 col-md-5 col-sm-12 col-xsm-12">
+        <div class="information-container">
+          <h5 class="title">Profile</h5>
+          <div class="my-3">
+            <p class="label">First Name</p>
+            <p class="info">Md. Iqbal</p>
+          </div>
+          <div class="my-3">
+            <p class="label">Surname</p>
+            <p class="info">Ahmed</p>
+          </div>
+          <div class="my-3">
+            <p class="label">Preferred language</p>
+            <p class="info">English</p>
+          </div>
+          <div class="my-3">
+            <p class="label">First access to site</p>
+            <p class="info">Sunday, 12 July 2020, 11:22 PM</p>
+          </div>
+          <div class="my-3">
+            <p class="label">Last access to site</p>
+            <p class="info">Thursday, 9 February 2023, 12:06 PM</p>
+          </div>
+          <div class="my-3">
+            <p class="label">Email address</p>
+            <p class="info">iqbalahmed986@gmail.com</p>
+          </div>
+        </div>
+        <div class="recent-activity my-4">
+          <h5 class="title">Recent activity</h5>
+          <p class="label">Courses I'm taking</p>
+          <h6 class="my-2">3</h6>
+        </div>
       </div>
     </div>
-
   </div>
 </div>
+<app-footer></app-footer>

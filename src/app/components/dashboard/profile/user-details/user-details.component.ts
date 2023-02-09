@@ -14,7 +14,6 @@ export class UserDetailsComponent implements OnInit {
   openmiscellaneous: boolean = false;
   openReport: boolean = false;
   openLoginActivity: boolean = false;
-  openMobileApp: boolean = false;
   ngOnInit(): void {
   }
 
@@ -35,8 +34,5 @@ export class UserDetailsComponent implements OnInit {
   }
   toggleLoginActivity() {
     this.openLoginActivity = !this.openLoginActivity;
-  }
-  toggleMobileApp() {
-    this.openMobileApp = !this.openMobileApp;
   }
 }

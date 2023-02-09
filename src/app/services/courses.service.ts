@@ -23,6 +23,14 @@ export class CoursesService {
         status: 'pending',
         completeRatio: '85%',
       },
+      {
+        id: 3,
+        img: '../../assets/images/node.jpg',
+        category: 'Learning Node.Js',
+        title: 'Node.Js. The JavaScript runtime',
+        status: 'pending',
+        completeRatio: '55%',
+      },
     ];
   }
   getRecentCourse() {

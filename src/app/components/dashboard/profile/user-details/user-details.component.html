@@ -5,15 +5,37 @@
       <i class="arrow" [ngClass]="openUserDetails ? 'up' : 'down'"></i>
     </h6>
   </div>
-  <div *ngIf="openUserDetails" class="edit">
-      <div class="radio-btn circle-orange">
-
-      </div>
+  <div *ngIf="openUserDetails" class="user-details-container">
+    <div class="user-details">
+      <div class="radio-btn"></div>
       <h6 class="title">
-        <a href="">
-          Edit Profile
-        </a>
+        <a href="" class="text-dark"> Edit Profile </a>
       </h6>
+    </div>
+
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        Email Address
+        <a href="" class="edit-link"> arif201@gmail.com </a>
+      </h6>
+    </div>
+
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        Country
+        <a href="" class="edit-link"> Bangladesh </a>
+      </h6>
+    </div>
+
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        City
+        <a href="" class="edit-link"> Dhaka </a>
+      </h6>
+    </div>
   </div>
 
   <div class="accordion-container" (click)="togglePrivacyPolicy()">
@@ -22,7 +44,14 @@
       <i class="arrow" [ngClass]="openPrivacyPolicty ? 'up' : 'down'"></i>
     </h6>
   </div>
-  <div *ngIf="openPrivacyPolicty">Privacy Policy</div>
+  <div *ngIf="openPrivacyPolicty">
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        <a href="" class="text-dark"> Data retention summary </a>
+      </h6>
+    </div>
+  </div>
 
   <div class="accordion-container" (click)="toggleCourseDetails()">
     <h6 class="accordion-title">
@@ -30,7 +59,19 @@
       <i class="arrow" [ngClass]="openCourseDetails ? 'up' : 'down'"></i>
     </h6>
   </div>
-  <div *ngIf="openCourseDetails">Edit Profile</div>
+  <div *ngIf="openCourseDetails">
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        Course profiles
+        <a href="" class="edit-link">
+          ERP Functional Workshop for Corporate Efficiency - B1 Agile Hands-On
+          With Scrum Practices - B1 Modern JavaScript Using ECMAScript (1st
+          Batch)
+        </a>
+      </h6>
+    </div>
+  </div>
 
   <div class="accordion-container" (click)="toggleMiscellaneous()">
     <h6 class="accordion-title">
@@ -38,7 +79,42 @@
       <i class="arrow" [ngClass]="openmiscellaneous ? 'up' : 'down'"></i>
     </h6>
   </div>
-  <div *ngIf="openmiscellaneous">Edit Profile</div>
+  <div *ngIf="openmiscellaneous">
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        <a href="" class="text-dark"> Blog entries </a>
+      </h6>
+    </div>
+
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        <a href="" class="text-dark"> My certificates </a>
+      </h6>
+    </div>
+
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        <a href="" class="text-dark"> Forum posts </a>
+      </h6>
+    </div>
+
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        <a href="" class="text-dark"> Forum discussions </a>
+      </h6>
+    </div>
+
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        <a href="" class="text-dark"> Learning plans </a>
+      </h6>
+    </div>
+  </div>
 
   <div class="accordion-container" (click)="toggleReport()">
     <h6 class="accordion-title">
@@ -46,7 +122,21 @@
       <i class="arrow" [ngClass]="openReport ? 'up' : 'down'"></i>
     </h6>
   </div>
-  <div *ngIf="openReport">Edit Profile</div>
+  <div *ngIf="openReport">
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        <a href="" class="text-dark"> Browser sessions </a>
+      </h6>
+    </div>
+
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        <a href="" class="text-dark"> Grades overview </a>
+      </h6>
+    </div>
+  </div>
 
   <div class="accordion-container" (click)="toggleLoginActivity()">
     <h6 class="accordion-title">
@@ -54,13 +144,21 @@
       <i class="arrow" [ngClass]="openLoginActivity ? 'up' : 'down'"></i>
     </h6>
   </div>
-  <div *ngIf="openLoginActivity">Login activity</div>
+  <div *ngIf="openLoginActivity">
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        First access to site
+        <a class="edit-link"> 12 July 2020, 11:23 PM </a>
+      </h6>
+    </div>
 
-  <div class="accordion-container" (click)="toggleMobileApp()">
-    <h6 class="accordion-title">
-      Mobile app
-      <i class="arrow" [ngClass]="openMobileApp ? 'up' : 'down'"></i>
-    </h6>
+    <div class="user-details">
+      <div class="radio-btn"></div>
+      <h6 class="title">
+        Last access to site
+        <a class="edit-link">9 February 2023, 11:30 AM (now) </a>
+      </h6>
+    </div>
   </div>
-  <div *ngIf="openMobileApp">Mobile app</div>
 </div>

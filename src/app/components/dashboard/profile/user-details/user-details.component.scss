@@ -32,23 +32,39 @@
   transform: rotate(-136deg);
 }
 
-@mixin circle-bg($bg-color) {
-  background-color: $bg-color;
-}
-
-.circle-orange {
-  @include circle-bg(#c75533);
-}
-
-.edit {
-  .title {
-    margin: 0 4rem;
-    a {
-      color: $black;
-      font-weight: 300;
+.user-details-container {
+  div {
+    &:last-child {
+      &::before {
+        height: 0;
+        width: 0;
+        background-color: transparent;
+      }
     }
   }
+}
+
+.user-details {
   position: relative;
+  margin-bottom: 70px;
+  margin-top: 30px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: $accordion-bg;
+    position: absolute;
+    content: "";
+    background-color: $accordion-bg;
+    height: 95px;
+    width: 4px;
+    top: 21px;
+    left: 8px;
+    z-index: -2;
+  }
+  .title {
+    margin: 0 4rem;
+  }
   .radio-btn {
     border-radius: 50%;
     height: 10px;
@@ -56,9 +72,10 @@
     position: absolute;
     top: 7px;
     width: 10px;
+    background-color: $custom-blue;
     &::before {
-      background-color: #fff;
-      border: 2px solid #c75533;
+      background-color: $white;
+      border: 2px solid $custom-blue;
       border-radius: 50%;
       content: "";
       height: 18px;
@@ -68,5 +85,11 @@
       width: 18px;
       z-index: -1;
     }
+  }
+  .edit-link {
+    display: block;
+    color: $black;
+    font-weight: 300;
+    margin-top: 5px;
   }
 }

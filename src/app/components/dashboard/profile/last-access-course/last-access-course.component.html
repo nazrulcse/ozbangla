@@ -1,0 +1,27 @@
+<div class="courses-container pb-5">
+  <h4 class="title">Md. Iqbal Ahmed's Last Accessed Courses</h4>
+  <div class="all-courses row">
+    <ng-container *ngFor="let course of courses">
+      <div class="col-lg-4 col-md-6 col-sm-12 col-xsm-12">
+        <a href="/" class="card">
+          <img
+            [src]="course.img"
+            class="card-img-top course-img"
+            alt="course-img"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ course.title }}</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <span>
+                <img src="../../../../../assets/images/clock.png" alt="" class="img-fluid card-icon">
+              </span>
+              <span class="date"> 9 Feb 2023 </span>
+            </li>
+          </ul>
+        </a>
+      </div>
+    </ng-container>
+  </div>
+</div>

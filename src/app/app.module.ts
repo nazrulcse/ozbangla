@@ -31,6 +31,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { CourseDetailsComponent } from './components/dashboard/course-details/course-details.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { UserDetailsComponent } from './components/dashboard/profile/user-details/user-details.component';
+import { LastAccessCourseComponent } from './components/dashboard/profile/last-access-course/last-access-course.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { UserDetailsComponent } from './components/dashboard/profile/user-detail
     RegistrationComponent,
     CourseDetailsComponent,
     ProfileComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    LastAccessCourseComponent
   ],
   imports: [
     BrowserModule,
