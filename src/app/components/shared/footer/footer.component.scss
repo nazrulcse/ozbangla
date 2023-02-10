@@ -1,6 +1,7 @@
 @import "../../../app.component.scss";
 .footer-container,
-.social-media-container {
+.social-media-container,
+.copyright-container {
   background-color: #151515;
   color: $accordion-bg;
 }
@@ -19,15 +20,15 @@
   color: $gray;
 }
 
-.social-media-container
-{
-  border-top: .1px solid rgb(68, 68, 68);
+.social-media-container,
+.copyright-container {
+  border-top: 0.1px solid rgb(68, 68, 68);
   .footer-links {
     a {
       color: $gray;
       padding: 8px;
       font-size: 14px;
-      border-right: .1px solid rgb(68, 68, 68);
+      border-right: 0.1px solid rgb(68, 68, 68);
       &:first-child {
         padding-left: 0;
       }
@@ -43,4 +44,9 @@
       margin-left: 0;
     }
   }
+}
+
+.copyright-text {
+  font-size: 14px;
+  color: $gray;
 }

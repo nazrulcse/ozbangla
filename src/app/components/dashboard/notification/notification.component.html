@@ -1,13 +1,25 @@
-<div class="notification-container p-4">
-  <h6 class="notification-header">Notifications</h6>
-  <ng-container *ngIf="notifications.length === 0">
-    <p class="no-notifications">You have no notifications</p>
-  </ng-container>
-  <ng-container *ngIf="notifications">
-    <ng-container *ngFor="let notification of notifications">
-      <div class="notification">
-        <a class="title">{{ notification.title }}</a>
-      </div>
+<div class="notification-container">
+  <div class="notification-header d-flex-between sticky-top p-4">
+    <h6>Notifications</h6>
+    <a href="">
+      <img
+        src="../../../../assets/images/settings.png"
+        alt="notification"
+        class="img-fluid notification-setting-img"
+      />
+    </a>
+  </div>
+
+  <div class="px-4">
+    <ng-container *ngIf="notifications.length === 0">
+      <p class="no-notifications">You have no notifications</p>
     </ng-container>
-  </ng-container>
+    <ng-container *ngIf="notifications">
+      <ng-container *ngFor="let notification of notifications">
+        <div class="notification">
+          <a class="title">{{ notification.title }}</a>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
 </div>

@@ -2,20 +2,6 @@
 @import "../dashboard.component.scss";
 
 .profile-container {
-  .header {
-    height: 300px;
-    background-color: $custom-blue;
-    .username-path {
-      color: $white;
-      .profile-username {
-        text-transform: uppercase;
-      }
-      .profile-path {
-        color: $white;
-        cursor: pointer;
-      }
-    }
-  }
   .profile-picture-container {
     position: relative;
     img {
@@ -38,7 +24,7 @@
   }
   .information-container,
   .recent-activity {
-    border: .1px solid $rgb-gray;
+    border: 0.1px solid $rgb-gray;
     padding: 25px;
     border-radius: 4px;
     .title {
@@ -50,7 +36,7 @@
       font-weight: 400;
     }
     .info {
-      font-size: 16px;
+      font-size: 15px;
       word-wrap: break-word;
     }
   }

@@ -1,8 +1,106 @@
-<div class="p-4">
-  <h2>{{ courseId }}</h2>
-  <ng-container *ngIf="isCourse">
-    <p>{{ course.title }}</p>
-    <p>{{ course.category }}</p>
-    <p>{{ course.status }}</p>
-  </ng-container>
+<div class="course-details-container">
+  <div class="header d-flex-center">
+   <div class="container">
+    <div class="course-path">
+      <h2 class="course-title">{{ course.title }}</h2>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb d-flex-center">
+          <li routerLink="/dashboard" class="breadcrumb-item path">
+            <a>Dashboard</a>
+          </li>
+          <li
+            routerLink="/profile"
+            class="breadcrumb-item path"
+            aria-current="page"
+          >
+            <a>My Courses</a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+   </div>
+  </div>
+  <div class="course-activity py-5">
+    <div class="container">
+      <div class="d-flex-between py-1 padding-bottom">
+        <a routerLink="">
+          <img
+            src="../../../../assets/images/announcement.png"
+            alt="announcement"
+            class="img-fluid course-activity-img"
+          />
+          <span>Announcement</span>
+        </a>
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="announcement"
+            checked
+          />
+        </div>
+      </div>
+
+      <div class="d-flex-between py-1 padding-bottom">
+        <a routerLink="">
+          <img
+            src="../../../../assets/images/user.png"
+            alt="Attendance"
+            class="img-fluid course-activity-img"
+          />
+          <span>Attendance</span>
+        </a>
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="Attendance"
+            checked
+          />
+        </div>
+      </div>
+
+      <div class="d-flex-between py-1 padding-bottom">
+        <a routerLink="">
+          <img
+            src="../../../../assets/images/video-call.png"
+            alt="Live-Class"
+            class="img-fluid course-activity-img"
+          />
+          <span>Live Class</span>
+        </a>
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="Live-Class"
+            checked
+          />
+        </div>
+      </div>
+
+      <div class="d-flex-between py-1">
+        <a routerLink="">
+          <img
+            src="../../../../assets/images/cloud-download.png"
+            alt="announcement"
+            class="img-fluid course-activity-img"
+          />
+          <span>Download Link</span>
+        </a>
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="Download"
+            checked
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

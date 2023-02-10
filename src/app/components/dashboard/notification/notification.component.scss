@@ -1,10 +1,17 @@
 @import "../../../app.component.scss";
 .notification-container {
+  h6 {
+    margin-bottom: 0;
+  }
+  .notification-setting-img {
+    width: 14px;
+  }
   height: 450px;
   overflow: scroll;
   .notification-header {
-    border-bottom: .1px solid $light-gray;
-    padding: 10px 0;
+    border-bottom: 0.1px solid $light-gray;
+    background-color: $white;
+    border-radius: 4px;
   }
   .no-notifications {
     font-size: 15px;
@@ -19,9 +26,7 @@
       text-align: justify;
     }
     &:last-child {
-        border-bottom: 0;
+      border-bottom: 0;
     }
   }
 }
-
-
