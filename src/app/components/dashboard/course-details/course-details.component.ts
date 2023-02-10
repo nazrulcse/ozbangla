@@ -17,7 +17,8 @@ export class CourseDetailsComponent implements OnInit {
   recentCourses: any;
   isCourse: boolean = false;
   course: any;
-
+  courseContent: any;
+  subTopic: any;
   ngOnInit(): void {
 
     this.courseId = this.route.snapshot.paramMap.get('id');
@@ -38,5 +39,9 @@ export class CourseDetailsComponent implements OnInit {
         this.course = course;
       }
     }
+    this.courseContent = this.courseService.getAllCourseContent();
+    // this.subTopic = this.courseContent.subTopic;
+    // console.log(this.courseContent)
+    // console.log(this.subTopic)
   }
 }

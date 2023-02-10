@@ -1,24 +1,24 @@
 <div class="course-details-container">
   <div class="header d-flex-center">
-   <div class="container">
-    <div class="course-path">
-      <h2 class="course-title">{{ course.title }}</h2>
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb d-flex-center">
-          <li routerLink="/dashboard" class="breadcrumb-item path">
-            <a>Dashboard</a>
-          </li>
-          <li
-            routerLink="/profile"
-            class="breadcrumb-item path"
-            aria-current="page"
-          >
-            <a>My Courses</a>
-          </li>
-        </ol>
-      </nav>
+    <div class="container">
+      <div class="course-path">
+        <h2 class="course-title">{{ course.title }}</h2>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb d-flex-center">
+            <li routerLink="/dashboard" class="breadcrumb-item path">
+              <a>Dashboard</a>
+            </li>
+            <li
+              routerLink="/profile"
+              class="breadcrumb-item path"
+              aria-current="page"
+            >
+              <a>My Courses</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
     </div>
-   </div>
   </div>
   <div class="course-activity py-5">
     <div class="container">
@@ -100,6 +100,25 @@
             checked
           />
         </div>
+      </div>
+      <div class="class-content-container py-4">
+        <ng-container *ngFor="let content of courseContent">
+          <h5>{{ content.topic }}</h5>
+          <ng-container *ngFor="let subcontent of content.subTopic">
+            <div class="py-1 d-flex-between">
+              <a href="">
+                <img src="../../../../assets/images/content.png" alt="content" class="img-fluid content-img">
+                <span class="content-topic">{{ subcontent.name }}</span>
+              </a>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  
+                </label>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
       </div>
     </div>
   </div>

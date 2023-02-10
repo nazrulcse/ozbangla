@@ -19,7 +19,8 @@ export class CoursesService {
         id: 2,
         img: '../../assets/images/ruby.jpg',
         category: 'Learning Ruby',
-        title: 'Ruby On Rails in Web Development and Server Side Application - B4',
+        title:
+          'Ruby On Rails in Web Development and Server Side Application - B4',
         status: 'pending',
         completeRatio: '85%',
       },
@@ -49,8 +50,20 @@ export class CoursesService {
         category: 'Learning JavaScript',
         title: 'JavaScript For Beginners',
         status: 'published',
-        completeRatio: '50%'
+        completeRatio: '50%',
       },
-    ]
+    ];
+  }
+  getAllCourseContent() {
+    return [
+      {
+        topic: 'Setting up Your Development Environment',
+        subTopic: [
+          { name: 'tools we need' },
+          { name: 'IDE & lightweight editor' },
+          { name: 'Developer Console' },
+        ],
+      },
+    ];
   }
 }
