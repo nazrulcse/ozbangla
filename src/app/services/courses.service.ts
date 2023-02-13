@@ -14,6 +14,7 @@ export class CoursesService {
         title: 'Python Programming For Beginner to Advance - B2',
         status: 'published',
         completeRatio: '75%',
+        grade: 'A'
       },
       {
         id: 2,
@@ -23,6 +24,7 @@ export class CoursesService {
           'Ruby On Rails in Web Development and Server Side Application - B4',
         status: 'pending',
         completeRatio: '85%',
+        grade: 'A+'
       },
       {
         id: 3,
@@ -31,6 +33,7 @@ export class CoursesService {
         title: 'Node.Js. The JavaScript runtime',
         status: 'pending',
         completeRatio: '55%',
+        grade: 'A-'
       },
     ];
   }
@@ -43,6 +46,7 @@ export class CoursesService {
         title: 'Node.Js. The JavaScript runtime',
         status: 'pending',
         completeRatio: '55%',
+        grade: 'A-'
       },
       {
         id: 4,
@@ -51,6 +55,7 @@ export class CoursesService {
         title: 'JavaScript For Beginners',
         status: 'published',
         completeRatio: '50%',
+        grade: 'B'
       },
     ];
   }

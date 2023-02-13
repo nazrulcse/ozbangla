@@ -32,6 +32,8 @@ import { CourseDetailsComponent } from './components/dashboard/course-details/co
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { UserDetailsComponent } from './components/dashboard/profile/user-details/user-details.component';
 import { LastAccessCourseComponent } from './components/dashboard/profile/last-access-course/last-access-course.component';
+import { GradesComponent } from './components/dashboard/grades/grades.component';
+import { PreferencesComponent } from './components/dashboard/preferences/preferences.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { LastAccessCourseComponent } from './components/dashboard/profile/last-a
     CourseDetailsComponent,
     ProfileComponent,
     UserDetailsComponent,
-    LastAccessCourseComponent
+    LastAccessCourseComponent,
+    GradesComponent,
+    PreferencesComponent
   ],
   imports: [
     BrowserModule,

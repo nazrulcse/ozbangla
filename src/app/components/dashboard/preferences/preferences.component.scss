@@ -1,0 +1,56 @@
+@import "../../../app.component.scss";
+
+.main {
+  margin-left: 250px;
+  text-align: justify;
+  padding: 20px;
+  p {
+    text-align: justify;
+  }
+  .dashboard-title {
+    box-shadow: 0 0 8px $light-gray;
+    border-radius: 5px;
+    .username {
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    .dashboard-text {
+      color: $black;
+    }
+  }
+  .user-preference, .badges, .blogs {
+    box-shadow: 0 0 5px $light-gray;
+    border-radius: 4px;
+    .preference-title {
+      font-size: 17px;
+      text-transform: capitalize;
+      font-weight: 600;
+    }
+    .preference-type {
+      text-transform: capitalize;
+      transition: .3s;
+      &:hover {
+        padding-left: 5px;
+      }
+    }
+  }
+  .copyright-message {
+    font-size: 14px;
+    color: $gray;
+  }
+}
+
+@media (max-width: 992px) {
+  .main {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .side-padding-none {
+    padding-right: 0px;
+  }
+  .badges {
+    padding-left: 0;
+  }
+}

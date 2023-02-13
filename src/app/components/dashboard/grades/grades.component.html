@@ -1,0 +1,49 @@
+<div class="grade-container">
+  <div class="header d-flex-center">
+    <div class="container">
+      <div class="username-path">
+        <h1 class="profile-username">MD. Iqbal Ahmed</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb d-flex-center">
+            <li routerLink="/dashboard" class="breadcrumb-item path">
+              <a>Dashboard</a>
+            </li>
+            <li
+              routerLink="/grade"
+              class="breadcrumb-item path"
+              aria-current="page"
+            >
+              <a>Grades</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h4 class="topic-title mt-5">Courses I am taking</h4>
+    <div class="table-responsive-sm">
+      <table class="table grade-table my-4">
+        <thead class="table-header">
+          <tr>
+            <th scope="col" class="course-title">Course Name</th>
+            <th scope="col" class="course-grade">Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let course of courses">
+            <tr>
+              <td>
+                <a routerLink="">
+                  {{ course.title }}
+                </a>
+              </td>
+              <td> - {{ course.grade }}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

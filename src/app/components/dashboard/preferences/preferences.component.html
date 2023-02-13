@@ -1,0 +1,60 @@
+<section>
+  <app-sidebar></app-sidebar>
+  <div class="main py-2">
+    <div class="d-flex-between flex-wrap dashboard-title my-3 p-4">
+      <h5 class="username">Md. Iqbal Ahmed</h5>
+      <a href="#" class="dashboard-text">Preferances</a>
+    </div>
+
+    <h4 class="topic-title mt-4">Preferances</h4>
+
+    <div class="row courses-container">
+      <div class="col-md-6 my-2">
+        <div class="side-padding-none">
+          <div class="user-preference p-4">
+            <h6 class="preference-title">User account</h6>
+            <ng-container *ngFor="let userPref of userPreferances">
+              <div class="py-1">
+                <a [routerLink]="userPref.route" class="preference-type">
+                  {{ userPref.label }}
+                </a>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 my-2">
+        <div class="badges">
+          <div class="badge-preference p-4">
+            <h6 class="preference-title">Badges</h6>
+            <ng-container *ngFor="let badgePref of badgesPreferences">
+              <div class="py-1">
+                <a [routerLink]="badgePref.route" class="preference-type">
+                  {{ badgePref.label }}
+                </a>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="blogs my-4">
+          <div class="blogs-preference p-4">
+            <h6 class="preference-title">Blogs</h6>
+            <ng-container *ngFor="let blogPref of blogPreferences">
+              <div class="py-1">
+                <a [routerLink]="blogPref.route" class="preference-type">
+                  {{ blogPref.label }}
+                </a>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright-footer text-center py-2">
+      <span class="copyright-message"
+        >Copyright © 2023 by OZ Academy. All Rights Reserved.</span
+      >
+    </div>
+  </div>
+</section>

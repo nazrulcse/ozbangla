@@ -1,3 +1,5 @@
+import { PreferencesComponent } from './components/dashboard/preferences/preferences.component';
+import { GradesComponent } from './components/dashboard/grades/grades.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
 import { CourseDetailsComponent } from './components/dashboard/course-details/course-details.component';
 import { RegistrationComponent } from './components/registration/registration.component';
@@ -25,12 +27,20 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
   },
   {
     path: 'dashboard/course_details/:id',
     component: CourseDetailsComponent,
   },
+  {
+    path: 'grade',
+    component: GradesComponent,
+  },
+  {
+    path: 'preferences',
+    component: PreferencesComponent
+  }
 ];
 
 @NgModule({

@@ -103,7 +103,7 @@
       </div>
       <div class="class-content-container py-4">
         <ng-container *ngFor="let content of courseContent">
-          <h5>{{ content.topic }}</h5>
+          <h4 class="topic-title">{{ content.topic }}</h4>
           <ng-container *ngFor="let subcontent of content.subTopic">
             <div class="py-1 d-flex-between">
               <a href="">
