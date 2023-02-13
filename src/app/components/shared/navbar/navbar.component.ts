@@ -12,6 +12,12 @@ export class NavbarComponent implements OnInit {
   settingDropDown: boolean = false;
   showNotification: boolean = false;
   showMessages: boolean = false;
+
+  // mobile responsive part toggle
+  showMoreCourse: boolean = false;
+  showProfileDropDownInMobile:boolean = false;
+  showSideBar:boolean = false;
+
   profileDropDownToggle() {
     this.openProfleDropDown = !this.openProfleDropDown;
     this.settingDropDown = false;
@@ -35,10 +41,21 @@ export class NavbarComponent implements OnInit {
     this.settingDropDown = false;
     this.openProfleDropDown = false;
     this.showNotification = false;
-    console.log(this.showMessages)
+    console.log(this.showMessages);
   }
 
   chatClose(event: any) {
     this.showMessages = event;
+  }
+
+  // mobile responsive part
+  showCourses() {
+    this.showMoreCourse = !this.showMoreCourse;
+  }
+  showSideBarOptions() {
+    this.showSideBar = !this.showSideBar;
+  }
+  showProfileDropDown() {
+    this.showProfileDropDownInMobile = !this.showProfileDropDownInMobile;
   }
 }

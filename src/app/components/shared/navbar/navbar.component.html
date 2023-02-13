@@ -170,17 +170,39 @@
       ></button>
     </div>
     <div class="offcanvas-body">
-      <div>
+      <div class="mobile-dropdown">
         <li class="nav-item nav-item-d-block">
           <a routerLink="login" class="nav-link" data-bs-dismiss="offcanvas"
             >HOME</a
           >
         </li>
-        <li class="nav-item nav-item-d-block">
-          <a routerLink="login" class="nav-link" data-bs-dismiss="offcanvas"
-            >COURSE</a
-          >
+        <li
+          class="nav-item nav-item-d-block slider-relative"
+          (click)="showCourses()"
+        >
+          <a routerLink="login" class="nav-link"
+            >COURSE
+            <i
+              class="mobile-nav-arrow"
+              [ngClass]="showMoreCourse ? 'arrow-down' : 'arrow-right'"
+            ></i
+          ></a>
         </li>
+        <ng-container *ngIf="showMoreCourse">
+          <li class="mobile-dropdown-list">
+            <a href="#">Sponsorship Program</a>
+          </li>
+          <li class="mobile-dropdown-list">
+            <a href="#">Basic Programming</a>
+          </li>
+          <li class="mobile-dropdown-list"><a href="#">Offline Course</a></li>
+          <li class="mobile-dropdown-list">
+            <a href="#">Collaborative Course</a>
+          </li>
+          <li class="mobile-dropdown-list">
+            <a href="#">A Level & O Level</a>
+          </li>
+        </ng-container>
         <li class="nav-item nav-item-d-block">
           <a routerLink="login" class="nav-link" data-bs-dismiss="offcanvas"
             >WORKSHOP</a
@@ -196,7 +218,28 @@
             >TSL HACKATHON</a
           >
         </li>
-        <li class="nav-item nav-item-d-block">
+        <li class="nav-item nav-item-d-block slider-relative" (click)="showSideBarOptions()">
+          <a routerLink="login" class="nav-link"
+            >Navigate
+            <i
+              class="mobile-nav-arrow"
+              [ngClass]="showSideBar ? 'arrow-down' : 'arrow-right'"
+            ></i>
+          </a>
+        </li>
+        <ng-container *ngIf="showSideBar">
+          <li class="mobile-dropdown-list"><a href="#">Dashboard</a></li>
+          <li class="mobile-dropdown-list"><a href="#">Site Home</a></li>
+          <li class="mobile-dropdown-list"><a href="#">Calender</a></li>
+          <li class="mobile-dropdown-list"><a href="#">Private Files</a></li>
+          <li class="mobile-dropdown-list"><a href="#">My Courses</a></li>
+          <li class="mobile-dropdown-list"><a href="#">ERP-B1</a></li>
+          <li class="mobile-dropdown-list"><a href="#">AHOWSP-B1</a></li>
+        </ng-container>
+        <li
+          class="nav-item nav-item-d-block slider-relative"
+          (click)="showProfileDropDown()"
+        >
           <a
             routerLink="login"
             class="nav-link d-flex justify-content-between align-items-center"
@@ -204,15 +247,29 @@
             <div>
               <span>Md. Iqbal Ahmed</span>
             </div>
-            <div class="profile-btn profile-icons">
+            <div class="profile-btn profile-icons d-flex-center">
               <img
                 src="../../../../assets/images/man.png"
                 alt="profile avater"
-                class="img-fluid"
+                class="img-fluid img-margin-right"
               />
+              <i
+                class="mobile-nav-arrow"
+                [ngClass]="
+                  showProfileDropDownInMobile ? 'arrow-down' : 'arrow-right'
+                "
+              ></i>
             </div>
           </a>
         </li>
+        <ng-container *ngIf="showProfileDropDownInMobile">
+          <li class="mobile-dropdown-list"><a href="#">Dashboard</a></li>
+          <li class="mobile-dropdown-list"><a href="#">Profile</a></li>
+          <li class="mobile-dropdown-list"><a href="#">Grades</a></li>
+          <li class="mobile-dropdown-list"><a href="#">Messages</a></li>
+          <li class="mobile-dropdown-list"><a href="#">Preferences</a></li>
+          <li class="mobile-dropdown-list"><a href="#">Log Out</a></li>
+        </ng-container>
       </div>
     </div>
   </div>
