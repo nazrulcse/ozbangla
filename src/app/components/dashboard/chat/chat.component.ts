@@ -1,11 +1,17 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { faWindowClose, faCog, faTimes, faUser, faSearch } from '@fortawesome/free-solid-svg-icons';
+import {
+  faWindowClose,
+  faCog,
+  faTimes,
+  faUser,
+  faSearch,
+} from '@fortawesome/free-solid-svg-icons';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { OnlineUsersService } from 'src/app/services/online-users.service';
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.scss']
+  styleUrls: ['./chat.component.scss'],
 })
 export class ChatComponent implements OnInit {
   @Output() closeChat = new EventEmitter<boolean>();
@@ -16,8 +22,8 @@ export class ChatComponent implements OnInit {
   faSearch = faSearch;
   chatUsers: any = [];
   showRoom: boolean = false;
-  user:any = {};
-  constructor(private chatService: OnlineUsersService) { }
+  user: any = {};
+  constructor(private chatService: OnlineUsersService) {}
 
   ngOnInit(): void {
     this.chatUsers = this.chatService.fetchOnlineUsers();

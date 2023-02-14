@@ -1,18 +1,16 @@
-import { Component, OnInit, Input,  Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-room',
   templateUrl: './room.component.html',
-  styleUrls: ['./room.component.scss']
+  styleUrls: ['./room.component.scss'],
 })
 export class RoomComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
   @Input() user: any;
   @Output() backToChatEvent = new EventEmitter<boolean>();
   faPaperPlane = faPaperPlane;
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   backToChat() {
     this.backToChatEvent.emit(false);

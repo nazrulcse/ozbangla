@@ -15,8 +15,8 @@ export class NavbarComponent implements OnInit {
 
   // mobile responsive part toggle
   showMoreCourse: boolean = false;
-  showProfileDropDownInMobile:boolean = false;
-  showSideBar:boolean = false;
+  showProfileDropDownInMobile: boolean = false;
+  showSideBar: boolean = false;
 
   profileDropDownToggle() {
     this.openProfleDropDown = !this.openProfleDropDown;

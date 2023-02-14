@@ -1,4 +1,4 @@
-@import '../../app.component.scss';
+@import "../../app.component.scss";
 
 .main {
   margin-left: 250px;
@@ -33,13 +33,11 @@
     .reset-btn-container {
       margin-right: 10px;
     }
-
   }
   .upcoming-activity-events {
     padding-right: 0;
   }
 }
-
 
 @media (max-width: 992px) {
   .main {
