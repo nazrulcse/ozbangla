@@ -15,70 +15,89 @@
         </button>
       </div>
     </div>
-    <div class="input-group my-4">
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          class="form-control input"
-          placeholder="Search"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-        />
-        <button class="input-group-text search-btn" id="basic-addon1">
-          <img
-            src="../../../../assets/images/search-icon.png"
-            alt="search-icon"
-            class="img-fluid icon"
+
+    <ng-container *ngIf="!showRoom">
+      <div class="input-group my-4">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            class="form-control input"
+            placeholder="Search"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
           />
-        </button>
+          <button class="input-group-text search-btn" id="basic-addon1">
+            <img
+              src="../../../../assets/images/search-icon.png"
+              alt="search-icon"
+              class="img-fluid icon"
+            />
+          </button>
+        </div>
       </div>
-    </div>
 
-    <div class="accordion-container">
-      <ngb-accordion #acc="ngbAccordion" class="accordion-container">
-        <ngb-panel id="toggle-1" title="Starred (1)" class="accordion-panel">
-          <ng-template ngbPanelContent>
-            <div class="chat-info">
-              <img
-                src="../../../../assets/images/man.png"
-                alt="profile"
-                class="img-fluid chat-img"
-              />
-              <span routerLink="" class="chat-username">Md. Iqbal Ahmed</span>
-            </div>
-          </ng-template>
-        </ngb-panel>
-        <ngb-panel id="toggle-2" title="Group (1)" class="accordion-panel">
-          <ng-template ngbPanelContent>
-            <div class="chat-info">
-              <img
-                src="../../../../assets/images/man.png"
-                alt="profile"
-                class="img-fluid chat-img"
-              />
-              <span routerLink="" class="chat-username">Md. Iqbal Ahmed</span>
-            </div>
-          </ng-template>
-        </ngb-panel>
-        <ngb-panel id="toggle-3" title="Private (1)" class="accordion-panel">
-          <ng-template ngbPanelContent>
-            <div class="chat-info">
-              <img
-                src="../../../../assets/images/man.png"
-                alt="profile"
-                class="img-fluid chat-img"
-              />
-              <span routerLink="" class="chat-username">Md. Iqbal Ahmed</span>
-            </div>
-          </ng-template>
-        </ngb-panel>
-      </ngb-accordion>
-    </div>
+      <div class="accordion-container">
+        <ngb-accordion #acc="ngbAccordion">
+          <ngb-panel id="toggle-1" title="Starred (1)" class="accordion-panel">
+            <ng-container>
+              <ng-template ngbPanelContent>
+                <div
+                  class="chat-info bg-light p-2 mb-2"
+                  *ngFor="let user of chatUsers"
+                  (click)="startMessage(user)"
+                >
+                  <img
+                    [src]="user.img"
+                    alt="profile"
+                    class="img-fluid chat-img"
+                  />
+                  <span class="chat-username">{{ user.name }}</span>
+                </div>
+              </ng-template>
+            </ng-container>
+          </ngb-panel>
+          <ngb-panel id="toggle-2" title="Group (1)" class="accordion-panel">
+            <ng-template ngbPanelContent>
+              <div
+                class="chat-info bg-light p-2 mb-2"
+                *ngFor="let user of chatUsers"
+                (click)="startMessage(user)"
+              >
+                <img
+                  [src]="user.img"
+                  alt="profile"
+                  class="img-fluid chat-img"
+                />
+                <span class="chat-username">{{ user.name }}</span>
+              </div>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="toggle-3" title="Private (1)" class="accordion-panel">
+            <ng-template ngbPanelContent>
+              <div
+                class="chat-info bg-light p-2 mb-2"
+                *ngFor="let user of chatUsers"
+                (click)="startMessage(user)"
+              >
+                <img
+                  [src]="user.img"
+                  alt="profile"
+                  class="img-fluid chat-img"
+                />
+                <span class="chat-username">{{ user.name }}</span>
+              </div>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
 
+      <div class="see-all-btn my-2">
+        <button class="button form-control bg-red">See All</button>
+      </div>
+    </ng-container>
 
-
-    <div class="see-all-btn my-2">
-      <button class="button form-control bg-red">See All</button>
-    </div>
+    <ng-container *ngIf="showRoom">
+      <app-room [user]="user" (backToChatEvent)="backToChat($event)"></app-room>
+    </ng-container>
   </div>
 </div>

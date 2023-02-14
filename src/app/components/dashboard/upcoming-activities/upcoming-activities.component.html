@@ -1,4 +1,6 @@
-<div class="upcoming-activity px-3 py-4 d-flex flex-wrap justify-content-between">
+<div
+  class="upcoming-activity px-3 py-4 d-flex flex-wrap justify-content-between"
+>
   <div class="control-mat-width mx-1">
     <mat-form-field appearance="fill" [style.width.px]="130">
       <mat-label><fa-icon [icon]="faClock" class="icon"></fa-icon></mat-label>
@@ -29,14 +31,20 @@
 
   <div class="mx-1 activitiy-due-container">
     <ng-container *ngFor="let course of allCourses">
-      <p class="course-title mt-4">{{ course.title }}</p>
-      <div class="text-center">
-        <img
-          src="../../../../assets/images/activities.svg"
-          alt="activities"
-          class="img-fluid activity-img"
-        />
-        <p class="no-activity">No upcoming activities due</p>
+      <div class="mt-3">
+        <a
+          routerLink="/dashboard/course_details/{{ course.id }}"
+          class="course-title mt-4"
+          >{{ course.title }}</a
+        >
+        <div class="text-center">
+          <img
+            src="../../../../assets/images/activities.svg"
+            alt="activities"
+            class="img-fluid activity-img"
+          />
+          <p class="no-activity">No upcoming activities due</p>
+        </div>
       </div>
     </ng-container>
 

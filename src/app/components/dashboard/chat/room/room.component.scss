@@ -1,0 +1,63 @@
+@import "../../../../app.component.scss";
+
+.room-container {
+  .chat-header {
+    .back {
+      position: relative;
+      cursor: pointer;
+      .arrow {
+        position: absolute;
+        border: solid $black;
+        border-width: 0 3px 3px 0;
+        padding: 4px;
+        bottom: -5px;
+        left: 3px;
+      }
+      .left {
+        transform: rotate(135deg);
+      }
+    }
+    .user-profile {
+      width: 65%;
+      .chat-img {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin-right: 15px;
+      }
+    }
+
+    .three-dot-btn {
+      border: 0;
+      border: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      .dot-img {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+      }
+    }
+    border-bottom: 0.1px solid rgb(238, 233, 233);
+    padding-bottom: 20px;
+  }
+  .chat-body {
+    height: 57vh;
+    overflow: auto;
+  }
+  .chat-footer {
+    background: #f3f3f3;
+    border-radius: 4px;
+    .message-text-area {
+      resize: none;
+      border: 0;
+      background: #f3f3f3;
+      padding: 20px;
+      outline: 0;
+    }
+    .message-send-img {
+      width: 30px;
+    }
+  }
+}

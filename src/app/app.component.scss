@@ -36,6 +36,7 @@ p {
     color: $white;
   }
 }
+
 .bg-green {
   @include button-bg($custom-green);
 }
@@ -44,6 +45,16 @@ p {
 }
 .bg-blue {
   @include button-bg($custom-blue);
+}
+
+.bg-red {
+  background-color: $custom-pink;
+  color: $white;
+  &:hover {
+    background-color: transparent;
+    border: 1px solid $custom-pink;
+    color: $custom-pink;
+  }
 }
 
 .d-flex-between {
@@ -111,9 +122,10 @@ p {
 
 // override bootstrap css code
 .accordion {
-  --bs-accordion-btn-focus-border-color: #F9FAFC;
+  --bs-accordion-btn-focus-border-color: #f9fafc;
   --bs-accordion-active-color: black;
-  --bs-accordion-btn-focus-box-shadow: #F9FAFC;
-  --bs-accordion-active-bg: #F9FAFC;
+  --bs-accordion-btn-focus-box-shadow: #f9fafc;
+  --bs-accordion-active-bg: #f9fafc;
   --bs-accordion-border-radius: 4px;
+  --bs-accordion-body-padding-x: 0;
 }

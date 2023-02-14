@@ -1,0 +1,36 @@
+<div class="room-container">
+  <div class="my-4">
+    <div class="d-flex-between chat-header">
+      <div class="back" (click)="backToChat()">
+        <i class="arrow left"></i>
+      </div>
+      <div class="user-profile d-flex align-items-center">
+        <img [src]="user.img" alt="chat-img" class="chat-img">
+        <div>
+          <p>{{ user.name }}</p>
+        </div>
+      </div>
+      <div class="more-option">
+        <button class="three-dot-btn">
+          <img src="../../../../../assets/images/dots.png" class="dot-img" alt="">
+        </button>
+      </div>
+    </div>
+    <div class="chat-body my-2">
+      <p>message-here</p>
+    </div>
+
+    <div class="chat-footer">
+      <div class="d-flex-around">
+        <div>
+          <textarea class="message-text-area input" id="" cols="25" rows="1" placeholder="Write a message..."></textarea>
+        </div>
+        <div>
+          <button class="button bg-red">
+            <fa-icon [icon]="faPaperPlane" class="send-message-icon"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

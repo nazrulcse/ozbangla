@@ -1,3 +1,4 @@
+import { MessagesComponent } from './components/dashboard/messages/messages.component';
 import { PreferencesComponent } from './components/dashboard/preferences/preferences.component';
 import { GradesComponent } from './components/dashboard/grades/grades.component';
 import { ProfileComponent } from './components/dashboard/profile/profile.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'dashboard/course_details/:id',
     component: CourseDetailsComponent,
+  },
+  {
+    path:  'messages',
+    component: MessagesComponent
   },
   {
     path: 'grade',

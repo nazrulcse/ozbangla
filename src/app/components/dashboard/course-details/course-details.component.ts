@@ -40,8 +40,6 @@ export class CourseDetailsComponent implements OnInit {
       }
     }
     this.courseContent = this.courseService.getAllCourseContent();
-    // this.subTopic = this.courseContent.subTopic;
-    // console.log(this.courseContent)
-    // console.log(this.subTopic)
+
   }
 }
