@@ -36,7 +36,6 @@ import { GradesComponent } from './components/dashboard/grades/grades.component'
 import { PreferencesComponent } from './components/dashboard/preferences/preferences.component';
 import { RoomComponent } from './components/dashboard/chat/room/room.component';
 import { MessagesComponent } from './components/dashboard/messages/messages.component';
-import { ChatFunctionalityComponent } from './components/dashboard/chat/chat-functionality/chat-functionality.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +65,6 @@ import { ChatFunctionalityComponent } from './components/dashboard/chat/chat-fun
     PreferencesComponent,
     RoomComponent,
     MessagesComponent,
-    ChatFunctionalityComponent
   ],
   imports: [
     BrowserModule,
