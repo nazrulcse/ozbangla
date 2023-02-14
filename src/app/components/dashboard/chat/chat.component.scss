@@ -30,6 +30,20 @@
   overflow: auto;
 }
 
+.chat-info {
+  cursor: pointer;
+  .chat-img {
+    width: 40px;
+  }
+  .chat-username {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: $black;
+    font-weight: 400;
+    margin: 0 10px;
+  }
+}
+
 .see-all-btn {
   .bg-red {
     background-color: $custom-pink;
@@ -41,3 +55,4 @@
     }
   }
 }
+

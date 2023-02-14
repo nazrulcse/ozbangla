@@ -25,7 +25,6 @@
           aria-describedby="basic-addon1"
         />
         <button class="input-group-text search-btn" id="basic-addon1">
-          <!-- <fa-icon [icon]="faSearch" class="search-icon"></fa-icon> -->
           <img
             src="../../../../assets/images/search-icon.png"
             alt="search-icon"
@@ -37,21 +36,46 @@
 
     <div class="accordion-container">
       <ngb-accordion #acc="ngbAccordion" class="accordion-container">
-        <ngb-panel id="toggle-1" title="Started" class="accordion-panel">
-          <ng-template ngbPanelContent> lorem400 </ng-template>
-        </ngb-panel>
-        <ngb-panel id="toggle-2" title="Private" class="accordion-panel">
+        <ngb-panel id="toggle-1" title="Starred (1)" class="accordion-panel">
           <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit,
+            <div class="chat-info">
+              <img
+                src="../../../../assets/images/man.png"
+                alt="profile"
+                class="img-fluid chat-img"
+              />
+              <span routerLink="" class="chat-username">Md. Iqbal Ahmed</span>
+            </div>
           </ng-template>
         </ngb-panel>
-        <ngb-panel id="toggle-3" title="Group" class="accordion-panel">
+        <ngb-panel id="toggle-2" title="Group (1)" class="accordion-panel">
           <ng-template ngbPanelContent>
-            Anim pariatur cliche reprehenderit
+            <div class="chat-info">
+              <img
+                src="../../../../assets/images/man.png"
+                alt="profile"
+                class="img-fluid chat-img"
+              />
+              <span routerLink="" class="chat-username">Md. Iqbal Ahmed</span>
+            </div>
+          </ng-template>
+        </ngb-panel>
+        <ngb-panel id="toggle-3" title="Private (1)" class="accordion-panel">
+          <ng-template ngbPanelContent>
+            <div class="chat-info">
+              <img
+                src="../../../../assets/images/man.png"
+                alt="profile"
+                class="img-fluid chat-img"
+              />
+              <span routerLink="" class="chat-username">Md. Iqbal Ahmed</span>
+            </div>
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
     </div>
+
+
 
     <div class="see-all-btn my-2">
       <button class="button form-control bg-red">See All</button>

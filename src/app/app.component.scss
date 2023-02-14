@@ -94,7 +94,7 @@ p {
 }
 
 .padding-bottom {
-  border-bottom: .1px solid $light-gray;
+  border-bottom: 0.1px solid $light-gray;
 }
 
 @media (max-width: 524px) {
@@ -107,4 +107,13 @@ p {
   .reset-btn-container {
     margin-right: 0 !important;
   }
+}
+
+// override bootstrap css code
+.accordion {
+  --bs-accordion-btn-focus-border-color: #F9FAFC;
+  --bs-accordion-active-color: black;
+  --bs-accordion-btn-focus-box-shadow: #F9FAFC;
+  --bs-accordion-active-bg: #F9FAFC;
+  --bs-accordion-border-radius: 4px;
 }
