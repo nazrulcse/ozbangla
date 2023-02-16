@@ -30,7 +30,10 @@
               />
             </div>
 
-            <div class="input-group pb-3">
+            <div
+              class="input-group pb-3"
+
+            >
               <div class="input-group-prepend">
                 <span class="input-group-text input-label-img">
                   <img
@@ -43,11 +46,13 @@
               <input
                 type="email"
                 name="email"
+                required
+                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
                 [(ngModel)]="loginFormData.email"
                 class="form-control input"
                 placeholder="Email"
-                aria-label="email"
-                aria-describedby="email"
+                #regEmail="ngModel"
+                [class.is-invalid]="regEmail.invalid && regEmail.touched"
               />
             </div>
 
