@@ -26,7 +26,7 @@
               />
             </div>
 
-            <div class="input-group mb-3">
+            <div class="input-group pb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text input-label-img">
                   <img
@@ -108,6 +108,31 @@
                 aria-label="city"
                 aria-describedby="city"
               />
+            </div>
+
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text input-label-img">
+                  <img
+                    src="../../../assets/images/user_role.png"
+                    alt=""
+                    class="img-fluid"
+                  />
+                </span>
+              </div>
+
+              <select
+                name="user-type"
+                id="user-type"
+                [(ngModel)]="loginFormData.userType"
+                class="form-control input select-input"
+                aria-label="user-type"
+                aria-describedby="user-type"
+              >
+                <option value="" disabled="disabled"> Choose User Type</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
             </div>
 
             <input type="submit" value="Sign Up" class="input form-control" />

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-navbar',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  constructor(private modalService: NgbModal) {}
   ngOnInit(): void {}
   openProfleDropDown: boolean = false;
   settingDropDown: boolean = false;
@@ -58,4 +59,7 @@ export class NavbarComponent implements OnInit {
   showProfileDropDown() {
     this.showProfileDropDownInMobile = !this.showProfileDropDownInMobile;
   }
+  openVerticallyCentered(content: any) {
+		this.modalService.open(content, { centered: true });
+	}
 }

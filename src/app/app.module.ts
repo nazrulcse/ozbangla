@@ -23,7 +23,7 @@ import { AvailableFilesComponent } from './components/dashboard/available-files/
 import { OnlineUsersComponent } from './components/dashboard/online-users/online-users.component';
 import { BadgesComponent } from './components/dashboard/badges/badges.component';
 import { EventsComponent } from './components/dashboard/events/events.component';
-import { MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NotificationComponent } from './components/dashboard/notification/notification.component';
 import { ChatComponent } from './components/dashboard/chat/chat.component';
@@ -76,12 +76,10 @@ import { MessagesComponent } from './components/dashboard/messages/messages.comp
     BrowserAnimationsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
-  constructor() {
-
-  }
- }
+  constructor() {}
+}

@@ -12,7 +12,12 @@ export class RegistrationComponent implements OnInit {
     email: '',
     password: '',
     mobile: '',
-    city: ''
+    city: '',
+    userType: ''
+  }
+
+  validation = {
+    email: ''
   }
 
   constructor() { }
@@ -26,5 +31,4 @@ export class RegistrationComponent implements OnInit {
   registration() {
     console.log(this.loginFormData);
   }
-
 }
