@@ -4,7 +4,11 @@
       <div class="col-md-6 form-container">
         <h5 class="text-center mb-3">Create New Account</h5>
         <div class="d-flex-center">
-          <form action="post" (ngSubmit)="registration()" class="form">
+          <form
+            action="post"
+            (ngSubmit)="registration(loginFormData)"
+            class="form"
+          >
             <div class="input-group mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text input-label-img">
@@ -81,7 +85,7 @@
               <input
                 type="tel"
                 name="mobile"
-                [(ngModel)]="loginFormData.mobile"
+                [(ngModel)]="loginFormData.name"
                 class="form-control input"
                 placeholder="Mobile Number"
                 aria-label="mobile"
@@ -89,50 +93,34 @@
               />
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text input-label-img">
-                  <img
-                    src="../../../assets/images/location.png"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </span>
+            <div class="d-flex mb-3">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="male"
+                  checked
+                  [(ngModel)]="loginFormData.gender"
+                  [value]="male"
+                />
+                <label class="form-check-label radio-input-label" for="male">
+                  Male
+                </label>
               </div>
-              <input
-                type="text"
-                name="city"
-                [(ngModel)]="loginFormData.city"
-                class="form-control input"
-                placeholder="City"
-                aria-label="city"
-                aria-describedby="city"
-              />
-            </div>
-
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text input-label-img">
-                  <img
-                    src="../../../assets/images/user_role.png"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </span>
+              <div class="form-check mx-4">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="gender"
+                  id="female"
+                  [(ngModel)]="loginFormData.gender"
+                  [value]="female"
+                />
+                <label class="form-check-label radio-input-label" for="female">
+                  Female
+                </label>
               </div>
-
-              <select
-                name="user-type"
-                id="user-type"
-                [(ngModel)]="loginFormData.userType"
-                class="form-control input select-input"
-                aria-label="user-type"
-                aria-describedby="user-type"
-              >
-                <option value="" disabled="disabled"> Choose User Type</option>
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-              </select>
             </div>
 
             <input type="submit" value="Sign Up" class="input form-control" />

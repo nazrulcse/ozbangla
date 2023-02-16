@@ -36,6 +36,7 @@ import { GradesComponent } from './components/dashboard/grades/grades.component'
 import { PreferencesComponent } from './components/dashboard/preferences/preferences.component';
 import { RoomComponent } from './components/dashboard/chat/room/room.component';
 import { MessagesComponent } from './components/dashboard/messages/messages.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { MessagesComponent } from './components/dashboard/messages/messages.comp
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
+    HttpClientModule,
   ],
   bootstrap: [AppComponent],
 })
