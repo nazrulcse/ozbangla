@@ -10,7 +10,7 @@ router.use((req, res, next) => {
   next()
 }) 
 
-router.post("/", controller.create);
+router.post("/",[authJwt.verifyToken],controller.create);
 // router.get("/",  controller.list);
 // router.get("/:id",controller.findOne);
 // router.put("/:id",controller.update);
