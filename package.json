@@ -31,16 +31,14 @@
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",
     "angularx-flatpickr": "^7.0.0",
-    "bootstrap": "^5.2.0",
-    "flatpickr": "^4.6.13",
-    "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.2.0",
     "cors": "^2.8.5",
     "custom-env": "^2.0.1",
     "dotenv": "^16.0.3",
-    "express": "^4.17.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.15.0",
+    "flatpickr": "^4.6.13",
     "joi": "^17.7.1",
     "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
@@ -48,7 +46,10 @@
     "nodemon": "^2.0.15",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.19.0"
+    "rxjs": "~7.5.0",
+    "sequelize": "^6.19.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.0.3",
@@ -61,7 +62,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.7.2",
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.4.1",
+    "typescript": "~4.7.2"
   }
 }
