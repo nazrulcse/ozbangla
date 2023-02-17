@@ -8,7 +8,7 @@ import { RegistrationService } from 'src/app/services/registration.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  loginFormData = {
+  registrationFormData = {
     username: '',
     email: '',
     password: '',
@@ -41,8 +41,8 @@ export class RegistrationComponent implements OnInit {
     }
   }
 
-  registration(loginFormData: any) {
-    this.registrationService.userRegistration(loginFormData).subscribe(response => {
+  registration(registrationFormData: any) {
+    this.registrationService.userRegistration(registrationFormData).subscribe(response => {
       console.log(response);
     })
   }
