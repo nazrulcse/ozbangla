@@ -8,26 +8,51 @@
             action="post"
             (ngSubmit)="registration(loginFormData)"
             class="form"
+            #registrationForm="ngForm"
           >
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text input-label-img">
-                  <img
-                    src="../../../assets/images/user.png"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </span>
+            <div class="mb-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text input-label-img">
+                    <img
+                      src="../../../assets/images/user.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  name="username"
+                  minlength="5"
+                  required
+                  [(ngModel)]="loginFormData.username"
+                  class="form-control input"
+                  placeholder="Username"
+                  #regUsername="ngModel"
+                  [class.is-invalid]="
+                    regUsername.invalid && regUsername.touched
+                  "
+                />
               </div>
-              <input
-                type="text"
-                name="username"
-                [(ngModel)]="loginFormData.username"
-                class="form-control input"
-                placeholder="Username"
-                aria-label="username"
-                aria-describedby="username"
-              />
+
+              <div
+                *ngIf="
+                  (regUsername.invalid && regUsername.touched) ||
+                  regUsername.dirty
+                "
+              >
+                <small
+                  *ngIf="regUsername.errors?.['required']"
+                  class="text-danger"
+                  >Username is required.</small
+                >
+                <small
+                  *ngIf="regUsername.errors?.['minlength']"
+                  class="text-danger"
+                  >Please provide a valid username.</small
+                >
+              </div>
             </div>
 
             <div class="pb-3">
@@ -58,10 +83,10 @@
                 *ngIf="(regEmail.invalid && regEmail.touched) || regEmail.dirty"
               >
                 <small *ngIf="regEmail.errors?.['required']" class="text-danger"
-                  >Email is required</small
+                  >Email is required.</small
                 >
                 <small *ngIf="regEmail.errors?.['pattern']" class="text-danger"
-                  >Please provide a valid Email address</small
+                  >Please provide a valid Email address.</small
                 >
               </div>
             </div>
@@ -90,6 +115,9 @@
                   [class.is-invalid]="
                     regPassword.invalid && regPassword.touched
                   "
+                  (keyup)="
+                    checkPasswords(regPassword.value, regConfirmPassword.value)
+                  "
                 />
               </div>
               <div
@@ -101,12 +129,12 @@
                 <small
                   *ngIf="regPassword.errors?.['required']"
                   class="text-danger"
-                  >Password is required</small
+                  >Password is required.</small
                 >
                 <small
                   *ngIf="regPassword.errors?.['minlength']"
                   class="text-danger"
-                  >Password must be at least 6 characters</small
+                  >Password must be at least 6 characters.</small
                 >
               </div>
             </div>
@@ -124,57 +152,83 @@
                 </div>
                 <input
                   type="password"
-                  name="password"
-                  [(ngModel)]="loginFormData.password"
+                  name="confirmPassword"
+                  [(ngModel)]="loginFormData.confirmPassword"
                   class="form-control input"
-                  placeholder="Password"
+                  placeholder="Confirm Password"
                   required
-                  minlength="6"
-                  maxlength="40"
-                  #regPassword="ngModel"
+                  #regConfirmPassword="ngModel"
                   [class.is-invalid]="
-                    regPassword.invalid && regPassword.touched
+                    regConfirmPassword.invalid && regConfirmPassword.touched
+                  "
+                  (keyup)="
+                    checkPasswords(regPassword.value, regConfirmPassword.value)
                   "
                 />
               </div>
               <div
                 *ngIf="
-                  (regPassword.invalid && regPassword.touched) ||
-                  regPassword.dirty
+                  (regConfirmPassword.invalid && regConfirmPassword.touched) ||
+                  regConfirmPassword.dirty
                 "
               >
                 <small
-                  *ngIf="regPassword.errors?.['required']"
+                  *ngIf="regConfirmPassword.errors?.['required'] && isConfirmPasswordEmpty"
                   class="text-danger"
-                  >Password is required</small
+                  >Confirm Password is required.</small
                 >
                 <small
-                  *ngIf="regPassword.errors?.['minlength']"
+                  *ngIf="!passwordsMatching && !isConfirmPasswordEmpty"
                   class="text-danger"
-                  >Password must be at least 6 characters</small
+                  >Confirm Password does not match.</small
                 >
               </div>
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text input-label-img">
-                  <img
-                    src="../../../assets/images/telephone.png"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </span>
+            <div class="mb-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text input-label-img">
+                    <img
+                      src="../../../assets/images/telephone.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </span>
+                </div>
+                <input
+                  type="tel"
+                  name="mobile"
+                  [(ngModel)]="loginFormData.contactNumber"
+                  class="form-control input"
+                  placeholder="Mobile Number"
+                  #regMobileNo="ngModel"
+                  required
+                  minlength="11"
+                  maxlength="12"
+                  pattern="^[0-9]*$"
+                  [class.is-invalid]="
+                    regMobileNo.invalid && regMobileNo.touched
+                  "
+                />
               </div>
-              <input
-                type="tel"
-                name="mobile"
-                [(ngModel)]="loginFormData.name"
-                class="form-control input"
-                placeholder="Mobile Number"
-                aria-label="mobile"
-                aria-describedby="mobile"
-              />
+              <div
+                *ngIf="
+                  (regMobileNo.invalid && regMobileNo.touched) ||
+                  regMobileNo.dirty
+                "
+              >
+                <small
+                  *ngIf="regMobileNo.errors?.['required'] "
+                  class="text-danger"
+                  >Mobile Number is required.</small
+                >
+                <small
+                  *ngIf="regMobileNo.errors?.['pattern']"
+                  class="text-danger"
+                  >Only Numbers are Allow.</small
+                >
+              </div>
             </div>
 
             <div class="d-flex mb-3">
@@ -207,7 +261,18 @@
               </div>
             </div>
 
-            <input type="submit" value="Sign Up" class="input form-control" />
+            <input
+              type="submit"
+              value="Sign Up"
+              class="input form-control"
+              [disabled]="registrationForm.form.invalid"
+              [ngClass]="
+                registrationForm.form.invalid
+                  ? 'cursor-disable'
+                  : 'cursor-pointer'
+              "
+            />
+
             <p class="py-3 sign-up-link">
               Have Account? <a routerLink="/login">Sign In</a>
             </p>

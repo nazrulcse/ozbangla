@@ -12,12 +12,14 @@ export class RegistrationComponent implements OnInit {
     username: '',
     email: '',
     password: '',
-    name: '',
+    confirmPassword: '',
+    contactNumber: '',
     gender: ''
   }
   male: string = 'male';
   female: string = 'female';
-
+  passwordsMatching = false;
+  isConfirmPasswordEmpty = true;
 
   constructor(private registrationService: RegistrationService) { }
 
@@ -26,6 +28,18 @@ export class RegistrationComponent implements OnInit {
 
   faEnvelope = faEnvelope;
   faLock = faLock;
+
+  checkPasswords(pw: string, cpw: string) {
+    if(cpw !== '') {
+      this.isConfirmPasswordEmpty = false;
+    }
+
+    if (pw === cpw) {
+      this.passwordsMatching = true;
+    } else {
+      this.passwordsMatching = false;
+    }
+  }
 
   registration(loginFormData: any) {
     this.registrationService.userRegistration(loginFormData).subscribe(response => {

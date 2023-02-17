@@ -42,6 +42,12 @@
   }
 }
 
+.cursor-disable {
+  cursor: not-allowed;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
 
 @media (max-width: 992px) {
   .form {
