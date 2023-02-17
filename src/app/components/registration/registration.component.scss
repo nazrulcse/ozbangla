@@ -49,6 +49,10 @@
   cursor: pointer;
 }
 
+.form-control.is-invalid {
+  border: 1px solid $light-gray;
+}
+
 @media (max-width: 992px) {
   .form {
     width: 100%;
