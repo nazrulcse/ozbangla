@@ -13,6 +13,6 @@ router.use((req, res, next) => {
 }) 
 
 router.post("/signup",[validator.signupValidation,verifySignUp.checkDuplicateUsernameOrEmail],authController.signup);
-router.post("/signin",authController.signin);
+router.post("/signin",[validator.signinValidation],authController.signin);
 
 module.exports = router
