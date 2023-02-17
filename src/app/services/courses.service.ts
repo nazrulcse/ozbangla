@@ -13,8 +13,8 @@ export class CoursesService {
         category: 'Learning Python',
         title: 'Python Programming For Beginner to Advance - B2',
         status: 'published',
-        completeRatio: '75%',
-        grade: 'A',
+        // completeRatio: '75%',
+        // grade: 'A',
       },
       {
         id: 2,
@@ -23,8 +23,8 @@ export class CoursesService {
         title:
           'Ruby On Rails in Web Development and Server Side Application - B4',
         status: 'pending',
-        completeRatio: '85%',
-        grade: 'A+',
+        // completeRatio: '85%',
+        // grade: 'A+',
       },
       {
         id: 3,
@@ -32,8 +32,8 @@ export class CoursesService {
         category: 'Learning Node.Js',
         title: 'Node.Js. The JavaScript runtime',
         status: 'pending',
-        completeRatio: '55%',
-        grade: 'A-',
+        // completeRatio: '55%',
+        // grade: 'A-',
       },
     ];
   }
@@ -45,8 +45,8 @@ export class CoursesService {
         category: 'Learning Node.Js',
         title: 'Node.Js. The JavaScript runtime',
         status: 'pending',
-        completeRatio: '55%',
-        grade: 'A-',
+        // completeRatio: '55%',
+        // grade: 'A-',
       },
       {
         id: 4,
@@ -54,8 +54,8 @@ export class CoursesService {
         category: 'Learning JavaScript',
         title: 'JavaScript For Beginners',
         status: 'published',
-        completeRatio: '50%',
-        grade: 'B',
+        // completeRatio: '50%',
+        // grade: 'B',
       },
     ];
   }
