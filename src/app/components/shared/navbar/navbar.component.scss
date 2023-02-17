@@ -18,12 +18,15 @@
         list-style: none;
         padding: 10px 0 10px 20px;
         border-bottom: 0.1px solid #595959;
+
         &:hover {
           background-color: rgba(0, 0, 0, 0.5);
+          cursor: pointer;
         }
         a {
           color: $gray;
           text-transform: uppercase;
+          cursor: pointer;
         }
       }
     }
@@ -58,7 +61,7 @@
         padding: 3px 3px;
         position: absolute;
         right: 15px;
-        transition: .3s;
+        transition: 0.3s;
         top: 19px;
       }
       .arrow-right {
@@ -135,6 +138,7 @@
           text-decoration: none;
           color: $black;
           transition: all 0.3s ease 0s;
+          cursor: pointer;
           &:hover {
             padding-left: 5px;
           }
@@ -250,4 +254,13 @@
 
 .close-dropdown {
   display: none;
+}
+
+.search-btn {
+  border-radius: 4px;
+  padding: 0.65rem 0.5rem;
+}
+
+.icon {
+  width: 20px;
 }

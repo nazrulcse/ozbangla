@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light desktop-nav sticky-top">
   <div class="container-fluid">
-    <div class="navbar-brand"><a href="#" class="logo">OZ ACADEMY</a></div>
+    <div class="navbar-brand"><a href="#" class="logo">OZ Bangla</a></div>
     <button
       class="navbar-toggler"
       type="button"
@@ -51,13 +51,17 @@
           </div>
         </li>
         <li class="nav-item nav-item-padding">
-          <a class="nav-link navigation-links" href="#">HACKATHON</a>
-        </li>
-        <li class="nav-item nav-item-padding">
-          <a class="nav-link navigation-links" href="#">EXAMS</a>
+          <a class="nav-link navigation-links" href="#">SEIP EXAMS</a>
         </li>
       </ul>
       <div class="d-flex align-items-center">
+        <button class="navbar-icons" (click)="openVerticallyCentered(content)">
+          <img
+            src="../../../../assets/images/search.png"
+            alt="search"
+            class="img-fluid"
+          />
+        </button>
         <button class="navbar-icons" (click)="showNotifications()">
           <img
             src="../../../../assets/images/bell.png"
@@ -135,7 +139,7 @@
 
 <nav class="mobile-nav">
   <div class="d-flex justify-content-between align-items-center">
-    <div class="navbar-brand"><a href="#" class="logo">OZ ACADEMY</a></div>
+    <div class="navbar-brand"><a href="#" class="logo">OZ Bangla</a></div>
     <button
       class="humberger-btn"
       type="button"
@@ -160,7 +164,7 @@
   >
     <div class="offcanvas-header">
       <div class="offcanvas-title" id="offcanvasScrollingLabel">
-        <div class="logo text-light">OZ ACADEMY</div>
+        <div class="logo text-light">OZ Bangla</div>
       </div>
       <button
         type="button"
@@ -171,6 +175,29 @@
     </div>
     <div class="offcanvas-body">
       <div class="mobile-dropdown">
+        <div class="input-group my-2">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control input bg-dark text-light"
+              placeholder="Search Courses..."
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+            <button
+              type="submit"
+              class="input-group-text"
+              id="basic-addon1"
+              data-bs-dismiss="offcanvas"
+            >
+              <img
+                src="../../../../assets/images/search-icon.png"
+                alt="search-icon"
+                class="img-fluid icon"
+              />
+            </button>
+          </div>
+        </div>
         <li class="nav-item nav-item-d-block">
           <a routerLink="login" class="nav-link" data-bs-dismiss="offcanvas"
             >HOME</a
@@ -231,7 +258,13 @@
           </a>
         </li>
         <ng-container *ngIf="showSideBar">
-          <li class="mobile-dropdown-list"><a href="#">Dashboard</a></li>
+          <li
+            class="mobile-dropdown-list"
+            routerLink="/dashboard"
+            data-bs-dismiss="offcanvas"
+          >
+            <a href="#">Dashboard</a>
+          </li>
           <li class="mobile-dropdown-list"><a href="#">Site Home</a></li>
           <li class="mobile-dropdown-list"><a href="#">Calender</a></li>
           <li class="mobile-dropdown-list"><a href="#">Private Files</a></li>
@@ -266,14 +299,76 @@
           </a>
         </li>
         <ng-container *ngIf="showProfileDropDownInMobile">
-          <li class="mobile-dropdown-list"><a href="#">Dashboard</a></li>
-          <li class="mobile-dropdown-list"><a href="#">Profile</a></li>
-          <li class="mobile-dropdown-list"><a href="#">Grades</a></li>
-          <li class="mobile-dropdown-list"><a href="#">Messages</a></li>
-          <li class="mobile-dropdown-list"><a href="#">Preferences</a></li>
-          <li class="mobile-dropdown-list"><a href="#">Log Out</a></li>
+          <li
+            class="mobile-dropdown-list"
+            routerLink="/dashboard"
+            data-bs-dismiss="offcanvas"
+          >
+            <a>Dashboard</a>
+          </li>
+          <li
+            class="mobile-dropdown-list"
+            routerLink="/profile"
+            data-bs-dismiss="offcanvas"
+          >
+            <a>Profile</a>
+          </li>
+          <li
+            class="mobile-dropdown-list"
+            routerLink="/grade"
+            data-bs-dismiss="offcanvas"
+          >
+            <a>Grades</a>
+          </li>
+          <li
+            class="mobile-dropdown-list"
+            routerLink="/messages"
+            data-bs-dismiss="offcanvas"
+          >
+            <a>Messages</a>
+          </li>
+          <li
+            class="mobile-dropdown-list"
+            routerLink="/preferences"
+            data-bs-dismiss="offcanvas"
+          >
+            <a>Preferences</a>
+          </li>
+          <li class="mobile-dropdown-list"><a>Log Out</a></li>
         </ng-container>
       </div>
     </div>
   </div>
 </nav>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="input-group my-2">
+      <div class="input-group">
+        <input
+          type="text"
+          class="form-control input"
+          placeholder="Search Courses..."
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+        <button class="input-group-text search-btn" id="basic-addon1">
+          <img
+            src="../../../../assets/images/search-icon.png"
+            alt="search-icon"
+            class="img-fluid icon"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer"></div>
+</ng-template>

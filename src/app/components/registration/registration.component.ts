@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
+import { RegistrationService } from 'src/app/services/registration.service';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -11,11 +12,14 @@ export class RegistrationComponent implements OnInit {
     username: '',
     email: '',
     password: '',
-    mobile: '',
-    city: ''
+    name: '',
+    gender: ''
   }
+  male: string = 'male';
+  female: string = 'female';
 
-  constructor() { }
+
+  constructor(private registrationService: RegistrationService) { }
 
   ngOnInit(): void {
   }
@@ -23,8 +27,9 @@ export class RegistrationComponent implements OnInit {
   faEnvelope = faEnvelope;
   faLock = faLock;
 
-  registration() {
-    console.log(this.loginFormData);
+  registration(loginFormData: any) {
+    this.registrationService.userRegistration(loginFormData).subscribe(response => {
+      console.log(response);
+    })
   }
-
 }

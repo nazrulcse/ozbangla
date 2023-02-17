@@ -8,7 +8,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:4000"
+  origin: "http://localhost:4200"
 };
 
 app.use(cors(corsOptions));
@@ -47,12 +47,12 @@ app.listen(config.PORT, config.HOST, () => {
 //     id: 1,
 //     name: "user"
 //   });
- 
+
 //   Role.create({
 //     id: 2,
 //     name: "moderator"
 //   });
- 
+
 //   Role.create({
 //     id: 3,
 //     name: "admin"
