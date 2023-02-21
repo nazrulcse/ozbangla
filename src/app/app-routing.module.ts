@@ -8,7 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
+import { AuthGuard } from './guard/auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -25,26 +25,32 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'dashboard/course_details/:id',
     component: CourseDetailsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path:  'messages',
-    component: MessagesComponent
+    component: MessagesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'grade',
     component: GradesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'preferences',
-    component: PreferencesComponent
+    component: PreferencesComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

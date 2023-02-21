@@ -6,10 +6,16 @@
         <div class="d-flex-center">
           <form
             action="post"
-            (ngSubmit)="login()"
-            class="form"
+            (ngSubmit)="login(loginFormData)"
+            class="form mt-2"
             #loginForm="ngForm"
           >
+
+            <ng-container *ngIf="error">
+              <div class="alert alert-danger alert-customization" role="alert">
+                <span>{{ error.error.message }}</span>
+              </div>
+            </ng-container>
             <div class="mb-3">
               <div class="input-group">
                 <div class="input-group-prepend">

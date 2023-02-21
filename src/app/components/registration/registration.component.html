@@ -10,6 +10,16 @@
             class="form"
             #registrationForm="ngForm"
           >
+            <ng-container *ngIf="showSuccessAlert">
+              <div class="alert alert-success alert-customization" role="alert">
+                User Registration Successfull
+              </div>
+            </ng-container>
+            <ng-container *ngIf="showDangerAlert">
+              <div class="alert alert-danger alert-customization" role="alert">
+                {{ error.error.message }}
+              </div>
+            </ng-container>
             <div class="mb-3">
               <div class="input-group">
                 <div class="input-group-prepend">
@@ -51,6 +61,51 @@
                   *ngIf="regUsername.errors?.['minlength']"
                   class="text-danger"
                   >Please provide a valid username.</small
+                >
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text input-label-img">
+                    <img
+                      src="../../../assets/images/person.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </span>
+                </div>
+                <input
+                  type="text"
+                  name="name"
+                  minlength="6"
+                  required
+                  [(ngModel)]="registrationFormData.name"
+                  class="form-control input"
+                  placeholder="Full Name"
+                  #regName="ngModel"
+                  [class.is-invalid]="
+                  regName.invalid && regName.touched
+                  "
+                />
+              </div>
+
+              <div
+                *ngIf="
+                  (regName.invalid && regName.touched) ||
+                  regName.dirty
+                "
+              >
+                <small
+                  *ngIf="regName.errors?.['required']"
+                  class="text-danger"
+                  >Full Name is required.</small
+                >
+                <small
+                  *ngIf="regName.errors?.['minlength']"
+                  class="text-danger"
+                  >Full Name should be at least 6 characters.</small
                 >
               </div>
             </div>
@@ -109,7 +164,7 @@
                   class="form-control input"
                   placeholder="Password"
                   required
-                  minlength="6"
+                  minlength="8"
                   maxlength="40"
                   #regPassword="ngModel"
                   [class.is-invalid]="
@@ -134,7 +189,7 @@
                 <small
                   *ngIf="regPassword.errors?.['minlength']"
                   class="text-danger"
-                  >Password must be at least 6 characters.</small
+                  >Password must be at least 8 characters.</small
                 >
               </div>
             </div>
@@ -199,7 +254,7 @@
                 <input
                   type="tel"
                   name="mobile"
-                  [(ngModel)]="registrationFormData.contactNumber"
+                  [(ngModel)]="registrationFormData.contact_no"
                   class="form-control input"
                   placeholder="Mobile Number"
                   #regMobileNo="ngModel"
@@ -226,7 +281,7 @@
                 <small
                   *ngIf="regMobileNo.errors?.['pattern']"
                   class="text-danger"
-                  >Only Numbers are Allow.</small
+                  >Only numbers are allow.</small
                 >
               </div>
             </div>

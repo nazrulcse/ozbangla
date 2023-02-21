@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private modalService: NgbModal) {}
+  constructor(
+    private modalService: NgbModal,
+    private authService: AuthService
+  ) {}
   ngOnInit(): void {}
   openProfleDropDown: boolean = false;
   settingDropDown: boolean = false;
@@ -42,11 +46,21 @@ export class NavbarComponent implements OnInit {
     this.settingDropDown = false;
     this.openProfleDropDown = false;
     this.showNotification = false;
-    console.log(this.showMessages);
   }
 
   chatClose(event: any) {
     this.showMessages = event;
+  }
+
+  isAuthenticated() {
+    return this.authService.isAuthenticated;
+  }
+
+  logout() {
+    this.authService.isAuthenticated = false;
+    window.localStorage.removeItem('auth');
+    window.location.href = '/login';
+    this.authService.logout();
   }
 
   // mobile responsive part
@@ -60,6 +74,6 @@ export class NavbarComponent implements OnInit {
     this.showProfileDropDownInMobile = !this.showProfileDropDownInMobile;
   }
   openVerticallyCentered(content: any) {
-		this.modalService.open(content, { centered: true });
-	}
+    this.modalService.open(content, { centered: true });
+  }
 }
