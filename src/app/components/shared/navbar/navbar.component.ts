@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -10,7 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavbarComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
   ngOnInit(): void {}
   openProfleDropDown: boolean = false;
@@ -57,9 +59,9 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
+    this.router.navigate(['login']);
     this.authService.isAuthenticated = false;
     window.localStorage.removeItem('auth');
-    window.location.href = '/login';
     this.authService.logout();
   }
 
