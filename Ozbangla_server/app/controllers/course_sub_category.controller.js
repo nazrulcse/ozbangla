@@ -1,6 +1,6 @@
 const db = require("../models");
 const config = require("../config/auth.config");
-const CourseCategories = require("../models/course_category.model");
+const CourseSubCategory = require("../models/course_sub_category.model");
 const { getPagination, getPagingData }  = require('../helpers/pagination');
 
 
@@ -11,12 +11,13 @@ exports.create = async(req, res) => {
       });
     }
     // Create a Course Category
-    const courseCategories = new CourseCategories({
+    const courseSubCategory = new CourseSubCategory({
       name: req.body.name,
-      category_url: req.body.category_url,
+      course_category_id: req.body.course_category_id,
+      details:req.body.details
     });
 
-    CourseCategories.create(courseCategories, (err, data) => {
+    CourseSubCategory.create(courseSubCategory, (err, data) => {
         if (err)
             res.status(500).send({
             message:
@@ -27,33 +28,20 @@ exports.create = async(req, res) => {
 
 };
 
+
+
 exports.list = async(req, res) => {
  
-  CourseCategories.list( (err, data) => {
+  CourseSubCategory.list( (err, data) => {
     if (err)
       res.status(500).send({
         message: "Some error occurred while creating the Course."
         });
     else 
       res.status(200).send({
-        message: "Course Category list",
+        message: "Course sub category list",
         data:data
       });
   });
 
 };
-
-exports.subCategoriesOfCourses = async(req, res) => {
-  
-  CourseCategories.subCategoriesOfCourses( (err, data) => {
-    if (err)
-      res.status(500).send({
-        message: "Some error occurred while creating the Course."
-        });
-    else 
-      res.status(200).send({
-        message: "Sub Categories list by category",
-        data:data
-      });
-  });
-}

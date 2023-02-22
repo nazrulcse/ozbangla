@@ -36,6 +36,7 @@ isAdmin = (req, res, next) => {
       res.status(500).send({
         message: "unauthorized."
       });
+      return;
     }
     next();
   });

@@ -6,17 +6,13 @@ signupValidation = (req,res,next) => {
         });
     }
 
-    if(req.body.email.length == 0 ){
+    if(!req.body.email){
         error.push('email is required')
     }else if( !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(req.body.email))){
         error.push('Invalid email address')
     }
 
-    if(req.body.username.length == 0){
-        error.push('username is required')
-    } 
-
-    if(req.body.contact_no.length == 0){
+    if(!req.body.contact_no){
         error.push('contact number is required')
     } 
 
@@ -41,7 +37,7 @@ signinValidation = (req,res,next) => {
         });
     }
     
-    if(req.body.email.length == 0 ){
+    if(!req.body.email){
         error.push('email is required')
     }else if( !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(req.body.email))){
         error.push('Invalid email')

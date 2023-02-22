@@ -16,8 +16,9 @@ exports.signup = (req, res) => {
     });
   }
 
+
   const user = new User({
-    username: req.body.username,
+    // username: req.body.username,
     name:req.body.name,
     contact_no:req.body.contact_no,
     email: req.body.email,
@@ -73,7 +74,7 @@ exports.signin = (req, res) => {
 
         res.status(200).send({
           id: data[0].id,
-          username: data[0].username,
+          name: data[0].name,
           email: data[0].email,
           accessToken: token
         });
