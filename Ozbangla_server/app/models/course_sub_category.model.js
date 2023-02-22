@@ -12,7 +12,6 @@ CourseSubCategory.create = (category, result) => {
           result(err, null);
         return;
         }
-        console.log("created course_sub_categories: ", { id: res.insertId, ...category });
         result(null, { id: res.insertId, ...category });
     });
 };
@@ -23,7 +22,6 @@ CourseSubCategory.list = (result) => {
         result(err, null);
       return;
       }
-      console.log("course course_sub_categories list : ", res);
       result(null, res);
   });
 };

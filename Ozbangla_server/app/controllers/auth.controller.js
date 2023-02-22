@@ -74,7 +74,7 @@ exports.signin = (req, res) => {
 
         res.status(200).send({
           id: data[0].id,
-          username: data[0].username,
+          name: data[0].name,
           email: data[0].email,
           accessToken: token
         });

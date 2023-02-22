@@ -39,7 +39,7 @@ exports.list = async(req, res) => {
         });
     else 
       res.status(200).send({
-        message: "Course Category list",
+        message: "Course sub category list",
         data:data
       });
   });

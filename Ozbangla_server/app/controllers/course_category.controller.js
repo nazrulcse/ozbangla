@@ -27,8 +27,6 @@ exports.create = async(req, res) => {
 
 };
 
-
-
 exports.list = async(req, res) => {
  
   CourseCategories.list( (err, data) => {
@@ -44,3 +42,18 @@ exports.list = async(req, res) => {
   });
 
 };
+
+exports.subCategoriesOfCourses = async(req, res) => {
+  
+  CourseCategories.subCategoriesOfCourses( (err, data) => {
+    if (err)
+      res.status(500).send({
+        message: "Some error occurred while creating the Course."
+        });
+    else 
+      res.status(200).send({
+        message: "Sub Categories list by category",
+        data:data
+      });
+  });
+}
