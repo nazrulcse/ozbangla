@@ -20,6 +20,12 @@ export class AuthService {
   public logout() {
     this.requestHeader();
   }
+  public getActiveUser() {
+    let auth: any = window.localStorage.getItem('auth');
+    let parse_auth = JSON.parse(auth);
+    let activeUser = parse_auth;
+    return activeUser;
+  }
   public getAuthToken() {
     let auth: any = window.localStorage.getItem('auth');
     let parse_auth = JSON.parse(auth);
