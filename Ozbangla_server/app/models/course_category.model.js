@@ -29,7 +29,7 @@ CourseCategories.list = (result) => {
 
 CourseCategories.subCategoriesOfCourses = (result) => {
 
-  sql.query("SELECT course_sub_categories.id, course_sub_categories.name as sub_category_name, course_categories.name as category_name FROM course_sub_categories LEFT JOIN course_categories ON course_sub_categories.course_category_id = course_categories.id GROUP BY id;", (err, res) => {
+  sql.query("SELECT course_sub_categories.id, course_sub_categories.name as sub_category_name,course_sub_categories.details as sub_category_details, course_categories.name as category_name,course_categories.visibility  FROM course_sub_categories LEFT JOIN course_categories ON course_sub_categories.course_category_id = course_categories.id GROUP BY id;", (err, res) => {
       if (err) {
         result(err, null);
       return;
