@@ -4,47 +4,101 @@
       <div class="col-md-6 form-container">
         <h5 class="text-center mb-3">Login To Your Account</h5>
         <div class="d-flex-center">
-          <form action="post" (ngSubmit)="login()" class="form">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text input-label-img">
-                  <img
-                    src="../../../assets/images/mail.png"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </span>
+          <form
+            action="post"
+            (ngSubmit)="login(loginFormData)"
+            class="form mt-2"
+            #loginForm="ngForm"
+          >
+            <ng-container *ngIf="error">
+              <div class="alert alert-danger alert-customization" role="alert">
+                <span>{{ error.error.message }}</span>
               </div>
-              <input
-                type="email"
-                name="email"
-                [(ngModel)]="loginFormData.email"
-                class="form-control input"
-                placeholder="Email"
-                aria-label="email"
-                aria-describedby="email"
-              />
+            </ng-container>
+            <div class="mb-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text input-label-img">
+                    <img
+                      src="../../../assets/images/mail.png"
+                      alt=""
+                      class="img-fluid"
+                    />
+                  </span>
+                </div>
+                <input
+                  type="email"
+                  name="email"
+                  [(ngModel)]="loginFormData.email"
+                  #loginEmail="ngModel"
+                  class="form-control input"
+                  placeholder="Email"
+                  required
+                  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                  [class.is-invalid]="loginEmail.invalid && loginEmail.touched"
+                />
+              </div>
+              <div
+                *ngIf="
+                  (loginEmail.invalid && loginEmail.touched) || loginEmail.dirty
+                "
+              >
+                <small
+                  *ngIf="loginEmail.errors?.['required']"
+                  class="text-danger"
+                  >Email is required.</small
+                >
+                <small
+                  *ngIf="loginEmail.errors?.['pattern']"
+                  class="text-danger"
+                  >Please provide a valid Email address.</small
+                >
+              </div>
             </div>
 
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text input-label-img">
-                  <img
-                    src="../../../assets//images/lock.png"
-                    alt="lock"
-                    class="img-fluid"
-                  />
-                </span>
+            <div class="mb-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text input-label-img">
+                    <img
+                      src="../../../assets//images/lock.png"
+                      alt="lock"
+                      class="img-fluid"
+                    />
+                  </span>
+                </div>
+                <input
+                  type="password"
+                  name="password"
+                  [(ngModel)]="loginFormData.password"
+                  #loginPassword="ngModel"
+                  class="form-control input"
+                  placeholder="Password"
+                  required
+                  minlength="6"
+                  maxlength="40"
+                  [class.is-invalid]="
+                    loginPassword.invalid && loginPassword.touched
+                  "
+                />
               </div>
-              <input
-                type="password"
-                name="password"
-                [(ngModel)]="loginFormData.password"
-                class="form-control input"
-                placeholder="Password"
-                aria-label="password"
-                aria-describedby="password"
-              />
+              <div
+                *ngIf="
+                  (loginPassword.invalid && loginPassword.touched) ||
+                  loginPassword.dirty
+                "
+              >
+                <small
+                  *ngIf="loginPassword.errors?.['required']"
+                  class="text-danger"
+                  >Password is required.</small
+                >
+                <small
+                  *ngIf="loginPassword.errors?.['minlength']"
+                  class="text-danger"
+                  >Password must be at least 6 characters.</small
+                >
+              </div>
             </div>
 
             <div
@@ -72,11 +126,20 @@
               </div>
             </div>
 
-            <input type="submit" value="Login" class="input form-control" />
-            <p class="py-3 sign-up-link">No Account?  <a routerLink="/registration">Sign Up</a> </p>
+            <input
+              type="submit"
+              value="Login"
+              class="input form-control"
+              [disabled]="loginForm.form.invalid"
+              [ngClass]="
+                loginForm.form.invalid ? 'cursor-disable' : 'cursor-pointer'
+              "
+            />
+            <p class="py-3 sign-up-link">
+              No Account? <a routerLink="/registration">Sign Up</a>
+            </p>
           </form>
         </div>
-
       </div>
     </div>
   </div>

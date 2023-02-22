@@ -1,274 +1,221 @@
 {
-	"info": {
-		"_postman_id": "80c6d155-47f2-4fc5-a555-3eda14da1a76",
-		"name": "Ozbangla Project backend",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "course-category",
-			"item": [
-				{
-					"name": "course-category create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc2MjYzNTg2LCJleHAiOjE2NzYzNDk5ODZ9.J2wkEzqW37dg7kWdIlcUWxS9hmgTVNGg8MYLAKYP63g",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\":\"Web development\",\n    \"category_url\":\"/web-courses\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:6000/api/course-category",
-							"host": [
-								"localhost"
-							],
-							"port": "6000",
-							"path": [
-								"api",
-								"course-category"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course-category list",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDMyODQ4LCJleHAiOjE2NTA1MTkyNDh9.hn0cBEkKlgsDcnJT9yGqg3m-P41XR5w7YTbrOQwlyqM",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "localhost:8080/api/floor",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"floor"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course-category details",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDMyODQ4LCJleHAiOjE2NTA1MTkyNDh9.hn0cBEkKlgsDcnJT9yGqg3m-P41XR5w7YTbrOQwlyqM",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:8080/api/floor/6",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"floor",
-								"6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course-category update",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDMyODQ4LCJleHAiOjE2NTA1MTkyNDh9.hn0cBEkKlgsDcnJT9yGqg3m-P41XR5w7YTbrOQwlyqM",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:8080/api/floor/delete/6",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"floor",
-								"delete",
-								"6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course-category delete",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDM3MDE2LCJleHAiOjE2NTA1MjM0MTZ9.DtNHDeOXls6vWpbKdnBxvR7d6S26WqRGHd1sq2Q37D4",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:8080/api/floor/delete/7",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"api",
-								"floor",
-								"delete",
-								"7"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Course",
-			"item": [
-				{
-					"name": "course-create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTY3NjUzMDc3NiwiZXhwIjoxNjc2NjE3MTc2fQ.d38Klv0eViLjsUBSJRl3nPX_bu51s2ZA18mS-kmvZAo",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"user_id\":1,\n    \"course_category_id\":1,\n    \"title\":\"Angular js\",\n    \"description\":\"Angular js description\",\n    \"price\":\"3000\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:6000/api/course",
-							"host": [
-								"localhost"
-							],
-							"port": "6000",
-							"path": [
-								"api",
-								"course"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Course list",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:6000/api/course/list",
-							"host": [
-								"localhost"
-							],
-							"port": "6000",
-							"path": [
-								"api",
-								"course",
-								"list"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Signup",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"username\":\"rahim\",\n    \"name\":\"rahim\",\n    \"gender\":\"Male\",\n    \"email\":\"rahim@gmail.com\",\n    \"password\":\"123456789\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:6000/api/auth/signup",
-					"host": [
-						"localhost"
-					],
-					"port": "6000",
-					"path": [
-						"api",
-						"auth",
-						"signup"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "SignIn",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"email\":\"rahim@gmail.com\",\n    \"password\":\"123456789\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:6000/api/auth/signin",
-					"host": [
-						"localhost"
-					],
-					"port": "6000",
-					"path": [
-						"api",
-						"auth",
-						"signin"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "80c6d155-47f2-4fc5-a555-3eda14da1a76",
+    "name": "Ozbangla Project backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "course-category",
+      "item": [
+        {
+          "name": "course-category create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc2MjYzNTg2LCJleHAiOjE2NzYzNDk5ODZ9.J2wkEzqW37dg7kWdIlcUWxS9hmgTVNGg8MYLAKYP63g",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Web development\",\n    \"category_url\":\"/web-courses\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:6000/api/course-category",
+              "host": ["localhost"],
+              "port": "6000",
+              "path": ["api", "course-category"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "course-category list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDMyODQ4LCJleHAiOjE2NTA1MTkyNDh9.hn0cBEkKlgsDcnJT9yGqg3m-P41XR5w7YTbrOQwlyqM",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "localhost:8080/api/floor",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "floor"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "course-category details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDMyODQ4LCJleHAiOjE2NTA1MTkyNDh9.hn0cBEkKlgsDcnJT9yGqg3m-P41XR5w7YTbrOQwlyqM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "localhost:8080/api/floor/6",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "floor", "6"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "course-category update",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDMyODQ4LCJleHAiOjE2NTA1MTkyNDh9.hn0cBEkKlgsDcnJT9yGqg3m-P41XR5w7YTbrOQwlyqM",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "localhost:8080/api/floor/delete/6",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "floor", "delete", "6"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "course-category delete",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDM3MDE2LCJleHAiOjE2NTA1MjM0MTZ9.DtNHDeOXls6vWpbKdnBxvR7d6S26WqRGHd1sq2Q37D4",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "localhost:8080/api/floor/delete/7",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "floor", "delete", "7"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Course",
+      "item": [
+        {
+          "name": "course-create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTY3NjU1MzQzNiwiZXhwIjoxNjc2NjM5ODM2fQ.5gJKOVXX4bCS7FZuKhkGNHbeDiC8ew6NXPf55-hhS4c",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"user_id\":1,\n    \"course_category_id\":1,\n    \"title\":\"Angular js\",\n    \"description\":\"Angular js description\",\n    \"price\":\"3000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8000/api/course",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Course list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:6000/api/course/list",
+              "host": ["localhost"],
+              "port": "6000",
+              "path": ["api", "course", "list"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Signup",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\":\"asif12043\",\n    \"name\":\"mubin\",\n    \"contact_no\":\"01779263424\",\n    \"gender\":\"Male\",\n    \"email\":\"asif3@gmail.com\",\n    \"password\":\"12345678\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8000/api/auth/signup",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "auth", "signup"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SignIn",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\":\"rahim@gmail.com\",\n    \"password\":\"123456789\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8000/api/auth/signin",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "auth", "signin"]
+        }
+      },
+      "response": []
+    }
+  ]
 }
