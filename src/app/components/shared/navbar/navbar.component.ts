@@ -15,12 +15,7 @@ export class NavbarComponent implements OnInit {
     private router: Router
   ) {}
   public activeUser: any;
-  getCurrentUsername() {
-    this.activeUser = this.authService.getActiveUser();
-  }
-  ngOnInit(): void {
-    this.getCurrentUsername();
-  }
+  ngOnInit(): void { }
 
   openProfleDropDown: boolean = false;
   settingDropDown: boolean = false;
@@ -34,6 +29,7 @@ export class NavbarComponent implements OnInit {
 
   profileDropDownToggle() {
     this.openProfleDropDown = !this.openProfleDropDown;
+    this.activeUser = this.authService.getActiveUser();
   }
   clickProfileButtonOutside(e: Event) {
     this.openProfleDropDown = false;
@@ -61,10 +57,10 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.router.navigate(['login']);
     this.authService.isAuthenticated = false;
     window.localStorage.removeItem('auth');
     this.authService.logout();
+    window.location.href = "/login";
   }
 
   // mobile responsive part

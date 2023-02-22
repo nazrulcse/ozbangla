@@ -1,0 +1,22 @@
+<div class="courses-container">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let course of allCourses">
+        <div class="col-md-4 my-4">
+          <div class="single-course">
+            <img src="../../../assets/images/node.jpg" alt="node" class="course-thumnail img-fluid">
+            <div class="course-description">
+             <h5>{{ course.title }}</h5>
+             <p>{{ course.description }}</p>
+
+              <div class="price-and-others d-flex-between">
+                <p class="price">৳ {{ course.price }}</p>
+                <button class="course-view">View Course</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

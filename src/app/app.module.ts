@@ -38,6 +38,7 @@ import { RoomComponent } from './components/dashboard/chat/room/room.component';
 import { MessagesComponent } from './components/dashboard/messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { CoursesComponent } from './components/courses/courses.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
     PreferencesComponent,
     RoomComponent,
     MessagesComponent,
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,

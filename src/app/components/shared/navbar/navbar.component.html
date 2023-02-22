@@ -47,7 +47,7 @@
             <li><a href="#">Basic Programming</a></li>
             <li><a href="#">Offline Course</a></li>
             <li><a href="#">Collaborative Course</a></li>
-            <li><a href="#">A Level & O Level</a></li>
+            <li routerLink="/courses"><a>All Courses</a></li>
           </div>
         </li>
         <li class="nav-item nav-item-padding">
@@ -152,6 +152,11 @@
             <li (click)="logout()"><a>Logout</a></li>
           </div>
         </button>
+      </div>
+      <div *ngIf="!isAuthenticated()">
+        <a routerLink="/login" class="navigation-links"> LOGIN</a>
+        <span class="mx-1">/</span>
+        <a routerLink="/registration" class="navigation-links"> SIGN UP</a>
       </div>
     </div>
   </div>
