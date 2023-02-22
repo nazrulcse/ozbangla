@@ -27,33 +27,28 @@ export class NavbarComponent implements OnInit {
 
   profileDropDownToggle() {
     this.openProfleDropDown = !this.openProfleDropDown;
-    this.settingDropDown = false;
-    this.showNotification = false;
-    this.showMessages = false;
+  }
+  clickProfileButtonOutside(e: Event) {
+    this.openProfleDropDown = false;
   }
   settingsDropDownToggle() {
     this.settingDropDown = !this.settingDropDown;
-    this.openProfleDropDown = false;
-    this.showNotification = false;
-    this.showMessages = false;
+  }
+  clickSettingsButtonOutside(e: Event) {
+    this.settingDropDown = false;
   }
   showNotifications() {
     this.showNotification = !this.showNotification;
-    this.settingDropDown = false;
-    this.openProfleDropDown = false;
-    this.showMessages = false;
+  }
+  clickNotificationButtonOutside(e: Event) {
+    this.showNotification = false;
   }
   showAllMessages() {
     this.showMessages = true;
-    this.settingDropDown = false;
-    this.openProfleDropDown = false;
-    this.showNotification = false;
   }
-
   chatClose(event: any) {
     this.showMessages = event;
   }
-
   isAuthenticated() {
     return this.authService.isAuthenticated;
   }
