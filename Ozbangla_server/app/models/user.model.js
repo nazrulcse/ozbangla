@@ -61,16 +61,19 @@ const User = function(user) {
         result(null, res);
     });
   };
+  // email ='${data.email}}' OR 
 
-  User.findByEmailOrUserName = (data, result) => {
-    let query = `SELECT * FROM users WHERE email ='${data.email}}' OR username='${data.username}'`
-    sql.query(query, (err, res) => {
-        if (err) {
-          result(err, null);
+  User.findByEmail = async (data, result) => {
+  
+    let query = `SELECT * FROM users WHERE email='${data.email}'`
+    await  sql.query(query,(err,res) =>{
+      if (err) {
+        result(err, null);
         return;
-        }
-        result(null, res);
-    });
+      }
+      
+      result(null, res);
+      });
   };
 
 module.exports = User;

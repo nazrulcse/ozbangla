@@ -3,22 +3,28 @@ const db = require("../models");
 // const User = db.user;
 const User = require('../models/user.model')
 
-checkDuplicateUsernameOrEmail = (req, res, next) => {
+checkDuplicateEmail = async (req, res, next) => {
 
   const signupDate = {
     email: req.body.email,
     username: req.body.username
   }
-  User.findByEmailOrUserName(signupDate, (err, data) => {
-    if(data.length > 0){
+  await User.findByEmail(signupDate, (err, data) => {
+    if (err)
       res.status(500).send({
-        message: "duplicate username or email."
+        message:
+          err.message || "unauthorized."
       });
-      return;
+
+    if(data.length){
+      res.status(500).send({
+        message:"duplicate email"
+      });
+      return 
     }
     next();
   });
-
+  
 };
 
 
@@ -55,7 +61,7 @@ checkRolesExisted = (req, res, next) => {
 };
 
 const verifySignUp = {
-  checkDuplicateUsernameOrEmail: checkDuplicateUsernameOrEmail,
+  checkDuplicateEmail: checkDuplicateEmail,
   checkRolesExisted: checkRolesExisted
 };
 

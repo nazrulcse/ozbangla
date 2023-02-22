@@ -16,4 +16,15 @@ CourseCategories.create = (category, result) => {
     });
 };
 
+CourseCategories.list = (result) => {
+  sql.query("SELECT * FROM course_categories;", (err, res) => {
+      if (err) {
+        result(err, null);
+      return;
+      }
+      console.log("course category list : ", res);
+      result(null, res);
+  });
+};
+
 module.exports = CourseCategories;
