@@ -14,7 +14,11 @@ export class NavbarComponent implements OnInit {
     private authService: AuthService,
     private router: Router
   ) {}
-  ngOnInit(): void {}
+  public activeUser: any;
+  ngOnInit(): void {
+    this.activeUser = this.authService.getActiveUser();
+  }
+
   openProfleDropDown: boolean = false;
   settingDropDown: boolean = false;
   showNotification: boolean = false;

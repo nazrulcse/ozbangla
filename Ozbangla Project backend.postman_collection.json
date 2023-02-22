@@ -230,6 +230,65 @@
 			]
 		},
 		{
+			"name": "course module",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzA1MDYzMywiZXhwIjoxNjc3MTM3MDMzfQ.xa0CXaxYK1lKJv2Row3CcTTeh4EEH9mUukPTFY6EW7s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"level 6  \",\n    \"details\":\"level 6 development details\",\n    \"course_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/course-module",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"course-module"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/course-module/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"course-module",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Signup",
 			"request": {
 				"auth": {
