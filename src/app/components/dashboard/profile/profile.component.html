@@ -2,7 +2,7 @@
   <div class="header d-flex-center">
     <div class="container">
       <div class="username-path">
-        <h1 class="profile-username">MD. Iqbal Ahmed</h1>
+        <h1 class="profile-username">{{ activeUser.username }}</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb d-flex-center">
             <li routerLink="/dashboard" class="breadcrumb-item path">
@@ -41,13 +41,13 @@
         <div class="information-container">
           <h5 class="title">Profile</h5>
           <div class="my-3">
-            <p class="label">First Name</p>
-            <p class="info">Md. Iqbal</p>
+            <p class="label"> Name</p>
+            <p class="info">{{ activeUser.username }}</p>
           </div>
-          <div class="my-3">
+          <!-- <div class="my-3">
             <p class="label">Surname</p>
-            <p class="info">Ahmed</p>
-          </div>
+            <p class="info">{{ activeUser.username }}</p>
+          </div> -->
           <div class="my-3">
             <p class="label">Preferred language</p>
             <p class="info">English</p>
@@ -62,7 +62,7 @@
           </div>
           <div class="my-3">
             <p class="label">Email address</p>
-            <p class="info">iqbalahmed986@gmail.com</p>
+            <p class="info">{{ activeUser.email }}</p>
           </div>
         </div>
         <div class="recent-activity my-4">

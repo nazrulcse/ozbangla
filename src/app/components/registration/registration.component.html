@@ -85,26 +85,17 @@
                   class="form-control input"
                   placeholder="Full Name"
                   #regName="ngModel"
-                  [class.is-invalid]="
-                  regName.invalid && regName.touched
-                  "
+                  [class.is-invalid]="regName.invalid && regName.touched"
                 />
               </div>
 
               <div
-                *ngIf="
-                  (regName.invalid && regName.touched) ||
-                  regName.dirty
-                "
+                *ngIf="(regName.invalid && regName.touched) || regName.dirty"
               >
-                <small
-                  *ngIf="regName.errors?.['required']"
-                  class="text-danger"
+                <small *ngIf="regName.errors?.['required']" class="text-danger"
                   >Full Name is required.</small
                 >
-                <small
-                  *ngIf="regName.errors?.['minlength']"
-                  class="text-danger"
+                <small *ngIf="regName.errors?.['minlength']" class="text-danger"
                   >Full Name should be at least 6 characters.</small
                 >
               </div>
@@ -165,7 +156,7 @@
                   placeholder="Password"
                   required
                   minlength="8"
-                  maxlength="40"
+                  maxlength="20"
                   #regPassword="ngModel"
                   [class.is-invalid]="
                     regPassword.invalid && regPassword.touched
