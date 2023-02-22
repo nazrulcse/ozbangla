@@ -37,6 +37,7 @@ import { PreferencesComponent } from './components/dashboard/preferences/prefere
 import { RoomComponent } from './components/dashboard/chat/room/room.component';
 import { MessagesComponent } from './components/dashboard/messages/messages.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatNativeDateModule,
     FormsModule,
     HttpClientModule,
+    ClickOutsideModule
   ],
   bootstrap: [AppComponent],
 })

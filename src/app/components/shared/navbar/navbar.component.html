@@ -62,7 +62,11 @@
             class="img-fluid"
           />
         </button>
-        <button class="navbar-icons" (click)="showNotifications()">
+        <button
+          class="navbar-icons"
+          (click)="showNotifications()"
+          (clickOutside)="clickNotificationButtonOutside($event)"
+        >
           <img
             src="../../../../assets/images/bell.png"
             class="img-fluid"
@@ -90,7 +94,11 @@
           <app-chat (closeChat)="chatClose($event)"></app-chat>
         </div>
 
-        <button class="navbar-icons" (click)="settingsDropDownToggle()">
+        <button
+          class="navbar-icons"
+          (click)="settingsDropDownToggle()"
+          (clickOutside)="clickSettingsButtonOutside($event)"
+        >
           <img
             src="../../../../assets/images/settings.png"
             alt="settings"
@@ -111,7 +119,11 @@
             <li><a href="">AHOWSP-B1</a></li>
           </div>
         </button>
-        <button class="profile-icons" (click)="profileDropDownToggle()">
+        <button
+          class="profile-icons"
+          (click)="profileDropDownToggle()"
+          (clickOutside)="clickProfileButtonOutside($event)"
+        >
           <img
             src="../../../../assets/images/man.png"
             alt="profile avater"
