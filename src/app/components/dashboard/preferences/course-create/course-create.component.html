@@ -1,0 +1,61 @@
+<div class="create-course-conatiner">
+  <div class="header d-flex-center">
+    <div class="container">
+      <div class="header-title">
+        <h1 class="title">create a new course</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 mx-auto py-5">
+        <form action="" >
+          <div class="row">
+            <div class="col-md-6 my-2">
+             <div>
+              <label for="">Course Title</label>
+              <input type="text" class="form-control input">
+             </div>
+            </div>
+            <div class="col-md-6 my-2">
+              <label for="">Course Price</label>
+              <input type="number" class="form-control input">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 my-2">
+             <div>
+              <label for="">Course Thumbnail</label>
+              <input type="file" class="form-control input">
+             </div>
+            </div>
+            <div class="col-md-6 my-2">
+              <label for="">Course Category</label>
+              <select class="form-select input" (change)="selectCategory($event)">
+                <option selected disabled >Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+            <div class="my-2">
+              <label for="">Course Description</label>
+              <textarea class="form-control input" rows="4"></textarea>
+            </div>
+            <div class="my-2">
+              <input type="submit" class="button bg-blue" value="Create Course">
+            </div>
+          </div>
+
+        </form>
+        <div class="my-2">
+          jjj
+          <ng-container *ngFor="let sub of filterSubCategory">
+            <p>{{ sub.name }}</p>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,5 @@
+import { CourseCreateComponent } from './components/dashboard/preferences/course-create/course-create.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { MessagesComponent } from './components/dashboard/messages/messages.component';
 import { PreferencesComponent } from './components/dashboard/preferences/preferences.component';
@@ -26,42 +28,55 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'courses',
     component: CoursesComponent,
- 
   },
   {
     path: 'dashboard/course_details/:id',
     component: CourseDetailsComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
-    path:  'messages',
+    path: 'messages',
     component: MessagesComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'grade',
     component: GradesComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'preferences',
     component: PreferencesComponent,
-    canActivate: [AuthGuard]
-  }
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'preferences/course-create',
+    component: CourseCreateComponent
+   },
+  {
+    path: '404',
+    component: NotFoundComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '/404',
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
