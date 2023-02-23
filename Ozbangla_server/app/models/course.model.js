@@ -16,7 +16,6 @@ Course.create = (newCourse, result) => {
           result(err, null);
         return;
         }
-        console.log("created course: ", { id: res.insertId, ...newCourse });
         result(null, { id: res.insertId, ...newCourse });
     });
 };
