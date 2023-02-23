@@ -1,3 +1,4 @@
+import { CoursesComponent } from './components/courses/courses.component';
 import { MessagesComponent } from './components/dashboard/messages/messages.component';
 import { PreferencesComponent } from './components/dashboard/preferences/preferences.component';
 import { GradesComponent } from './components/dashboard/grades/grades.component';
@@ -33,6 +34,11 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'courses',
+    component: CoursesComponent,
+ 
+  },
+  {
     path: 'dashboard/course_details/:id',
     component: CourseDetailsComponent,
     canActivate: [AuthGuard]
@@ -55,7 +61,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

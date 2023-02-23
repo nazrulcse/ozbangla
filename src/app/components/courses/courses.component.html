@@ -1,0 +1,36 @@
+<div class="courses-container">
+  <div class="header d-flex-center">
+    <div class="all-courses-header">
+      <h1 class="title">LEARN FROM ANYWHERE</h1>
+      <p class="description-text">
+        Technology is bringing a massive wave of evolution for learning things
+        in different ways.
+      </p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <h4 class="d-flex-center pt-5 my-3 all-courses-title">Browse Our Top Course</h4>
+      <ng-container *ngFor="let course of allCourses">
+        <div class="col-md-4 my-4">
+          <div class="single-course">
+            <img
+              src="../../../assets/images/python.jpg"
+              alt="node"
+              class="course-thumnail img-fluid"
+            />
+            <div class="course-description">
+              <h5>{{ course.title }}</h5>
+              <p>{{ course.description }}</p>
+
+              <div class="price-and-others d-flex-between">
+                <p class="price">৳ {{ course.price }}</p>
+                <button class="course-view">View Course</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,9 @@ import { Base } from './base';
 })
 export class AuthService {
   isAuthenticated = false;
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {
+    this.isAuthenticated = this.getAuthToken() != ''
+  }
   apiUrl = Base.apiUrl;
 
   public userLogin(data: any): Observable<any> {

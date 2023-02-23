@@ -14,7 +14,9 @@ export class NavbarComponent implements OnInit {
     private authService: AuthService,
     private router: Router
   ) {}
+
   ngOnInit(): void {}
+
   openProfleDropDown: boolean = false;
   settingDropDown: boolean = false;
   showNotification: boolean = false;
@@ -54,10 +56,10 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.router.navigate(['login']);
     this.authService.isAuthenticated = false;
     window.localStorage.removeItem('auth');
     this.authService.logout();
+    window.location.href = '/login';
   }
 
   // mobile responsive part

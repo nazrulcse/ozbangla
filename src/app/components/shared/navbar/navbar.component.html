@@ -47,7 +47,7 @@
             <li><a href="#">Basic Programming</a></li>
             <li><a href="#">Offline Course</a></li>
             <li><a href="#">Collaborative Course</a></li>
-            <li><a href="#">A Level & O Level</a></li>
+            <li routerLink="/courses"><a>All Courses</a></li>
           </div>
         </li>
         <li class="nav-item nav-item-padding">
@@ -57,7 +57,7 @@
       <div class="d-flex align-items-center" *ngIf="isAuthenticated()">
         <button class="navbar-icons" (click)="openVerticallyCentered(content)">
           <img
-            src="../../../../assets/images/search.png"
+            src="/assets/images/search.png"
             alt="search"
             class="img-fluid"
           />
@@ -68,7 +68,7 @@
           (clickOutside)="clickNotificationButtonOutside($event)"
         >
           <img
-            src="../../../../assets/images/bell.png"
+            src="/assets/images/bell.png"
             class="img-fluid"
             alt="notification-bell"
           />
@@ -144,6 +144,11 @@
             <li (click)="logout()"><a>Logout</a></li>
           </div>
         </button>
+      </div>
+      <div *ngIf="!isAuthenticated()">
+        <a routerLink="/login" class="navigation-links"> LOGIN</a>
+        <span class="mx-1">/</span>
+        <a routerLink="/registration" class="navigation-links"> SIGN UP</a>
       </div>
     </div>
   </div>

@@ -101,11 +101,13 @@ p {
   background-color: $custom-blue;
 
   .username-path,
-  .course-path {
+  .course-path,
+  .all-courses-header {
     color: $white;
 
     .profile-username,
-    .course-title {
+    .course-title,
+    .title {
       text-transform: uppercase;
       text-align: center;
     }
@@ -113,6 +115,11 @@ p {
     .path {
       color: $white;
       cursor: pointer;
+    }
+    .description-text {
+      color: $white;
+      font-size: 20px;
+      margin: 10px;
     }
   }
 }
