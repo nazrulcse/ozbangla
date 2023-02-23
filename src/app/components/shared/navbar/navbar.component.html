@@ -57,7 +57,7 @@
       <div class="d-flex align-items-center" *ngIf="isAuthenticated()">
         <button class="navbar-icons" (click)="openVerticallyCentered(content)">
           <img
-            src="../../../../assets/images/search.png"
+            src="/assets/images/search.png"
             alt="search"
             class="img-fluid"
           />
@@ -68,7 +68,7 @@
           (clickOutside)="clickNotificationButtonOutside($event)"
         >
           <img
-            src="../../../../assets/images/bell.png"
+            src="/assets/images/bell.png"
             class="img-fluid"
             alt="notification-bell"
           />
@@ -136,14 +136,6 @@
                 : 'close-dropdown'
             "
           >
-            <li routerLink="/profile">
-              <img
-                src="../../../../assets/images/man.png"
-                alt="profile avater"
-                class="img-fluid profile-img"
-              />
-              <span class="active-user">{{ activeUser.name }}</span>
-            </li>
             <li routerLink="/dashboard"><a>Dashboard</a></li>
             <li routerLink="/profile"><a>Profile</a></li>
             <li routerLink="/grade"><a>Grades</a></li>

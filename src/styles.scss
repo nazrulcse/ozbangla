@@ -13,11 +13,8 @@
 body {
   font-family: "Nunito", sans-serif;
 }
-html {
-  scroll-behavior: smooth;
-}
 
 ::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+  width: 0;
+  background: transparent; 
 }
