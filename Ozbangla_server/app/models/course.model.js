@@ -5,7 +5,9 @@ const Course = function(course) {
     this.description = course.description;
     this.price = course.price;
     this.user_id = course.user_id,
-    this.course_category_id = course.course_category_id
+    this.course_category_id = course.course_category_id,
+    this.thumbnail = course.thumbnail,
+    this.course_url = course.course_url
   };
 
 Course.create = (newCourse, result) => {

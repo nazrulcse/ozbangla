@@ -4,6 +4,7 @@ const userRoute = require('../routes/user.routes')
 const courseCategoryRoute = require('../routes/course-category.router')
 const courseSubCategoryRoute = require('../routes/course-sub-category.router')
 const courseModuleRoute = require('../routes/course-module.router')
+const courseLessonRoute = require('../routes/course-lesson.router')
 const courseRoute = require('../routes/course.router')
 const router = require("express").Router();
 
@@ -22,5 +23,8 @@ module.exports = function(app) {
     app.use('/api/course', courseRoute);
     app.use('/api/course-sub-category', courseSubCategoryRoute);
     app.use('/api/course-module', courseModuleRoute);
+    app.use('/api/course-lesson', courseLessonRoute);
+
+    
 
 }

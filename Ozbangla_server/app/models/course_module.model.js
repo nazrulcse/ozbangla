@@ -6,13 +6,13 @@ const CourseModule = function(CourseModule) {
     this.details = CourseModule.details;
   };
 
-CourseModule.create = (category, result) => {
-    sql.query("INSERT INTO course_modules SET ?", category, (err, res) => {
+CourseModule.create = (course_module, result) => {
+    sql.query("INSERT INTO course_modules SET ?", course_module, (err, res) => {
         if (err) {
           result(err, null);
         return;
         }
-        result(null, { id: res.insertId, ...category });
+        result(null, { id: res.insertId, ...course_module });
     });
 };
 

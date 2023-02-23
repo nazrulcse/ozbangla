@@ -10,7 +10,7 @@ exports.create = async(req, res) => {
         message: "Content can not be empty!"
       });
     }
-    // Create a Course Category
+    // Create a Course sub category
     const courseSubCategory = new CourseSubCategory({
       name: req.body.name,
       course_category_id: req.body.course_category_id,
