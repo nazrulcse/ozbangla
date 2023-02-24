@@ -16,6 +16,7 @@ exports.create = async(req, res) => {
       price: req.body.price,
       user_id: req.body.user_id,
       course_category_id: req.body.course_category_id,
+      course_sub_category_id:req.body.course_sub_category_id,
       thumbnail: '/uploads/courses/'+req.file.filename,
       course_url: req.body.title.replace(/\W+/g, '-')
     });
