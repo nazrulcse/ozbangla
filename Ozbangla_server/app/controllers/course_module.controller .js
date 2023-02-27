@@ -2,6 +2,7 @@ const db = require("../models");
 const config = require("../config/auth.config");
 const CourseModule = require("../models/course_module.model");
 const { getPagination, getPagingData }  = require('../helpers/pagination');
+const courseModuleServices  = require('../service/course_module_services');
 
 
 exports.create = async(req, res) => {
@@ -16,7 +17,7 @@ exports.create = async(req, res) => {
       course_id: req.body.course_id,
       details:req.body.details
     });
-    await CourseModule.create(courseModule, (err, data) => {
+    await courseModuleServices.courseModuleCreate(courseModule, (err, data) => {
         if (err)
             res.status(500).send({
             message:
@@ -35,7 +36,7 @@ exports.create = async(req, res) => {
 
 exports.list = async(req, res) => {
   try {
-    await CourseModule.list( (err, data) => {
+    await courseModuleServices.courseModuleList( (err, data) => {
       if (err)
         res.status(500).send({
           message: "Some error occurred while creating the course module."

@@ -1,6 +1,6 @@
 const { date } = require("joi");
 const Course = require("../models/course.model.js");
-
+const course_services = require('../service/course_services')
 
 exports.create = async(req, res) => {
   try {
@@ -21,7 +21,7 @@ exports.create = async(req, res) => {
       course_url: req.body.title.replace(/\W+/g, '-')
     });
 
-    await Course.create(course, (err, data) => {
+    await course_services.courseCreate(course, (err, data) => {
       if (err){
         res.status(500).send({
           message: "Some error occurred while creating the Course."
@@ -39,14 +39,12 @@ exports.create = async(req, res) => {
       message: "Something error occoured , please check data input correctly"
     });
   }
-   
-
 };
 
 
 exports.list = async(req, res) => {
    try {
-    await Course.list( (err, data) => {
+    await course_services.courseList( (err, data) => {
       if (err){
         res.status(500).send({
           message: "Some error occurred while creating the Course."

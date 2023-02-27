@@ -2,7 +2,7 @@ const db = require("../models");
 const config = require("../config/auth.config");
 const CourseCategories = require("../models/course_category.model");
 const { getPagination, getPagingData }  = require('../helpers/pagination');
-
+const courseCategoryServices  = require('../service/course_category_services');
 
 exports.create = async(req, res) => {
   try {
@@ -16,7 +16,7 @@ exports.create = async(req, res) => {
       category_url: req.body.category_url,
     });
 
-    await CourseCategories.create(courseCategories, (err, data) => {
+    await courseCategoryServices.courseCategoryCreate(courseCategories, (err, data) => {
         if (err)
             res.status(500).send({
             message:
@@ -33,7 +33,7 @@ exports.create = async(req, res) => {
 
 exports.list = async(req, res) => {
   try {
-    await CourseCategories.list( (err, data) => {
+    await courseCategoryServices.courseCategoryList( (err, data) => {
       if (err)
         res.status(500).send({
           message: "Some error occurred while creating the Course."
@@ -53,7 +53,7 @@ exports.list = async(req, res) => {
 
 exports.subCategoriesOfCourses = async(req, res) => {
   try {
-    await CourseCategories.subCategoriesOfCourses( (err, data) => {
+    await courseCategoryServices.courseSubcategoriesOfCourses( (err, data) => {
       if (err)
         res.status(500).send({
           message: "Some error occurred while creating the Course."

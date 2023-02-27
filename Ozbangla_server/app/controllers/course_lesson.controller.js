@@ -2,6 +2,7 @@ const db = require("../models");
 const config = require("../config/auth.config");
 const CourseLesson = require("../models/course_lesson.model");
 const { getPagination, getPagingData }  = require('../helpers/pagination');
+const courseLessonService = require('../service/course_lesson_service')
 
 exports.create = async(req, res) => {
   try {
@@ -20,7 +21,7 @@ exports.create = async(req, res) => {
       thumbnail:'/uploads/course_lessons/'+req.file.filename,
     });
 
-    await CourseLesson.create(courseLesson, (err, data) => {
+    await courseLessonService.courseLessonCreate(courseLesson, (err, data) => {
         if (err)
             res.status(500).send({
             message:
@@ -39,7 +40,7 @@ exports.create = async(req, res) => {
 
 exports.list = async(req, res) => {
   try {
-    await CourseLesson.list( (err, data) => {
+    await courseLessonService.courseLessonList( (err, data) => {
       if (err){
         res.status(500).send({
           message: "Some error occurred while creating the course lesson."

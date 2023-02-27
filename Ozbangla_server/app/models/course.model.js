@@ -1,5 +1,3 @@
-const sql = require("./db.js");
-
 const Course = function(course) {
     this.title = course.title;
     this.description = course.description;
@@ -10,26 +8,5 @@ const Course = function(course) {
     this.thumbnail = course.thumbnail,
     this.course_url = course.course_url
   };
-
-Course.create = (newCourse, result) => {
-    sql.query("INSERT INTO courses SET ?", newCourse, (err, res) => {
-        if (err) {
-          result(err, null);
-        return;
-        }
-        result(null, { id: res.insertId, ...newCourse });
-    });
-};
-
-Course.list = (result) => {
-  sql.query("SELECT * FROM courses;", (err, res) => {
-      if (err) {
-        result(err, null);
-      return;
-      }
-      console.log("course list : ", res);
-      result(null, res);
-  });
-};
 
 module.exports = Course;
