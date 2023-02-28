@@ -5,11 +5,17 @@ const getPagination = (page, size) => {
     return { limit, offset };
 };
 
-const getPagingData = (data, page, limit) => {
-    const { count: totalItems, rows: items } = data;
+const getPagingData = (data, page, limit, totalItem) => {
+    const count = totalItem;
+    const rows = data
     const currentPage = page ? +page : 0;
-    const totalPages = Math.ceil(totalItems / limit);
-    return { totalItems, items, totalPages, currentPage };
+    const totalPages = Math.ceil(totalItem / limit);
+    let paginated_data = {}
+    paginated_data.totalItem = totalItem
+    paginated_data.data = data
+    paginated_data.totalPages = totalPages
+    paginated_data.currentPage = currentPage
+    return { paginated_data };
   };
 
 
