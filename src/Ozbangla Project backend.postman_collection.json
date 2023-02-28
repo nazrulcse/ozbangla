@@ -180,13 +180,44 @@
 						"header": [
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImlhdCI6MTY3Njk2MjM3NSwiZXhwIjoxNjc3MDQ4Nzc1fQ.W1dG68EGtqzRq3f4xDMaMgt1Qy8dibo1ZFc3bCyiEmg",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzE0NzU3MywiZXhwIjoxNjc3MjMzOTczfQ.59DLh3vJ2R5_B3MnjP7oLSyvtB2IbcBv5jM4p4lZdww",
 								"type": "text"
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"user_id\":1,\n    \"course_category_id\":2,\n    \"title\":\"Angular js\",\n    \"description\":\"description\",\n    \"price\":5000\n}",
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "12",
+									"type": "text"
+								},
+								{
+									"key": "course_category_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "angular.js",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "angular.js description",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "3000",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/home/asif/Downloads/IMG_20211120_171223.jpg"
+								}
+							],
 							"options": {
 								"raw": {
 									"language": "json"
@@ -233,7 +264,7 @@
 			"name": "course module",
 			"item": [
 				{
-					"name": "New Request",
+					"name": "course module create",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -267,7 +298,7 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "course module list",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -289,6 +320,91 @@
 			]
 		},
 		{
+			"name": "Course lesson",
+			"item": [
+				{
+					"name": "lesson create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzEyODUxNiwiZXhwIjoxNjc3MjE0OTE2fQ.CUpLaq5e6DkG5Y8nApfPoe1Um-zDu_L-Lm80712LpZk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "course_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "course_module_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "something",
+									"type": "text"
+								},
+								{
+									"key": "details",
+									"value": "details ",
+									"type": "text"
+								},
+								{
+									"key": "url",
+									"value": "https://www.youtube.com/watch?v=vQ_Lxlo7V0g",
+									"type": "text"
+								},
+								{
+									"key": "thumbnail",
+									"type": "file",
+									"src": "/home/asif/Desktop/2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/course-lesson",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"course-lesson"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "course lesson list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/course-lesson/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"course-lesson",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Signup",
 			"request": {
 				"auth": {
@@ -298,7 +414,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\":\"asif80\",\n    \"name\":\"asif1\",\n    \"contact_no\":\"01779263424\",\n    \"gender\":\"Male\",\n    \"email\":\"asif5@gmail.com\",\n    \"password\":\"12345678\"\n}",
+					"raw": "{\n    \"username\":\"asif80\",\n    \"name\":\"asif1\",\n    \"contact_no\":\"01779263424\",\n    \"gender\":\"Male\",\n    \"email\":\"asif99@gmail.com\",\n    \"password\":\"12345678\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -324,7 +440,14 @@
 			"name": "SignIn",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n    \"email\":\"asif@gmail.com\",\n    \"password\":\"12345678\"\n}",

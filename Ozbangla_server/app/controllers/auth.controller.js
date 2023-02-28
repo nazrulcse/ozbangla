@@ -72,11 +72,14 @@ exports.signin = (req, res) => {
           expiresIn: 86400 // 24 hours
         });
 
+        var isAdmin = data[0].role ? true : false;
+
         res.status(200).send({
           id: data[0].id,
           name: data[0].name,
           email: data[0].email,
-          accessToken: token
+          accessToken: token,
+          isAdmin
         });
     }
     });
