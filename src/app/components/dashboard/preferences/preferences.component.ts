@@ -39,16 +39,16 @@ export class PreferencesComponent implements OnInit {
   ];
   public badgesPreferences = [
     {
-      label: 'Manage badges',
-      route: '/manage-badges'
+      label: 'Create New Course',
+      route: '/preferences/course-create'
     },
     {
-      label: 'Badge preferences',
-      route: '/badge-preferences'
+      label: 'Manage Courses',
+      route: '/manage-course'
     },
     {
-      label: 'Backpack settings',
-      route: '/backpack-settings'
+      label: 'Course Settings',
+      route: '/courses-settings'
     }
   ];
   public blogPreferences = [

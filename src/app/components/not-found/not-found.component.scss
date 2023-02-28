@@ -1,0 +1,17 @@
+@import "../../app.component.scss";
+.not-found-text {
+  height: 80vh;
+}
+.four-o-four {
+  font-size: 100px;
+  font-weight: 700;
+}
+.nothing {
+  text-transform: capitalize;
+}
+
+.button-green {
+  border: 0;
+  background-color: $custom-green;
+  color: $white;
+}

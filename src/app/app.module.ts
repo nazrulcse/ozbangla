@@ -39,6 +39,11 @@ import { MessagesComponent } from './components/dashboard/messages/messages.comp
 import { HttpClientModule } from '@angular/common/http';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { CoursesComponent } from './components/courses/courses.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { CourseCreateComponent } from './components/dashboard/preferences/course-create/course-create.component';
+import { MatInputModule } from '@angular/material/input';
+
+
 
 @NgModule({
   declarations: [
@@ -69,6 +74,8 @@ import { CoursesComponent } from './components/courses/courses.component';
     RoomComponent,
     MessagesComponent,
     CoursesComponent,
+    NotFoundComponent,
+    CourseCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +89,8 @@ import { CoursesComponent } from './components/courses/courses.component';
     MatNativeDateModule,
     FormsModule,
     HttpClientModule,
-    ClickOutsideModule
+    ClickOutsideModule,
+    MatInputModule
   ],
   bootstrap: [AppComponent],
 })
