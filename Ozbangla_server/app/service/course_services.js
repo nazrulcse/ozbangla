@@ -15,7 +15,6 @@ const courseCreate = async(newCourse, result) => {
 const courseList = async(query, result) => {
     const { page ,size } = query;
     let {limit , offset } = getPagination(page,size)
-
     await sql.query(`SELECT * FROM courses LIMIT ${limit} OFFSET ${offset};`, async(err, res) => {
         if (err) {
           result(err, null);
@@ -30,7 +29,7 @@ const courseList = async(query, result) => {
             const { paginated_data } = getPagingData(res, page, limit, res_count[0].total);
             result(null, paginated_data );
         });
-  });  
+    });  
 };
 
 

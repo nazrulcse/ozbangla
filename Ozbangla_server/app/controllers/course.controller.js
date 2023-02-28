@@ -52,10 +52,11 @@ exports.list = async(req, res) => {
           message: "Some error occurred while creating the Course."
           });
       }else{
-        let results = paginated_data.data.map(course => ({...course, thumbnail_url: req.headers.host+course.thumbnail }))
+        let data = paginated_data.data.map(course => ({...course, thumbnail_url: req.headers.host+course.thumbnail }))
+        paginated_data.data = data
         res.status(200).send({
           message: "Course list",
-          data:results
+          data:paginated_data
         });
       }
     });
