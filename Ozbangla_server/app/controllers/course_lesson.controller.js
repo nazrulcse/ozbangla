@@ -11,13 +11,15 @@ exports.create = async(req, res) => {
         message: "Content can not be empty!"
       });
     }
-    
+
+    console.log("requestbody: ", req.body)
+
     const courseLesson = new CourseLesson({
-      course_id: req.body.course_id,
-      course_module_id: req.body.course_module_id,
-      name: req.body.name,
-      details:req.body.details,
-      url:req.body.url,
+      course_id: req.body.data.course_id,
+      course_module_id: req.data.body.course_module_id,
+      name: req.body.data.name,
+      details:req.body.data.details,
+      url:req.body.data.url,
       thumbnail:'/uploads/course_lessons/'+req.file.filename,
     });
 
@@ -45,7 +47,7 @@ exports.list = async(req, res) => {
         res.status(500).send({
           message: "Some error occurred while creating the course lesson."
           });
-      }else{ 
+      }else{
         let results = data.map(lesson => ({...lesson, thumbnail_url: req.headers.host+lesson.thumbnail }))
         res.status(200).send({
           message: "Course lesson list",

@@ -13,8 +13,8 @@ export class AllCoursesService {
   public getAllCourses(): Observable<any> {
     return this.http.get(this.apiUrl + '/course/list');
   }
-  public createNewCourse(course: any) {
-    return this.http.post<any>(this.apiUrl + '/course', course, {
+  public createNewCourse(data: any) {
+    return this.http.post<any>(this.apiUrl + '/course', data, {
       headers: Base.requestHeader(),
     });
   }
