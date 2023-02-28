@@ -1,6 +1,7 @@
 const { date } = require("joi");
 const Course = require("../models/course.model.js");
 const course_services = require('../service/course_services')
+const { getPagination, getPagingData }  = require('../helpers/pagination');
 
 exports.create = async(req, res) => {
   try {
@@ -44,16 +45,18 @@ exports.create = async(req, res) => {
 
 exports.list = async(req, res) => {
    try {
-    await course_services.courseList( (err, data) => {
+
+    await course_services.courseList(req.query ,(err, paginated_data)=> {
       if (err){
         res.status(500).send({
           message: "Some error occurred while creating the Course."
           });
       }else{
-        let results = data.map(course => ({...course, thumbnail_url: req.headers.host+course.thumbnail }))
+        let data = paginated_data.data.map(course => ({...course, thumbnail_url: req.headers.host+course.thumbnail }))
+        paginated_data.data = data
         res.status(200).send({
           message: "Course list",
-          data:results
+          data:paginated_data
         });
       }
     });
