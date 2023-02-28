@@ -17,8 +17,8 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit(): void {
     this.allCourseService.getAllCourses().subscribe((resp) => {
-      this.allCourses = resp.data;
-      console.log(this.allCourses)
+      this.allCourses = resp.data.data;
+      console.log('resp', this.allCourses)
     });
     this.activeUser = this.authService.getActiveUser();
   }
