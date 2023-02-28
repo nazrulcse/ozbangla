@@ -7,31 +7,40 @@ import { AllCoursesService } from 'src/app/services/all-courses.service';
   styleUrls: ['./course-create.component.scss'],
 })
 export class CourseCreateComponent implements OnInit {
-  constructor(private AuthService: AuthService, private AllCoursesService: AllCoursesService) {}
+  constructor(
+    private AuthService: AuthService,
+    private AllCoursesService: AllCoursesService
+  ) {}
 
-  subcategory = [
+  courseCategory = [
     {
       id: 1,
+      course_sub_category_id: 1,
       name: 'php',
     },
     {
       id: 1,
+      course_sub_category_id: 2,
       name: 'java',
     },
     {
       id: 2,
+      course_sub_category_id: 3,
       name: 'javascript',
     },
     {
       id: 2,
+      course_sub_category_id: 4,
       name: 'python',
     },
     {
       id: 3,
+      course_sub_category_id: 5,
       name: 'ruby',
     },
     {
       id: 3,
+      course_sub_category_id: 6,
       name: 'go',
     },
   ];
@@ -40,10 +49,11 @@ export class CourseCreateComponent implements OnInit {
     title: '',
     description: '',
     price: '',
-    course_category_id: '',
+    course_category_id: 0,
     thumbnail: '',
-    user_id: ''
-  }
+    user_id: '',
+    course_sub_category_id: 0,
+  };
 
   filterSubCategory: any = [];
   activeUser: any;
@@ -52,17 +62,19 @@ export class CourseCreateComponent implements OnInit {
     this.createCourseData.user_id = this.activeUser.id;
   }
   selectCategory(e: any) {
-    this.filterSubCategory = this.subcategory.filter((sub) => {
+    this.filterSubCategory = this.courseCategory.filter((sub) => {
+      this.createCourseData.course_category_id = parseInt(e.target.value);
       return sub.id == e.target.value;
     });
-    console.log(this.filterSubCategory);
-    this.filterSubCategory.forEach((element:any) => {
-      console.log(element.name)
-    });
+  }
+  selectSubCategory(e: any) {
+    this.createCourseData.course_sub_category_id = parseInt(e.target.value);
   }
   createCourse() {
-    this.AllCoursesService.createNewCourse(this.createCourseData).subscribe((resp) => {
-      console.log(resp)
-    })
+    this.AllCoursesService.createNewCourse(this.createCourseData).subscribe(
+      (resp) => {
+        console.log(resp);
+      }
+    );
   }
 }

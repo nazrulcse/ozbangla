@@ -63,6 +63,25 @@
               </select>
             </div>
 
+            <div class="col-md-6 my-2">
+              <label for="">Sub Category</label>
+              <select
+                class="form-select input"
+                name="course_sub_category_id"
+                [(ngModel)]="createCourseData.course_sub_category_id"
+                #course_sub_category_id="ngModel"
+                (change)="selectSubCategory($event)"
+              >
+                <option selected disabled>Open this select menu</option>
+                <option
+                  *ngFor="let subcategory of filterSubCategory"
+                  [value]="subcategory.course_sub_category_id"
+                >
+                  {{ subcategory.name }}
+                </option>
+              </select>
+            </div>
+
             <div class="my-2">
               <label for="">Course Description</label>
               <textarea
