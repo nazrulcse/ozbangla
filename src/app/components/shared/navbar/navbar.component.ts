@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { AllCoursesService } from 'src/app/services/all-courses.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +13,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private modalService: NgbModal,
     private authService: AuthService,
+    private allCourseService: AllCoursesService,
     private router: Router
   ) {}
 
@@ -26,6 +28,10 @@ export class NavbarComponent implements OnInit {
   showMoreCourse: boolean = false;
   showProfileDropDownInMobile: boolean = false;
   showSideBar: boolean = false;
+
+  searchCourseData: any = {
+    courseName: ''
+  }
 
   profileDropDownToggle() {
     this.openProfleDropDown = !this.openProfleDropDown;
