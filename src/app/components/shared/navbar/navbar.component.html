@@ -364,8 +364,14 @@
           placeholder="Search Courses..."
           aria-label="Username"
           aria-describedby="basic-addon1"
+          [(ngModel)]="searchCourseData.courseName"
         />
-        <button class="input-group-text search-btn" id="basic-addon1">
+        <button
+          class="input-group-text search-btn"
+          id="basic-addon1"
+          type="submit"
+          data-bs-dismiss="modal"
+        >
           <img
             src="assets/images/search-icon.png"
             alt="search-icon"

@@ -8,13 +8,41 @@
       </p>
     </div>
   </div>
+
   <div class="container">
+    <div class="row d-flex-center">
+      <div class="col-md-6">
+        <div class="search-container">
+          <div class="input-group mt-5">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control input"
+                placeholder="Search Courses..."
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                [(ngModel)]="searchCourseData.courseName"
+              />
+              <button
+                (click)="searchCourse()"
+                class="input-group-text search-btn button-green"
+                id="basic-addon1"
+                type="submit"
+                data-bs-dismiss="modal"
+              >
+                SEARCH
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row">
-      <h4 class="d-flex-center pt-5 my-3 all-courses-title">
+      <h4 class="d-flex-center pt-3 my-3 all-courses-title">
         Browse Our Top Course
       </h4>
       <ng-container *ngFor="let course of allCourses">
-        <div class="col-md-4 my-4">
+        <div class="col-lg-4 col-md-6 col-sm-12 my-4">
           <div class="single-course">
             <img
               [src]="'http://' + course.thumbnail_url"
@@ -39,6 +67,31 @@
           </div>
         </div>
       </ng-container>
+      <nav aria-label="Page navigation example mb-3">
+        <ul class="pagination">
+          <li class="page-item pagination-item">
+            <a class="page-link" (click)="paginateToPrevious(currentNumber - 1)"
+              >Previous</a
+            >
+          </li>
+          <ng-container
+            *ngFor="let in of counter(totalPaginationNumber); let i = index"
+          >
+            <li class="page-item">
+              <a
+                class="page-link pagination-item"
+                (click)="getCourseByPagination(i)"
+                >{{ i }}</a
+              >
+            </li>
+          </ng-container>
+          <li class="page-item pagination-item">
+            <a class="page-link" (click)="paginateToNext(currentNumber + 1)"
+              >Next</a
+            >
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </div>

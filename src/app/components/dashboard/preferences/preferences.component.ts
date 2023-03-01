@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-preferences',
@@ -66,9 +67,10 @@ export class PreferencesComponent implements OnInit {
     }
   ];
 
-  constructor() { }
-
+  constructor(private authService: AuthService) { }
+  activeUser: any;
   ngOnInit(): void {
+    this.activeUser = this.authService.getActiveUser();
   }
 
 }
