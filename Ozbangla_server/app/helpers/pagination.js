@@ -15,6 +15,7 @@ const getPagingData = (data, page, limit, totalItem) => {
     paginated_data.data = data
     paginated_data.totalPages = totalPages
     paginated_data.currentPage = currentPage
+    paginated_data.per_page = limit
     return { paginated_data };
   };
 

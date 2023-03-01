@@ -45,7 +45,6 @@ exports.create = async(req, res) => {
 
 exports.list = async(req, res) => {
    try {
-    
     await course_services.courseList(req.query ,(err, paginated_data)=> {
       if (err){
         res.status(500).send({

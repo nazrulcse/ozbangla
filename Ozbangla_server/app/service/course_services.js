@@ -13,15 +13,15 @@ const courseCreate = async(newCourse, result) => {
 };
 
 const courseList = async(query, result) => {
-    const { page ,size } = query;
+    const { page ,size,title } = query;
     let {limit , offset } = getPagination(page,size)
-    await sql.query(`SELECT * FROM courses LIMIT ${limit} OFFSET ${offset};`, async(err, res) => {
+    await sql.query(`SELECT * FROM courses where title LIKE '%${title ? title : ''}%' LIMIT ${limit} OFFSET ${offset};`, async(err, res) => {
         if (err) {
           result(err, null);
         return;
         }
         
-       await sql.query(`SELECT COUNT(*) as total FROM courses`, (err, res_count) => {
+        await sql.query(`SELECT COUNT(*) as total FROM courses where title LIKE '%${title ? title : ''}%'`, (err, res_count) => {
             if (err) {
               result(err, null);
             return;
