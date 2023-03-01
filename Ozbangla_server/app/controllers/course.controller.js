@@ -10,7 +10,7 @@ exports.create = async(req, res) => {
         message: "Content can not be empty!"
       });
     }
-    // Create a Course 
+    // Create a Course
     const course = new Course({
       title: req.body.title,
       description: req.body.description,
@@ -33,7 +33,7 @@ exports.create = async(req, res) => {
           message: "Course created",
           data:results
         });
-      }     
+      }
     });
   } catch (error) {
     res.status(500).send({

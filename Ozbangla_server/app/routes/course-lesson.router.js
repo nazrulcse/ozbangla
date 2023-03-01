@@ -15,9 +15,9 @@ var multParse = multer()
 router.use((req, res, next) => {
   console.log('Time: ', Date.now())
   next()
-}) 
+})
 // multParse.none()
-router.post("/",[authJwt.verifyToken],uploadCourseLessonThumbnailMiddleware,controller.create);
+router.post("/", [authJwt.verifyToken], uploadCourseLessonThumbnailMiddleware, controller.create);
 router.get("/list",  controller.list);
 // router.get("/:id",controller.findOne);
 // router.put("/:id",controller.update);

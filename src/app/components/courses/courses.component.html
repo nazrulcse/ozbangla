@@ -10,20 +10,28 @@
   </div>
   <div class="container">
     <div class="row">
-      <h4 class="d-flex-center pt-5 my-3 all-courses-title">Browse Our Top Course</h4>
+      <h4 class="d-flex-center pt-5 my-3 all-courses-title">
+        Browse Our Top Course
+      </h4>
       <ng-container *ngFor="let course of allCourses">
         <div class="col-md-4 my-4">
           <div class="single-course">
             <img
-              src="/assets/images/python.jpg"
+              [src]="'http://' + course.thumbnail_url"
               alt="node"
-              class="course-thumnail img-fluid"
+              class="course-thumbnail img-fluid"
             />
             <div class="course-description">
               <h5>{{ course.title }}</h5>
-              <p>{{ course.description }}</p>
+              <p>
+                {{
+                  course.description.length > 50
+                    ? (course.description | slice : 0 : 50) + "..."
+                    : course.description
+                }}
+              </p>
 
-              <div class="price-and-others d-flex-between">
+              <div class="price-and-others d-flex-between py-3">
                 <p class="price">৳ {{ course.price }}</p>
                 <button class="course-view">View Course</button>
               </div>

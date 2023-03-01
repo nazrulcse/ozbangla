@@ -107,13 +107,13 @@
 						"header": [
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImlhdCI6MTY3Njk3MzA3NCwiZXhwIjoxNjc3MDU5NDc0fQ.ClHCKGXrh-Zswr4CEOpreNRLspe1ZdDP-oQHzxnV2o0",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"digital marketing\",\n    \"details\":\"digital marketing details\",\n    \"course_category_id\":2\n}",
+							"raw": "{\n    \"name\":\"canva pro  development\",\n    \"details\":\"canva pro development details\",\n    \"course_category_id\":1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -144,9 +144,8 @@
 						"header": [
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDMyODQ4LCJleHAiOjE2NTA1MTkyNDh9.hn0cBEkKlgsDcnJT9yGqg3m-P41XR5w7YTbrOQwlyqM",
-								"type": "text",
-								"disabled": true
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
+								"type": "text"
 							}
 						],
 						"body": {
@@ -180,7 +179,7 @@
 						"header": [
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzE0NzU3MywiZXhwIjoxNjc3MjMzOTczfQ.59DLh3vJ2R5_B3MnjP7oLSyvtB2IbcBv5jM4p4lZdww",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
 								"type": "text"
 							}
 						],
@@ -195,6 +194,11 @@
 								{
 									"key": "course_category_id",
 									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "course_sub_category_id",
+									"value": "3",
 									"type": "text"
 								},
 								{
@@ -240,11 +244,23 @@
 				},
 				{
 					"name": "Course list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "localhost:8000/api/course/list",
+							"raw": "localhost:8000/api/course/list?page=1&size=1",
 							"host": [
 								"localhost"
 							],
@@ -253,6 +269,16 @@
 								"api",
 								"course",
 								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
 							]
 						}
 					},
@@ -270,7 +296,7 @@
 						"header": [
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzA1MDYzMywiZXhwIjoxNjc3MTM3MDMzfQ.xa0CXaxYK1lKJv2Row3CcTTeh4EEH9mUukPTFY6EW7s",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
 								"type": "text"
 							}
 						],
@@ -329,7 +355,7 @@
 						"header": [
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzEyODUxNiwiZXhwIjoxNjc3MjE0OTE2fQ.CUpLaq5e6DkG5Y8nApfPoe1Um-zDu_L-Lm80712LpZk",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
 								"type": "text"
 							}
 						],
@@ -386,7 +412,13 @@
 					"name": "course lesson list",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "localhost:8000/api/course-lesson/list",
 							"host": [

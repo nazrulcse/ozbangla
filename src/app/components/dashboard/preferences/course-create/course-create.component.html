@@ -42,8 +42,8 @@
                   type="file"
                   class="form-control input"
                   name="thumbnail"
-                  [(ngModel)]="createCourseData.thumbnail"
-                  #thumbnail="ngModel"
+                  #thumbnail
+                  (change)="processFile(thumbnail)"
                 />
               </div>
             </div>
@@ -57,13 +57,32 @@
                 #course_category_id="ngModel"
               >
                 <option selected disabled>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="1">Front-End Development</option>
+                <option value="2">Back-End Development</option>
+                <option value="3">Mobile Application</option>
               </select>
             </div>
 
-            <div class="my-2">
+            <div class="col-md-6 my-2">
+              <label for="">Sub Category</label>
+              <select
+                class="form-select input"
+                name="course_sub_category_id"
+                [(ngModel)]="createCourseData.course_sub_category_id"
+                #course_sub_category_id="ngModel"
+                (change)="selectSubCategory($event)"
+              >
+                <option selected disabled>Open this select menu</option>
+                <option
+                  *ngFor="let subcategory of filterSubCategory"
+                  [value]="subcategory.course_sub_category_id"
+                >
+                  {{ subcategory.name }}
+                </option>
+              </select>
+            </div>
+
+            <div class="col-md-6 my-2">
               <label for="">Course Description</label>
               <textarea
                 class="form-control input"
