@@ -48,7 +48,7 @@ exports.list = async(req, res) => {
           message: "Some error occurred while creating the course lesson."
           });
       }else{
-        let results = data.map(lesson => ({...lesson, thumbnail_url: req.headers.host+lesson.thumbnail }))
+        let results = data.map(lesson => ({...lesson, thumbnail_url: req.protocol+'://'+req.headers.host+lesson.thumbnail }))
         res.status(200).send({
           message: "Course lesson list",
           data:results
