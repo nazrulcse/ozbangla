@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AllCoursesService } from 'src/app/services/all-courses.service';
+import { faShoppingBag, faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-course-details-info',
@@ -16,16 +17,16 @@ export class CourseDetailsInfoComponent implements OnInit {
   public selectedCourseUrl: any;
   public allCourse: any;
   public course: any;
-
+  public faShoppingBag = faShoppingBag;
+  public faCartPlus = faCartPlus;
 
   ngOnInit(): void {
     this.selectedCourseUrl = this.route.snapshot.paramMap.get('course_url');
     this.allCourse = this.allCourseService.getAllCourses().subscribe((resp) => {
-
       this.allCourse = resp.data.data;
-      console.log(this.allCourse)
+      console.log(this.allCourse);
       for (let course of this.allCourse) {
-        console.log(this.selectedCourseUrl == course.course_url)
+        console.log(this.selectedCourseUrl == course.course_url);
         if (this.selectedCourseUrl == course.course_url) {
           this.course = course;
           console.log(resp);

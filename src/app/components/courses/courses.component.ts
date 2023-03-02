@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { number } from 'joi';
 import { AllCoursesService } from 'src/app/services/all-courses.service';
 import { AuthService } from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
@@ -64,9 +64,14 @@ export class CoursesComponent implements OnInit {
     this.allCourseService
       .searchCourseByTitle(this.searchCourseData.courseName, this.currentNumber)
       .subscribe((resp) => {
-        console.log(resp)
+        console.log(resp);
         this.totalPaginationNumber = parseInt(resp.data.totalPages);
         this.allCourses = resp.data.data;
       });
+  }
+  keyDownFunction(event: any) {
+    if (event.keyCode === 13) {
+      this.searchCourse();
+    }
   }
 }

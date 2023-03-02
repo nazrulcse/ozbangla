@@ -1,2 +1,126 @@
-<p>course-details-info works!</p>
-{{ course?.title }}
+<div class="course-details-container">
+  <div class="header d-flex-center">
+    <div class="container">
+      <div class="course-path">
+        <h2 class="course-title">{{ course?.title }}</h2>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb d-flex-center">
+            <li routerLink="/" class="breadcrumb-item path">
+              <a>Home</a>
+            </li>
+            <li
+              routerLink="/courses"
+              class="breadcrumb-item path"
+              aria-current="page"
+            >
+              <a>Courses</a>
+            </li>
+            <li class="breadcrumb-item path" aria-current="page">
+              <a>{{ course?.title }}</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="course-details-body py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 my-3">
+          <img
+            [src]="course?.thumbnail_url"
+            alt="thumbnail_url"
+            class="img-fluid course-img"
+          />
+          <h5 class="py-3 course-title">{{ course?.title }}</h5>
+        </div>
+        <div class="col-md-4">
+          <div class="price-button-container my-3">
+            <button class="form-control course-details-button background-green">
+              {{ course?.price }} TK
+            </button>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <div class="buy-now-button-container">
+                <button
+                  class="form-control course-details-button background-cyan button-font"
+                >
+                  BUY NOW
+                  <fa-icon [icon]="faShoppingBag" class="icon"></fa-icon>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="buy-now-button-container">
+                <button
+                  class="form-control course-details-button background-yellow button-font"
+                >
+                  ADD TO CART
+                  <fa-icon [icon]="faCartPlus" class="icon"></fa-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="course-curriculum">
+            <p>Course Curriculum</p>
+          </div>
+          <div class="accordion-container">
+            <ngb-accordion #acc="ngbAccordion">
+              <ngb-panel id="toggle-1" title="Module 01" class="accordion-panel">
+                <ng-container>
+                  <ng-template ngbPanelContent>
+                    <div class="curriculum-info">
+                      Module 01 Content
+                    </div>
+                  </ng-template>
+                </ng-container>
+              </ngb-panel>
+              <ngb-panel id="toggle-2" title="Module 02" class="accordion-panel">
+                <ng-template ngbPanelContent>
+                  <div class="curriculum-info">
+                    Module 02 Content
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="toggle-3" title="Module 03" class="accordion-panel">
+                <ng-template ngbPanelContent class="mx-3">
+                  <div class="curriculum-info">
+                    Module 03 Content
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="toggle-4" title="Module 04" class="accordion-panel">
+                <ng-template ngbPanelContent class="mx-3">
+                  <div class="curriculum-info">
+                    Module 04 Content
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="toggle-5" title="Module 05" class="accordion-panel">
+                <ng-template ngbPanelContent class="mx-3">
+                  <div class="curriculum-info">
+                    Module 05 Content
+                  </div>
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="toggle-6" title="Module 06" class="accordion-panel">
+                <ng-template ngbPanelContent class="mx-3">
+                  <div class="curriculum-info">
+                    Module 06 Content
+                  </div>
+                </ng-template>
+              </ngb-panel><ngb-panel id="toggle-7" title="Module 07" class="accordion-panel">
+                <ng-template ngbPanelContent class="mx-3">
+                  <div class="curriculum-info">
+                    Module 07 Content
+                  </div>
+                </ng-template>
+              </ngb-panel>
+            </ngb-accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

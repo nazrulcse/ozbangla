@@ -1,0 +1,33 @@
+@import "../../../app.component.scss";
+
+.course-details-button {
+  padding: 10px 20px;
+  font-weight: 700;
+  border-radius: 0;
+}
+.button-font {
+  font-size: 13px;
+}
+.icon {
+  margin: 5px;
+}
+.course-curriculum {
+  background-color: $custom-cyan;
+  color: $white;
+  padding: 15px;
+  font-weight: 700;
+}
+.curriculum-info {
+  padding: 0px 23px;
+}
+.accordion-container {
+  height: 475px;
+  overflow: auto;
+}
+.course-img {
+  box-shadow: 0 0 8px $light-gray;
+  width: 100%;
+}
+.course-title {
+  font-weight: 700;
+}

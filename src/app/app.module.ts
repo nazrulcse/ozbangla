@@ -42,7 +42,7 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CourseCreateComponent } from './components/dashboard/preferences/course-create/course-create.component';
 import { MatInputModule } from '@angular/material/input';
-
+import { CourseDetailsInfoComponent } from './components/courses/course-details-info/course-details-info.component';
 
 
 @NgModule({
@@ -76,6 +76,7 @@ import { MatInputModule } from '@angular/material/input';
     CoursesComponent,
     NotFoundComponent,
     CourseCreateComponent,
+    CourseDetailsInfoComponent
   ],
   imports: [
     BrowserModule,
