@@ -43,7 +43,7 @@
         Browse Our Top Course
       </h4>
       <ng-container *ngFor="let course of allCourses">
-        <div class="col-lg-4 col-md-6 col-sm-12 my-4">
+        <div class="col-lg-4 col-md-6 col-sm-12 my-3">
           <div class="single-course" routerLink="{{ course.course_url }}">
             <img
               [src]="course.thumbnail_url"

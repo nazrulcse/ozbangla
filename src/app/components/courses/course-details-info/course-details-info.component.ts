@@ -24,12 +24,9 @@ export class CourseDetailsInfoComponent implements OnInit {
     this.selectedCourseUrl = this.route.snapshot.paramMap.get('course_url');
     this.allCourse = this.allCourseService.getAllCourses().subscribe((resp) => {
       this.allCourse = resp.data.data;
-      console.log(this.allCourse);
       for (let course of this.allCourse) {
-        console.log(this.selectedCourseUrl == course.course_url);
         if (this.selectedCourseUrl == course.course_url) {
           this.course = course;
-          console.log(resp);
         }
       }
     });
