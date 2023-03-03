@@ -14,8 +14,7 @@ export class CourseCreateComponent implements OnInit {
 
   constructor(
     private AuthService: AuthService,
-    private AllCoursesService: AllCoursesService,
-
+    private AllCoursesService: AllCoursesService
   ) {}
 
   courseCategory = [
@@ -64,6 +63,9 @@ export class CourseCreateComponent implements OnInit {
   filterSubCategory: any = [];
   selectedFile: any;
   activeUser: any;
+  success: boolean = false;
+  error: boolean = false;
+
   ngOnInit(): void {
     this.activeUser = this.AuthService.getActiveUser();
     this.createCourseData.user_id = this.activeUser.id;
@@ -83,23 +85,43 @@ export class CourseCreateComponent implements OnInit {
   }
 
   createCourse() {
-    const formData = this.courseCategoryDataToFormData()
+    const formData = this.courseCategoryDataToFormData();
     this.AllCoursesService.createNewCourse(formData).subscribe(
       (resp) => {
-        console.log(resp);
+        this.createCourseData = {
+          title: '',
+          description: '',
+          price: '',
+          course_category_id: 0,
+          thumbnail: File,
+          user_id: '',
+          course_sub_category_id: 0,
+        };
+        this.success = true;
+        this.error = false;
+      },
+      (err) => {
+        this.error = true;
+        this.success = false;
       }
     );
   }
 
   courseCategoryDataToFormData(): FormData {
     var formdata = new FormData();
-    formdata.append("user_id", this.createCourseData.user_id);
-    formdata.append("course_category_id", this.createCourseData.course_category_id.toString());
-    formdata.append("course_sub_category_id", this.createCourseData.course_sub_category_id.toString());
-    formdata.append("title", this.createCourseData.title);
-    formdata.append("description", this.createCourseData.description);
-    formdata.append("price", this.createCourseData.price);
-    formdata.append("thumbnail", this.selectedFile, this.selectedFile.name);
-    return formdata
+    formdata.append('user_id', this.createCourseData.user_id);
+    formdata.append(
+      'course_category_id',
+      this.createCourseData.course_category_id.toString()
+    );
+    formdata.append(
+      'course_sub_category_id',
+      this.createCourseData.course_sub_category_id.toString()
+    );
+    formdata.append('title', this.createCourseData.title);
+    formdata.append('description', this.createCourseData.description);
+    formdata.append('price', this.createCourseData.price);
+    formdata.append('thumbnail', this.selectedFile, this.selectedFile.name);
+    return formdata;
   }
 }

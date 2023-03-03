@@ -32,6 +32,6 @@ export class AllCoursesService {
     );
   }
   public getCourseDetailsBySlug(slug: any): Observable<any> {
-    return this.http.get(this.apiUrl + `/course/details?slug=${slug}`)
+    return this.http.get(this.apiUrl + `/course/details?slug=${slug}`);
   }
 }
