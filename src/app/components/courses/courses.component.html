@@ -22,6 +22,7 @@
                 aria-label="Username"
                 aria-describedby="basic-addon1"
                 [(ngModel)]="searchCourseData.courseName"
+                (keydown)="keyDownFunction($event)"
               />
               <button
                 (click)="searchCourse()"
@@ -42,10 +43,10 @@
         Browse Our Top Course
       </h4>
       <ng-container *ngFor="let course of allCourses">
-        <div class="col-lg-4 col-md-6 col-sm-12 my-4">
-          <div class="single-course">
+        <div class="col-lg-4 col-md-6 col-sm-12 my-3">
+          <div class="single-course" routerLink="{{ course.course_url }}">
             <img
-              [src]="'http://' + course.thumbnail_url"
+              [src]="course.thumbnail_url"
               alt="node"
               class="course-thumbnail img-fluid"
             />
@@ -59,7 +60,7 @@
                 }}
               </p>
 
-              <div class="price-and-others d-flex-between py-3">
+              <div class="price-and-others d-flex-between py-3 ">
                 <p class="price">৳ {{ course.price }}</p>
                 <button class="course-view">View Course</button>
               </div>

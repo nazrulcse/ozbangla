@@ -7,6 +7,7 @@ $custom-cyan: #219ac0;
 $custom-pink: #ed4f84;
 $custom-green: #00a78e;
 $custom-blue: #3449d8;
+$custom-yellow: #efb731;
 $accordion-bg: #edeff7;
 
 a {
@@ -30,6 +31,18 @@ p {
   background: transparent;
 }
 
+@mixin button-background($color) {
+  background-color: $color;
+  color: $white;
+  border: 1px solid transparent;
+  &:hover {
+    border: 1px solid $color;
+    color: $color;
+    background-color: transparent;
+    transition: 0.3s;
+  }
+}
+
 @mixin button-bg($color) {
   border: 1px solid $color;
   color: $color;
@@ -39,6 +52,24 @@ p {
     background-color: $color;
     color: $white;
   }
+}
+.background-green {
+  @include button-background($custom-green);
+}
+.background-red {
+  @include button-background($custom-pink);
+}
+.background-blue {
+  @include button-background($custom-blue);
+}
+.background-cyan {
+  @include button-background($custom-cyan);
+}
+.background-yellow {
+  @include button-background($custom-yellow);
+}
+.bg-cyan {
+  @include button-bg($custom-cyan);
 }
 
 .bg-green {
@@ -53,16 +84,20 @@ p {
   @include button-bg($custom-blue);
 }
 
-.bg-red {
-  background-color: transparent;
-  border: 1px solid $custom-pink;
-  color: $custom-pink;
-
-  &:hover {
-    background-color: $custom-pink;
-    color: $white;
-  }
+.bg-yellow {
+  @include button-bg($custom-yellow);
 }
+
+// .bg-red {
+//   background-color: transparent;
+//   border: 1px solid $custom-pink;
+//   color: $custom-pink;
+
+//   &:hover {
+//     background-color: $custom-pink;
+//     color: $white;
+//   }
+// }
 
 .d-flex-between {
   display: flex;

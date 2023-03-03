@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CourseDetailsInfoComponent } from './components/courses/course-details-info/course-details-info.component';
 import { AuthGuard } from './guard/auth.guard';
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'courses',
     component: CoursesComponent,
+  },
+  {
+    path: 'courses/:course_url',
+    component: CourseDetailsInfoComponent,
   },
   {
     path: 'dashboard/course_details/:id',
