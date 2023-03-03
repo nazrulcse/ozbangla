@@ -1,7 +1,6 @@
 const { date } = require("joi");
 const Course = require("../models/course.model.js");
 const course_services = require('../service/course_services')
-const { getPagination, getPagingData }  = require('../helpers/pagination');
 
 exports.create = async(req, res) => {
   try {
@@ -65,3 +64,20 @@ exports.list = async(req, res) => {
       });
    }
 };
+
+exports.courseDetails =async(req, res) =>{
+  
+    await course_services.courseDetails(req.query,(err, results)=>{
+      if (err){
+        res.status(500).send({
+          message: "Some error occurred while getting course details."
+          });
+      }else{
+        res.status(200).send({
+          message: "Course details",
+          result:results[0]
+        });
+      }
+    })
+ 
+}

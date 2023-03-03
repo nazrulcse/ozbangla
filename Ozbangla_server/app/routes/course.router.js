@@ -13,7 +13,7 @@ router.use((req, res, next) => {
 
 router.post("/", [authJwt.verifyToken,authJwt.isAdmin], uploadCourseThumbnailMiddleware, controller.create);
 router.get("/list",  controller.list);
-// router.get("/:id",controller.findOne);
+router.get("/details",controller.courseDetails);
 // router.put("/:id",controller.update);
 // router.delete("/:id",controller.delete);
 
