@@ -22,13 +22,9 @@ export class CourseDetailsInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.selectedCourseUrl = this.route.snapshot.paramMap.get('course_url');
-    this.allCourse = this.allCourseService.getAllCourses().subscribe((resp) => {
-      this.allCourse = resp.data.data;
-      for (let course of this.allCourse) {
-        if (this.selectedCourseUrl == course.course_url) {
-          this.course = course;
-        }
-      }
-    });
+    this.allCourseService.getCourseDetailsBySlug(this.selectedCourseUrl).subscribe((resp) => {
+      console.log(resp.result)
+      this.course = resp.result;
+    })
   }
 }
