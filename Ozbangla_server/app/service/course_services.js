@@ -2,7 +2,6 @@ const sql = require("../models/db");
 const { getPagination, getPagingData }  = require('../helpers/pagination');
 
 const courseCreate = async(newCourse, result) => {
-    
     await sql.query("INSERT INTO courses SET ?", newCourse, (err, res) => {
         if (err) {
           result(err, null);
@@ -32,9 +31,21 @@ const courseList = async(query, result) => {
     });  
 };
 
+const courseDetails = async(data,result) => {
+  const { slug,id } = data; 
+  let query = slug ? `SELECT * FROM courses where course_url='${slug}';` : `SELECT * FROM courses where id='${id}';`
+  await sql.query(query, (err, res) => {
+     if (err) {
+       result(err, null);
+     return;
+     }
+     result(null, res);
+ });
+};
 
 module.exports = {
     courseCreate,
-    courseList
+    courseList,
+    courseDetails
 };
   
