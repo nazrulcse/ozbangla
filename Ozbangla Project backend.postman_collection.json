@@ -1,508 +1,468 @@
 {
-	"info": {
-		"_postman_id": "80c6d155-47f2-4fc5-a555-3eda14da1a76",
-		"name": "Ozbangla Project backend",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "course-category",
-			"item": [
-				{
-					"name": "course-category create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3Njk1NTY0OSwiZXhwIjoxNjc3MDQyMDQ5fQ.Gq5d80E0rOAVuj8bzMXjBFIraZ15eQcXr2pF7A2ixLI",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\":\"Graphics\",\n    \"category_url\":\"/graphics\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8000/api/course-category",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course-category"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course-category list",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDMyODQ4LCJleHAiOjE2NTA1MTkyNDh9.hn0cBEkKlgsDcnJT9yGqg3m-P41XR5w7YTbrOQwlyqM",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "localhost:8000/api/course-category/list",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course-category",
-								"list"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course-category with related sub category",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzA0MzA2MCwiZXhwIjoxNjc3MTI5NDYwfQ.seH_e8OVo-bEdYUll2RBRaOLzAtxHq1zQR9e_PlBeHw",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:8000/api/course-category/sub-category-list",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course-category",
-								"sub-category-list"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "course-sub-category",
-			"item": [
-				{
-					"name": "course-sub-category create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\":\"canva pro  development\",\n    \"details\":\"canva pro development details\",\n    \"course_category_id\":1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8000/api/course-sub-category",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course-sub-category"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course-sub-category list",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": []
-						},
-						"url": {
-							"raw": "localhost:8000/api/course-sub-category/list",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course-sub-category",
-								"list"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Course",
-			"item": [
-				{
-					"name": "course-create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "user_id",
-									"value": "12",
-									"type": "text"
-								},
-								{
-									"key": "course_category_id",
-									"value": "1",
-									"type": "text"
-								},
-								{
-									"key": "course_sub_category_id",
-									"value": "3",
-									"type": "text"
-								},
-								{
-									"key": "title",
-									"value": "angular.js",
-									"type": "text"
-								},
-								{
-									"key": "description",
-									"value": "angular.js description",
-									"type": "text"
-								},
-								{
-									"key": "price",
-									"value": "3000",
-									"type": "text"
-								},
-								{
-									"key": "thumbnail",
-									"type": "file",
-									"src": "/home/asif/Downloads/IMG_20211120_171223.jpg"
-								}
-							],
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8000/api/course",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Course list",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8000/api/course/list?page=1&size=1",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course",
-								"list"
-							],
-							"query": [
-								{
-									"key": "page",
-									"value": "1"
-								},
-								{
-									"key": "size",
-									"value": "1"
-								}
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "course module",
-			"item": [
-				{
-					"name": "course module create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"name\":\"level 6  \",\n    \"details\":\"level 6 development details\",\n    \"course_id\": 2\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:8000/api/course-module",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course-module"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course module list",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "localhost:8000/api/course-module/list",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course-module",
-								"list"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Course lesson",
-			"item": [
-				{
-					"name": "lesson create",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "course_id",
-									"value": "2",
-									"type": "text"
-								},
-								{
-									"key": "course_module_id",
-									"value": "2",
-									"type": "text"
-								},
-								{
-									"key": "name",
-									"value": "something",
-									"type": "text"
-								},
-								{
-									"key": "details",
-									"value": "details ",
-									"type": "text"
-								},
-								{
-									"key": "url",
-									"value": "https://www.youtube.com/watch?v=vQ_Lxlo7V0g",
-									"type": "text"
-								},
-								{
-									"key": "thumbnail",
-									"type": "file",
-									"src": "/home/asif/Desktop/2.png"
-								}
-							]
-						},
-						"url": {
-							"raw": "localhost:8000/api/course-lesson",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course-lesson"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "course lesson list",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "localhost:8000/api/course-lesson/list",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"course-lesson",
-								"list"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Signup",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"username\":\"asif80\",\n    \"name\":\"asif1\",\n    \"contact_no\":\"01779263424\",\n    \"gender\":\"Male\",\n    \"email\":\"asif99@gmail.com\",\n    \"password\":\"12345678\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8000/api/auth/signup",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"auth",
-						"signup"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "SignIn",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "",
-						"value": "",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"email\":\"asif@gmail.com\",\n    \"password\":\"12345678\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "localhost:8000/api/auth/signin",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"auth",
-						"signin"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "80c6d155-47f2-4fc5-a555-3eda14da1a76",
+    "name": "Ozbangla Project backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "course-category",
+      "item": [
+        {
+          "name": "course-category create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3Njk1NTY0OSwiZXhwIjoxNjc3MDQyMDQ5fQ.Gq5d80E0rOAVuj8bzMXjBFIraZ15eQcXr2pF7A2ixLI",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"Graphics\",\n    \"category_url\":\"/graphics\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8000/api/course-category",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course-category"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "course-category list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjUwNDMyODQ4LCJleHAiOjE2NTA1MTkyNDh9.hn0cBEkKlgsDcnJT9yGqg3m-P41XR5w7YTbrOQwlyqM",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "localhost:8000/api/course-category/list",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course-category", "list"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "course-category with related sub category",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzA0MzA2MCwiZXhwIjoxNjc3MTI5NDYwfQ.seH_e8OVo-bEdYUll2RBRaOLzAtxHq1zQR9e_PlBeHw",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "localhost:8000/api/course-category/sub-category-list",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course-category", "sub-category-list"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "course-sub-category",
+      "item": [
+        {
+          "name": "course-sub-category create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"canva pro  development\",\n    \"details\":\"canva pro development details\",\n    \"course_category_id\":1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8000/api/course-sub-category",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course-sub-category"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "course-sub-category list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": []
+            },
+            "url": {
+              "raw": "localhost:8000/api/course-sub-category/list",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course-sub-category", "list"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Course",
+      "item": [
+        {
+          "name": "course-create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "user_id",
+                  "value": "12",
+                  "type": "text"
+                },
+                {
+                  "key": "course_category_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "course_sub_category_id",
+                  "value": "3",
+                  "type": "text"
+                },
+                {
+                  "key": "title",
+                  "value": "angular.js",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "angular.js description",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "3000",
+                  "type": "text"
+                },
+                {
+                  "key": "thumbnail",
+                  "type": "file",
+                  "src": "/home/asif/Downloads/IMG_20211120_171223.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "localhost:8000/api/course",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Course list",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8000/api/course/list?page=1&size=9&title=angular",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course", "list"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "size",
+                  "value": "9"
+                },
+                {
+                  "key": "title",
+                  "value": "angular"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "course details by id or slug",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8000/api/course/details?id=143",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course", "details"],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "143"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "course module",
+      "item": [
+        {
+          "name": "course module create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\":\"level 6  \",\n    \"details\":\"level 6 development details\",\n    \"course_id\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8000/api/course-module",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course-module"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "course module list",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8000/api/course-module/list",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course-module", "list"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Course lesson",
+      "item": [
+        {
+          "name": "lesson create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "course_id",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "course_module_id",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "name",
+                  "value": "something",
+                  "type": "text"
+                },
+                {
+                  "key": "details",
+                  "value": "details ",
+                  "type": "text"
+                },
+                {
+                  "key": "url",
+                  "value": "https://www.youtube.com/watch?v=vQ_Lxlo7V0g",
+                  "type": "text"
+                },
+                {
+                  "key": "thumbnail",
+                  "type": "file",
+                  "src": "/home/asif/Desktop/2.png"
+                }
+              ]
+            },
+            "url": {
+              "raw": "localhost:8000/api/course-lesson",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course-lesson"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "course lesson list",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "x-access-token",
+                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImlhdCI6MTY3NzQ3NDg1MywiZXhwIjoxNjc3NTYxMjUzfQ.NUT3akerEtr9_0iK4La_1uYDzMqNhzRkbQUwjjet7jI",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "localhost:8000/api/course-lesson/list",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "course-lesson", "list"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Course Enroltment",
+      "item": [
+        {
+          "name": "New Request",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": null
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Signup",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\":\"asif80\",\n    \"name\":\"asif1\",\n    \"contact_no\":\"01779263424\",\n    \"gender\":\"Male\",\n    \"email\":\"asif99@gmail.com\",\n    \"password\":\"12345678\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8000/api/auth/signup",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "auth", "signup"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SignIn",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\":\"asif@gmail.com\",\n    \"password\":\"12345678\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8000/api/auth/signin",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "auth", "signin"]
+        }
+      },
+      "response": []
+    }
+  ]
 }
