@@ -66,8 +66,8 @@ const routes: Routes = [
   },
   {
     path: 'preferences/course-create',
-    component: CourseCreateComponent
-   },
+    component: CourseCreateComponent,
+  },
   {
     path: '404',
     component: NotFoundComponent,

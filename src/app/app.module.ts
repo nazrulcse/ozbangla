@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -43,7 +42,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CourseCreateComponent } from './components/dashboard/preferences/course-create/course-create.component';
 import { MatInputModule } from '@angular/material/input';
 import { CourseDetailsInfoComponent } from './components/courses/course-details-info/course-details-info.component';
-
 
 @NgModule({
   declarations: [

@@ -31,4 +31,7 @@ export class AllCoursesService {
       this.apiUrl + `/course/list?page=${pageNo}&size=9&title=${title}`
     );
   }
+  public getCourseDetailsBySlug(slug: any): Observable<any> {
+    return this.http.get(this.apiUrl + `/course/details?slug=${slug}`);
+  }
 }
