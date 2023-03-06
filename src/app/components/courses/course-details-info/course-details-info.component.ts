@@ -19,11 +19,17 @@ export class CourseDetailsInfoComponent implements OnInit {
   public course: any;
   public faShoppingBag = faShoppingBag;
   public faCartPlus = faCartPlus;
+  public modules: any;
 
   ngOnInit(): void {
     this.selectedCourseUrl = this.route.snapshot.paramMap.get('course_url');
     this.allCourseService.getCourseDetailsBySlug(this.selectedCourseUrl).subscribe((resp) => {
       this.course = resp.result;
     })
+    this.modules = this.allCourseService.loadCourseModules();
+    console.log(this.modules);
+  }
+  openModule(moduleNo: any) {
+    console.log(`click to module ${moduleNo}`)
   }
 }

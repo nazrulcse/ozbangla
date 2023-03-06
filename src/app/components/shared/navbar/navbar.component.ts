@@ -17,12 +17,13 @@ export class NavbarComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {}
+
 
   openProfleDropDown: boolean = false;
   settingDropDown: boolean = false;
   showNotification: boolean = false;
   showMessages: boolean = false;
+  activeUser: any;
 
   // mobile responsive part toggle
   showMoreCourse: boolean = false;
@@ -31,6 +32,10 @@ export class NavbarComponent implements OnInit {
 
   searchCourseData: any = {
     courseName: ''
+  }
+
+  ngOnInit(): void {
+    this.activeUser = this.authService.getActiveUser();
   }
 
   profileDropDownToggle() {

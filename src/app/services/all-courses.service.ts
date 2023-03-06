@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
+
 export class AllCoursesService {
   accessToken: any;
   public apiUrl = Base.apiUrl;
@@ -31,7 +32,36 @@ export class AllCoursesService {
       this.apiUrl + `/course/list?page=${pageNo}&size=9&title=${title}`
     );
   }
+
   public getCourseDetailsBySlug(slug: any): Observable<any> {
     return this.http.get(this.apiUrl + `/course/details?slug=${slug}`);
+  }
+  public loadCourseModules() {
+    return [
+      {
+        moduleNo: 1,
+        moduleName: 'Chapter 1'
+      },
+      {
+        moduleNo: 2,
+        moduleName: 'Chapter 2'
+      },
+      {
+        moduleNo: 3,
+        moduleName: 'Chapter 3'
+      },
+      {
+        moduleNo: 4,
+        moduleName: 'Chapter 4'
+      },
+      {
+        moduleNo: 5,
+        moduleName: 'Chapter 5'
+      },
+      {
+        moduleNo: 6,
+        moduleName: 'Chapter 6'
+      }
+    ]
   }
 }

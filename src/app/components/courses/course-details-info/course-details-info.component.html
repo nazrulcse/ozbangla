@@ -60,75 +60,26 @@
             </div>
           </div>
           <div class="course-curriculum">
-            <p>Course Curriculum</p>
+            <p>Course Modules</p>
           </div>
           <div class="accordion-container">
-            <ngb-accordion #acc="ngbAccordion">
-              <ngb-panel
-                id="toggle-1"
-                title="Module 01"
-                class="accordion-panel"
-              >
-                <ng-container>
-                  <ng-template ngbPanelContent>
-                    <div class="curriculum-info">Module 01 Content</div>
-                  </ng-template>
-                </ng-container>
-              </ngb-panel>
-              <ngb-panel
-                id="toggle-2"
-                title="Module 02"
-                class="accordion-panel"
-              >
-                <ng-template ngbPanelContent>
-                  <div class="curriculum-info">Module 02 Content</div>
-                </ng-template>
-              </ngb-panel>
-              <ngb-panel
-                id="toggle-3"
-                title="Module 03"
-                class="accordion-panel"
-              >
-                <ng-template ngbPanelContent class="mx-3">
-                  <div class="curriculum-info">Module 03 Content</div>
-                </ng-template>
-              </ngb-panel>
-              <ngb-panel
-                id="toggle-4"
-                title="Module 04"
-                class="accordion-panel"
-              >
-                <ng-template ngbPanelContent class="mx-3">
-                  <div class="curriculum-info">Module 04 Content</div>
-                </ng-template>
-              </ngb-panel>
-              <ngb-panel
-                id="toggle-5"
-                title="Module 05"
-                class="accordion-panel"
-              >
-                <ng-template ngbPanelContent class="mx-3">
-                  <div class="curriculum-info">Module 05 Content</div>
-                </ng-template>
-              </ngb-panel>
-              <ngb-panel
-                id="toggle-6"
-                title="Module 06"
-                class="accordion-panel"
-              >
-                <ng-template ngbPanelContent class="mx-3">
-                  <div class="curriculum-info">Module 06 Content</div>
-                </ng-template> </ngb-panel
-              ><ngb-panel
-                id="toggle-7"
-                title="Module 07"
-                class="accordion-panel"
-              >
-                <ng-template ngbPanelContent class="mx-3">
-                  <div class="curriculum-info">Module 07 Content</div>
-                </ng-template>
-              </ngb-panel>
-            </ngb-accordion>
+            <ng-container *ngFor="let module of modules">
+              <div (click)="openModule(module.moduleNo)">
+                <ngb-accordion #acc="ngbAccordion">
+                  <ngb-panel
+                    [id]="module.moduleNo"
+                    [title]="module.moduleName"
+                    class="accordion-panel"
+                  >
+                    <ng-container>
+                      <ng-template ngbPanelContent>
+                        <div class="curriculum-info">{{ module.moduleName }} Content</div>
+                      </ng-template>
+                    </ng-container>
+                  </ngb-panel>
+                </ngb-accordion>
+              </div>
+            </ng-container>
           </div>
         </div>
       </div>

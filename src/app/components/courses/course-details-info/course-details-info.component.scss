@@ -4,6 +4,10 @@
   padding: 10px 20px;
   font-weight: 700;
   border-radius: 0;
+  &:active,
+  &:focus {
+    box-shadow: none;
+  }
 }
 .button-font {
   font-size: 13px;

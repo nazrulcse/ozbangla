@@ -71,6 +71,7 @@ export class PreferencesComponent implements OnInit {
   activeUser: any;
   ngOnInit(): void {
     this.activeUser = this.authService.getActiveUser();
+    console.log(this.activeUser)
   }
 
 }
