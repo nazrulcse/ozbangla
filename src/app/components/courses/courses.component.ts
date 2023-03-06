@@ -35,7 +35,6 @@ export class CoursesComponent implements OnInit {
 
   getCourseByPagination(num: any) {
     this.currentNumber = num;
-    console.log(this.currentNumber);
     this.allCourseService.getCourseByPaginationNumber(num).subscribe((resp) => {
       this.allCourses = resp.data.data;
     });

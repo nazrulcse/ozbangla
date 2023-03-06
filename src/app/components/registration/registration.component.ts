@@ -24,7 +24,7 @@ export class RegistrationComponent implements OnInit {
   faEnvelope = faEnvelope;
   faLock = faLock;
   error: any;
-  mTimeout: any
+  mTimeout: any;
   showSuccessAlert: any;
   showDangerAlert: any;
 
@@ -51,11 +51,12 @@ export class RegistrationComponent implements OnInit {
 
   registration(registrationFormData: any) {
     this.authService.userRegistration(registrationFormData).subscribe(
-      (response) => {
+      (resp) => {
         this.showSuccessAlert = true;
         this.showDangerAlert = false;
-        this.navigateToLoginComponent(this.router)
-      }, (err: any) => {
+        this.navigateToLoginComponent(this.router);
+      },
+      (err: any) => {
         this.error = err;
         this.showDangerAlert = true;
         this.showSuccessAlert = false;
@@ -65,8 +66,8 @@ export class RegistrationComponent implements OnInit {
 
   navigateToLoginComponent(router: Router) {
     this.mTimeout = setTimeout(() => {
-      clearTimeout(this.mTimeout)
+      clearTimeout(this.mTimeout);
       router.navigate(['login']);
-    }, 1500)
+    }, 1500);
   }
 }
