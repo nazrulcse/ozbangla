@@ -255,98 +255,100 @@
             >TSL HACKATHON</a
           >
         </li>
-        <li
-          class="nav-item nav-item-d-block slider-relative"
-          (click)="showSideBarOptions()"
-        >
-          <a routerLink="login" class="nav-link"
-            >Navigate
-            <i
-              class="mobile-nav-arrow"
-              [ngClass]="showSideBar ? 'arrow-down' : 'arrow-right'"
-            ></i>
-          </a>
-        </li>
-        <ng-container *ngIf="showSideBar">
+        <ng-container *ngIf="isAuthenticated()">
           <li
-            class="mobile-dropdown-list"
-            routerLink="/dashboard"
-            data-bs-dismiss="offcanvas"
+            class="nav-item nav-item-d-block slider-relative"
+            (click)="showSideBarOptions()"
           >
-            <a href="#">Dashboard</a>
-          </li>
-          <li class="mobile-dropdown-list"><a href="#">Site Home</a></li>
-          <li class="mobile-dropdown-list"><a href="#">Calender</a></li>
-          <li class="mobile-dropdown-list"><a href="#">Private Files</a></li>
-          <li class="mobile-dropdown-list"><a href="#">My Courses</a></li>
-          <li class="mobile-dropdown-list"><a href="#">ERP-B1</a></li>
-          <li class="mobile-dropdown-list"><a href="#">AHOWSP-B1</a></li>
-        </ng-container>
-        <li
-          class="nav-item nav-item-d-block slider-relative"
-          (click)="showProfileDropDown()"
-        >
-          <a
-            routerLink="login"
-            class="nav-link d-flex justify-content-between align-items-center"
-          >
-            <div>
-              <span>{{ activeUser?.name }}</span>
-            </div>
-            <div class="profile-btn profile-icons d-flex-center">
-              <img
-                src="assets/images/man.png"
-                alt="profile avater"
-                class="img-fluid img-margin-right"
-              />
+            <a routerLink="login" class="nav-link"
+              >Navigate
               <i
                 class="mobile-nav-arrow"
-                [ngClass]="
-                  showProfileDropDownInMobile ? 'arrow-down' : 'arrow-right'
-                "
+                [ngClass]="showSideBar ? 'arrow-down' : 'arrow-right'"
               ></i>
-            </div>
-          </a>
-        </li>
-        <ng-container *ngIf="showProfileDropDownInMobile">
+            </a>
+          </li>
+          <ng-container *ngIf="showSideBar">
+            <li
+              class="mobile-dropdown-list"
+              routerLink="/dashboard"
+              data-bs-dismiss="offcanvas"
+            >
+              <a href="#">Dashboard</a>
+            </li>
+            <li class="mobile-dropdown-list"><a href="#">Site Home</a></li>
+            <li class="mobile-dropdown-list"><a href="#">Calender</a></li>
+            <li class="mobile-dropdown-list"><a href="#">Private Files</a></li>
+            <li class="mobile-dropdown-list"><a href="#">My Courses</a></li>
+            <li class="mobile-dropdown-list"><a href="#">ERP-B1</a></li>
+            <li class="mobile-dropdown-list"><a href="#">AHOWSP-B1</a></li>
+          </ng-container>
           <li
-            class="mobile-dropdown-list"
-            routerLink="/dashboard"
-            data-bs-dismiss="offcanvas"
+            class="nav-item nav-item-d-block slider-relative"
+            (click)="showProfileDropDown()"
           >
-            <a>Dashboard</a>
+            <a
+              routerLink="login"
+              class="nav-link d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <span>{{ activeUser?.name }}</span>
+              </div>
+              <div class="profile-btn profile-icons d-flex-center">
+                <img
+                  src="assets/images/man.png"
+                  alt="profile avater"
+                  class="img-fluid img-margin-right"
+                />
+                <i
+                  class="mobile-nav-arrow"
+                  [ngClass]="
+                    showProfileDropDownInMobile ? 'arrow-down' : 'arrow-right'
+                  "
+                ></i>
+              </div>
+            </a>
           </li>
-          <li
-            class="mobile-dropdown-list"
-            routerLink="/profile"
-            data-bs-dismiss="offcanvas"
-          >
-            <a>Profile</a>
-          </li>
-          <li
-            class="mobile-dropdown-list"
-            routerLink="/grade"
-            data-bs-dismiss="offcanvas"
-          >
-            <a>Grades</a>
-          </li>
-          <li
-            class="mobile-dropdown-list"
-            routerLink="/messages"
-            data-bs-dismiss="offcanvas"
-          >
-            <a>Messages</a>
-          </li>
-          <li
-            class="mobile-dropdown-list"
-            routerLink="/preferences"
-            data-bs-dismiss="offcanvas"
-          >
-            <a>Preferences</a>
-          </li>
-          <li class="mobile-dropdown-list" (click)="logout()">
-            <a>Log Out</a>
-          </li>
+          <ng-container *ngIf="showProfileDropDownInMobile">
+            <li
+              class="mobile-dropdown-list"
+              routerLink="/dashboard"
+              data-bs-dismiss="offcanvas"
+            >
+              <a>Dashboard</a>
+            </li>
+            <li
+              class="mobile-dropdown-list"
+              routerLink="/profile"
+              data-bs-dismiss="offcanvas"
+            >
+              <a>Profile</a>
+            </li>
+            <li
+              class="mobile-dropdown-list"
+              routerLink="/grade"
+              data-bs-dismiss="offcanvas"
+            >
+              <a>Grades</a>
+            </li>
+            <li
+              class="mobile-dropdown-list"
+              routerLink="/messages"
+              data-bs-dismiss="offcanvas"
+            >
+              <a>Messages</a>
+            </li>
+            <li
+              class="mobile-dropdown-list"
+              routerLink="/preferences"
+              data-bs-dismiss="offcanvas"
+            >
+              <a>Preferences</a>
+            </li>
+            <li class="mobile-dropdown-list" (click)="logout()">
+              <a>Log Out</a>
+            </li>
+          </ng-container>
         </ng-container>
       </div>
     </div>
