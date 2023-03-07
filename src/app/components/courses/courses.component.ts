@@ -51,7 +51,6 @@ export class CoursesComponent implements OnInit {
   }
 
   paginateToNext(nextNumber: any) {
-    console.log(nextNumber);
     this.allCourseService
       .getCourseByPaginationNumber(nextNumber)
       .subscribe((resp) => {
@@ -63,7 +62,6 @@ export class CoursesComponent implements OnInit {
     this.allCourseService
       .searchCourseByTitle(this.searchCourseData.courseName, this.currentNumber)
       .subscribe((resp) => {
-        console.log(resp);
         this.totalPaginationNumber = parseInt(resp.data.totalPages);
         this.allCourses = resp.data.data;
       });

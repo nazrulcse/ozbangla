@@ -17,8 +17,6 @@ export class NavbarComponent implements OnInit {
     private router: Router
   ) {}
 
-
-
   openProfleDropDown: boolean = false;
   settingDropDown: boolean = false;
   showNotification: boolean = false;
@@ -31,34 +29,45 @@ export class NavbarComponent implements OnInit {
   showSideBar: boolean = false;
 
   searchCourseData: any = {
-    courseName: ''
-  }
+    courseName: '',
+  };
 
   ngOnInit(): void {
-    this.activeUser = this.authService.getActiveUser();
+    this.authService.activeLoginUser.subscribe({
+      next: (user) => {
+        this.activeUser = user;
+      },
+    });
   }
 
   profileDropDownToggle() {
     this.openProfleDropDown = !this.openProfleDropDown;
   }
+
   clickProfileButtonOutside(e: Event) {
     this.openProfleDropDown = false;
   }
+
   settingsDropDownToggle() {
     this.settingDropDown = !this.settingDropDown;
   }
+
   clickSettingsButtonOutside(e: Event) {
     this.settingDropDown = false;
   }
+
   showNotifications() {
     this.showNotification = !this.showNotification;
   }
+
   clickNotificationButtonOutside(e: Event) {
     this.showNotification = false;
   }
+
   showAllMessages() {
     this.showMessages = true;
   }
+
   chatClose(event: any) {
     this.showMessages = event;
   }

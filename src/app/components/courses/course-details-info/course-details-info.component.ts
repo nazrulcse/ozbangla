@@ -27,9 +27,6 @@ export class CourseDetailsInfoComponent implements OnInit {
       this.course = resp.result;
     })
     this.modules = this.allCourseService.loadCourseModules();
-    console.log(this.modules);
   }
-  openModule(moduleNo: any) {
-    console.log(`click to module ${moduleNo}`)
-  }
+  openModule(moduleNo: any) {}
 }

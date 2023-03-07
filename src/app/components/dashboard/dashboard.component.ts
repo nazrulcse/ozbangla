@@ -10,6 +10,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private authService: AuthService) { }
   public activeUser: any;
+
   ngOnInit(): void {
     this.activeUser = this.authService.getActiveUser();
   }
