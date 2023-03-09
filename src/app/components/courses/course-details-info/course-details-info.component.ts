@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { AllCoursesService } from 'src/app/services/all-courses.service';
 import { faShoppingBag, faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { DomSanitizer} from '@angular/platform-browser';
+import { any } from 'joi';
 
 @Component({
   selector: 'app-course-details-info',
@@ -24,7 +25,8 @@ export class CourseDetailsInfoComponent implements OnInit {
   public modules: any;
   public activePlayVideo: any;
   public playFirstModuleVideo: any;
-  playFirstVideo = true;
+  public playFirstVideo = true;
+
 
   ngOnInit(): void {
     this.selectedCourseUrl = this.route.snapshot.paramMap.get('course_url');
