@@ -23,8 +23,28 @@
 }
 
 .curriculum-info {
-  padding: 0px 23px;
+  padding: 15px 23px;
+  font-size: 15px;
+  text-transform: capitalize;
   cursor: pointer;
+  width: 100%;
+  transition: 0.2s;
+  display: flex;
+  justify-content: flex-start;
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  border-bottom: 0.1px solid $light-gray;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $custom-cyan;
+    color: $white;
+    .video-lock-icon {
+      color: $white;
+      border: 1px solid $white;
+    }
+  }
 }
 .accordion-container {
   height: 500px;
@@ -35,4 +55,17 @@
 }
 .course-title {
   font-weight: 700;
+}
+.video-lock-icon {
+  color: $custom-cyan;
+  margin-right: 10px;
+  width: 24px;
+  height: 21px;
+  border-radius: 50%;
+  border: 1px solid $custom-cyan;
+  font-size: 12px;
+}
+
+.accordion {
+  --bs-accordion-body-padding-y: 0rem !important;
 }

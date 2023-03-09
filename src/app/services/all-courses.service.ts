@@ -40,32 +40,32 @@ export class AllCoursesService {
     return [
       {
         moduleNo: 1,
-        moduleName: 'Chapter 1',
+        moduleName: 'Build an Angular project from scratch',
         videoLink: 'https://www.youtube.com/embed/k5E2AVpwsko'
       },
       {
         moduleNo: 2,
-        moduleName: 'Chapter 2',
+        moduleName: 'Working with Templates',
         videoLink: 'https://www.youtube.com/embed/0LhBvp8qpro'
       },
       {
         moduleNo: 3,
-        moduleName: 'Chapter 3',
+        moduleName: 'Data binding and forms',
         videoLink: 'https://www.youtube.com/embed/L1pfd9iHaWw'
       },
       {
         moduleNo: 4,
-        moduleName: 'Chapter 4',
+        moduleName: 'Directives and Transclusion',
         videoLink: 'https://www.youtube.com/embed/k5E2AVpwsko'
       },
       {
         moduleNo: 5,
-        moduleName: 'Chapter 5',
+        moduleName: 'Routing and navigation',
         videoLink: 'https://www.youtube.com/embed/0LhBvp8qpro'
       },
       {
         moduleNo: 6,
-        moduleName: 'Chapter 6',
+        moduleName: 'Call REST services',
         videoLink: 'https://www.youtube.com/embed/L1pfd9iHaWw'
       }
     ]
