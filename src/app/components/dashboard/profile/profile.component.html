@@ -2,7 +2,7 @@
   <div class="header d-flex-center">
     <div class="container">
       <div class="username-path">
-        <h1 class="profile-username">{{ activeUser.name }}</h1>
+        <h1 class="profile-username">{{ activeUser?.name }}</h1>
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb d-flex-center">
             <li routerLink="/dashboard" class="breadcrumb-item path">
@@ -42,7 +42,7 @@
           <h5 class="title">Profile</h5>
           <div class="my-3">
             <p class="label"> Name</p>
-            <p class="info">{{ activeUser.name }}</p>
+            <p class="info">{{ activeUser?.name }}</p>
           </div>
           <!-- <div class="my-3">
             <p class="label">Surname</p>

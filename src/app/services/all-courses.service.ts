@@ -40,27 +40,33 @@ export class AllCoursesService {
     return [
       {
         moduleNo: 1,
-        moduleName: 'Chapter 1'
+        moduleName: 'Chapter 1',
+        videoLink: 'https://www.youtube.com/embed/k5E2AVpwsko'
       },
       {
         moduleNo: 2,
-        moduleName: 'Chapter 2'
+        moduleName: 'Chapter 2',
+        videoLink: 'https://www.youtube.com/embed/0LhBvp8qpro'
       },
       {
         moduleNo: 3,
-        moduleName: 'Chapter 3'
+        moduleName: 'Chapter 3',
+        videoLink: 'https://www.youtube.com/embed/L1pfd9iHaWw'
       },
       {
         moduleNo: 4,
-        moduleName: 'Chapter 4'
+        moduleName: 'Chapter 4',
+        videoLink: 'https://www.youtube.com/embed/k5E2AVpwsko'
       },
       {
         moduleNo: 5,
-        moduleName: 'Chapter 5'
+        moduleName: 'Chapter 5',
+        videoLink: 'https://www.youtube.com/embed/0LhBvp8qpro'
       },
       {
         moduleNo: 6,
-        moduleName: 'Chapter 6'
+        moduleName: 'Chapter 6',
+        videoLink: 'https://www.youtube.com/embed/L1pfd9iHaWw'
       }
     ]
   }

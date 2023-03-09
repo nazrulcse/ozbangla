@@ -31,12 +31,15 @@
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/8uIe0qY9qG8"
+              [src]="activePlayVideo"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
+            <!-- <video controls width="100%">
+              <source [src]="activePlayVideo" type="video/mp4"/>
+            </video> -->
           </div>
           <h5 class="py-3 course-title">{{ course?.title }}</h5>
           <p>{{ course?.description }}</p>
@@ -69,11 +72,16 @@
                   <ngb-panel
                     [id]="module.moduleNo"
                     [title]="module.moduleName"
-                    class="accordion-panel"
+                    class="accordion-panel accordion-content"
                   >
                     <ng-container>
                       <ng-template ngbPanelContent>
-                        <div class="curriculum-info">{{ module.moduleName }} Content</div>
+                        <div
+                          class="curriculum-info"
+                          (click)="playVideo(module)"
+                        >
+                          {{ module.moduleName }} Content
+                        </div>
                       </ng-template>
                     </ng-container>
                   </ngb-panel>
