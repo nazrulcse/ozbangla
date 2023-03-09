@@ -23,6 +23,8 @@ export class CourseDetailsInfoComponent implements OnInit {
   public faCartPlus = faCartPlus;
   public modules: any;
   public activePlayVideo: any;
+  public playFirstModuleVideo: any;
+  playFirstVideo = true;
 
   ngOnInit(): void {
     this.selectedCourseUrl = this.route.snapshot.paramMap.get('course_url');
@@ -30,11 +32,10 @@ export class CourseDetailsInfoComponent implements OnInit {
       this.course = resp.result;
     })
     this.modules = this.allCourseService.loadCourseModules();
+    this.playFirstModuleVideo = this.sanitizer.bypassSecurityTrustResourceUrl(this.modules[0].videoLink);
   }
   playVideo(module: any) {
+    this.playFirstVideo = false;
     this.activePlayVideo = this.sanitizer.bypassSecurityTrustResourceUrl(module.videoLink);
-    ;
-    console.log(this.activePlayVideo)
   }
-  openModule(moduleNo: any) {}
 }
