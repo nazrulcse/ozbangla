@@ -27,7 +27,6 @@ export class CourseDetailsInfoComponent implements OnInit {
   public playFirstModuleVideo: any;
   public playFirstVideo = true;
 
-
   ngOnInit(): void {
     this.selectedCourseUrl = this.route.snapshot.paramMap.get('course_url');
     this.allCourseService.getCourseDetailsBySlug(this.selectedCourseUrl).subscribe((resp) => {

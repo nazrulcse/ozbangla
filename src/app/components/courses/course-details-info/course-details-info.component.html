@@ -76,9 +76,9 @@
           <div class="accordion-container">
             <ng-container *ngFor="let module of modules">
               <div>
-                <ngb-accordion #acc="ngbAccordion">
+                <ngb-accordion #acc="ngbAccordion" activeIds="static-1">
                   <ngb-panel
-                    [id]="module.moduleNo"
+                    id="static-{{ module.moduleNo}}"
                     [title]="module.moduleName"
                     class="accordion-panel accordion-content"
                   >
