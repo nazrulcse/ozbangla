@@ -15,6 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CourseDetailsInfoComponent } from './components/courses/course-details-info/course-details-info.component';
 import { AuthGuard } from './guard/auth.guard';
+import { AdminGuard } from './guard/admin.guard';
 
 const routes: Routes = [
   {
@@ -75,7 +76,7 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AdminGuard],
     children: [
       {
         path: 'test',

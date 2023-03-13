@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-test',
@@ -8,17 +6,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./test.component.scss'],
 })
 export class TestComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    let url = window.location.pathname;
-    let admin = this.authService.getActiveUser().isAdmin;
-    console.log(url, admin);
-
-    if (url == '/admin/test' && admin) {
-      this.router.navigate(['admin/test']);
-    } else {
-      this.router.navigate(['404']);
-    }
-  }
+  ngOnInit(): void {}
 }

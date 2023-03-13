@@ -21,17 +21,28 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     const auth = localStorage.getItem('auth');
+
     if (auth) {
+      const activeUser = this.authService.getActiveUser();
+      if (activeUser.isAdmin) {
+        this.router.navigate(['admin']);
+      } else {
+        this.router.navigate(['dashboard']);
+      }
       this.authService.isAuthenticated = true;
-      this.router.navigate(['dashboard']);
     }
   }
 
   login(loginFormData: any) {
     this.authService.userLogin(loginFormData).subscribe(
       (response) => {
+        console.log(response);
         window.localStorage.setItem('auth', JSON.stringify(response));
-        this.router.navigate(['dashboard']);
+        if (response.isAdmin) {
+          this.router.navigate(['admin']);
+        } else {
+          this.router.navigate(['dashboard']);
+        }
         this.authService.isAuthenticated = true;
       },
       (err: any) => {
