@@ -1,60 +1,89 @@
 <div class="col-lg-3 col-md-12 sidebar">
   <div class="my-3">
-    <div class="sidebar-single-option" routerLink="/dashboard">
-      <img
-        src="assets/images/menu.png"
-        alt="menu"
-        class="img-fluid sidebar-img"
-      />
-      <a>Dashboard</a>
+    <div *ngIf="!isAdmin">
+      <div class="sidebar-single-option" routerLink="/dashboard">
+        <img
+          src="assets/images/menu.png"
+          alt="menu"
+          class="img-fluid sidebar-img"
+        />
+        <a>Dashboard</a>
+      </div>
+      <div class="sidebar-single-option">
+        <img
+          src="assets/images/home.png"
+          alt="home"
+          class="img-fluid sidebar-img"
+        />
+        <a href="/">Site Home</a>
+      </div>
+      <div class="sidebar-single-option">
+        <img
+          src="assets/images/calendar.png"
+          alt="calender"
+          class="img-fluid sidebar-img"
+        />
+        <a href="/">Calender</a>
+      </div>
+      <div class="sidebar-single-option">
+        <img
+          src="assets/images/document.png"
+          alt="documents"
+          class="img-fluid sidebar-img"
+        />
+        <a href="/">Private Files</a>
+      </div>
+      <div class="sidebar-single-option">
+        <img
+          src="assets/images/graduation-cap.png"
+          alt="graduation-cap"
+          class="img-fluid sidebar-img"
+        />
+        <a href="/">My Courses</a>
+      </div>
+      <div class="sidebar-single-option">
+        <img
+          src="assets/images/graduation-cap.png"
+          alt="graduation-cap"
+          class="img-fluid sidebar-img"
+        />
+        <a href="/">ERP-B1</a>
+      </div>
+      <div class="sidebar-single-option">
+        <img
+          src="assets/images/graduation-cap.png"
+          alt="graduation-cap"
+          class="img-fluid sidebar-img"
+        />
+        <a href="/">AHOWSP-B1</a>
+      </div>
     </div>
-    <div class="sidebar-single-option">
-      <img
-        src="assets/images/home.png"
-        alt="home"
-        class="img-fluid sidebar-img"
-      />
-      <a href="/">Site Home</a>
-    </div>
-    <div class="sidebar-single-option">
-      <img
-        src="assets/images/calendar.png"
-        alt="calender"
-        class="img-fluid sidebar-img"
-      />
-      <a href="/">Calender</a>
-    </div>
-    <div class="sidebar-single-option">
-      <img
-        src="assets/images/document.png"
-        alt="documents"
-        class="img-fluid sidebar-img"
-      />
-      <a href="/">Private Files</a>
-    </div>
-    <div class="sidebar-single-option">
-      <img
-        src="assets/images/graduation-cap.png"
-        alt="graduation-cap"
-        class="img-fluid sidebar-img"
-      />
-      <a href="/">My Courses</a>
-    </div>
-    <div class="sidebar-single-option">
-      <img
-        src="assets/images/graduation-cap.png"
-        alt="graduation-cap"
-        class="img-fluid sidebar-img"
-      />
-      <a href="/">ERP-B1</a>
-    </div>
-    <div class="sidebar-single-option">
-      <img
-        src="assets/images/graduation-cap.png"
-        alt="graduation-cap"
-        class="img-fluid sidebar-img"
-      />
-      <a href="/">AHOWSP-B1</a>
+
+    <div *ngIf="isAdmin">
+      <div class="sidebar-single-option">
+        <img
+          src="assets/images/graduation-cap.png"
+          alt="graduation-cap"
+          class="img-fluid sidebar-img"
+        />
+        <a href="/">Manage Courses</a>
+      </div>
+      <div class="sidebar-single-option">
+        <img
+          src="assets/images/graduation-cap.png"
+          alt="graduation-cap"
+          class="img-fluid sidebar-img"
+        />
+        <a href="/">Manage Enrollment</a>
+      </div>
+      <div class="sidebar-single-option">
+        <img
+          src="assets/images/graduation-cap.png"
+          alt="graduation-cap"
+          class="img-fluid sidebar-img"
+        />
+        <a href="/">Manage Users</a>
+      </div>
     </div>
   </div>
 </div>

@@ -24,7 +24,6 @@ export class AdminGuard implements CanActivate {
     | UrlTree {
     let url = state.url;
     let admin = this.authService.getActiveUser().isAdmin;
-    console.log(route, state);
     if (url === '/admin' && admin) {
       return true;
     } else {
