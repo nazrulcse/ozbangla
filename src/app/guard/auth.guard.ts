@@ -24,6 +24,7 @@ export class AuthGuard implements CanActivate {
     | UrlTree {
     let auth: any = window.localStorage.getItem('auth');
     let parse_auth = JSON.parse(auth);
+
     if (this.authservice.isAuthenticated && parse_auth) {
       return true;
     } else {

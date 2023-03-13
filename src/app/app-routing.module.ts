@@ -1,3 +1,5 @@
+import { TestComponent } from './components/admin/test/test.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { CourseCreateComponent } from './components/dashboard/preferences/course-create/course-create.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CoursesComponent } from './components/courses/courses.component';
@@ -13,6 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CourseDetailsInfoComponent } from './components/courses/course-details-info/course-details-info.component';
 import { AuthGuard } from './guard/auth.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -68,6 +71,17 @@ const routes: Routes = [
   {
     path: 'preferences/course-create',
     component: CourseCreateComponent,
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'test',
+        component: TestComponent
+      }
+    ]
   },
   {
     path: '404',

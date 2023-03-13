@@ -42,6 +42,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CourseCreateComponent } from './components/dashboard/preferences/course-create/course-create.component';
 import { MatInputModule } from '@angular/material/input';
 import { CourseDetailsInfoComponent } from './components/courses/course-details-info/course-details-info.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { TestComponent } from './components/admin/test/test.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +76,9 @@ import { CourseDetailsInfoComponent } from './components/courses/course-details-
     CoursesComponent,
     NotFoundComponent,
     CourseCreateComponent,
-    CourseDetailsInfoComponent
+    CourseDetailsInfoComponent,
+    AdminComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
