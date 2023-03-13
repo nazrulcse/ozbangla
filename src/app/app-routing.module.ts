@@ -1,4 +1,3 @@
-import { TestComponent } from './components/admin/test/test.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CourseCreateComponent } from './components/dashboard/preferences/course-create/course-create.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -21,7 +20,7 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'login',
@@ -77,12 +76,7 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard, AdminGuard],
-    children: [
-      {
-        path: 'test',
-        component: TestComponent
-      }
-    ]
+    children: [],
   },
   {
     path: '404',

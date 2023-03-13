@@ -43,7 +43,6 @@ import { CourseCreateComponent } from './components/dashboard/preferences/course
 import { MatInputModule } from '@angular/material/input';
 import { CourseDetailsInfoComponent } from './components/courses/course-details-info/course-details-info.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { TestComponent } from './components/admin/test/test.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +77,6 @@ import { TestComponent } from './components/admin/test/test.component';
     CourseCreateComponent,
     CourseDetailsInfoComponent,
     AdminComponent,
-    TestComponent
   ],
   imports: [
     BrowserModule,
