@@ -1,3 +1,4 @@
+import { ManageEnrollComponent } from './components/admin/manage-enroll/manage-enroll.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { CourseCreateComponent } from './components/dashboard/preferences/course-create/course-create.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -15,6 +16,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CourseDetailsInfoComponent } from './components/courses/course-details-info/course-details-info.component';
 import { AuthGuard } from './guard/auth.guard';
 import { AdminGuard } from './guard/admin.guard';
+import { ManageCourseComponent } from './components/admin/manage-course/manage-course.component';
 
 const routes: Routes = [
   {
@@ -76,7 +78,16 @@ const routes: Routes = [
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard, AdminGuard],
-    children: [],
+    children: [
+      {
+        path: 'manage-course',
+        component: ManageCourseComponent
+      },
+      {
+        path: 'manage-enroll',
+        component: ManageEnrollComponent
+      }
+    ],
   },
   {
     path: '404',

@@ -43,6 +43,9 @@ import { CourseCreateComponent } from './components/dashboard/preferences/course
 import { MatInputModule } from '@angular/material/input';
 import { CourseDetailsInfoComponent } from './components/courses/course-details-info/course-details-info.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ManageCourseComponent } from './components/admin/manage-course/manage-course.component';
+import { ManageEnrollComponent } from './components/admin/manage-enroll/manage-enroll.component';
+import { TestCardComponent } from './components/admin/test-card/test-card.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +80,9 @@ import { AdminComponent } from './components/admin/admin.component';
     CourseCreateComponent,
     CourseDetailsInfoComponent,
     AdminComponent,
+    ManageCourseComponent,
+    ManageEnrollComponent,
+    TestCardComponent,
   ],
   imports: [
     BrowserModule,

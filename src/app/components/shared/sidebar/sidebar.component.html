@@ -66,7 +66,7 @@
           alt="graduation-cap"
           class="img-fluid sidebar-img"
         />
-        <a href="/">Manage Courses</a>
+        <a routerLink="/admin/manage-course">Manage Courses</a>
       </div>
       <div class="sidebar-single-option">
         <img
@@ -74,15 +74,24 @@
           alt="graduation-cap"
           class="img-fluid sidebar-img"
         />
-        <a href="/">Manage Enrollment</a>
+        <a routerLink="/admin/manage-enroll">Manage Enrollment</a>
       </div>
+
       <div class="sidebar-single-option">
         <img
           src="assets/images/graduation-cap.png"
           alt="graduation-cap"
           class="img-fluid sidebar-img"
         />
-        <a href="/">Manage Users</a>
+        <a routerLink="/admin/manage-course">Manage Users</a>
+      </div>
+      <div class="sidebar-single-option logout" (click)="logout()">
+        <img
+          src="assets/images/logout.png"
+          alt="graduation-cap"
+          class="img-fluid sidebar-img"
+        />
+        <a>Logout</a>
       </div>
     </div>
   </div>

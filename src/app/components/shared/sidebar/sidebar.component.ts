@@ -17,4 +17,11 @@ export class SidebarComponent implements OnInit {
     console.log(this.isAdmin)
   }
 
+  logout() {
+    this.authService.isAuthenticated = false;
+    window.localStorage.removeItem('auth');
+    this.authService.logout();
+    window.location.href = '/login';
+  }
+
 }
