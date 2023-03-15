@@ -1,6 +1,5 @@
 import { ManageEnrollComponent } from './components/admin/manage-enroll/manage-enroll.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { CourseCreateComponent } from './components/dashboard/preferences/course-create/course-create.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { MessagesComponent } from './components/dashboard/messages/messages.component';
@@ -71,22 +70,18 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'preferences/course-create',
-    component: CourseCreateComponent,
-  },
-  {
     path: 'admin',
     component: AdminComponent,
     canActivate: [AuthGuard, AdminGuard],
     children: [
       {
         path: 'manage-course',
-        component: ManageCourseComponent
+        component: ManageCourseComponent,
       },
       {
         path: 'manage-enroll',
-        component: ManageEnrollComponent
-      }
+        component: ManageEnrollComponent,
+      },
     ],
   },
   {

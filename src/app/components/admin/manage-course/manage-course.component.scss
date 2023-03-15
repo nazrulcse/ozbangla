@@ -1,0 +1,17 @@
+@import "../../../app.component.scss";
+.main {
+  margin-left: 250px;
+}
+
+form {
+  input,
+  select {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main {
+    margin-left: 0;
+  }
+}

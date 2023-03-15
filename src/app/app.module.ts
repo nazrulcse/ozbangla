@@ -39,13 +39,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { CoursesComponent } from './components/courses/courses.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { CourseCreateComponent } from './components/dashboard/preferences/course-create/course-create.component';
 import { MatInputModule } from '@angular/material/input';
 import { CourseDetailsInfoComponent } from './components/courses/course-details-info/course-details-info.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ManageCourseComponent } from './components/admin/manage-course/manage-course.component';
 import { ManageEnrollComponent } from './components/admin/manage-enroll/manage-enroll.component';
-import { TestCardComponent } from './components/admin/test-card/test-card.component';
 
 @NgModule({
   declarations: [
@@ -77,12 +75,10 @@ import { TestCardComponent } from './components/admin/test-card/test-card.compon
     MessagesComponent,
     CoursesComponent,
     NotFoundComponent,
-    CourseCreateComponent,
     CourseDetailsInfoComponent,
     AdminComponent,
     ManageCourseComponent,
     ManageEnrollComponent,
-    TestCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,7 +93,7 @@ import { TestCardComponent } from './components/admin/test-card/test-card.compon
     FormsModule,
     HttpClientModule,
     ClickOutsideModule,
-    MatInputModule
+    MatInputModule,
   ],
   bootstrap: [AppComponent],
 })
